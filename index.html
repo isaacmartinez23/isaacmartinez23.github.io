@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Isaac's portafolio">
+  <meta name="keywords" content="portafolio,Isaac Martinez Rios, Data Analyst">
+  <meta name="author" content="Isaac Martinez">
+  <meta name="google" content="notranslate" />
+  <meta property="og:title" content="Isaac Martinez, Data Analyst">
+  <meta property="og:image" content="img/portada.png">
+  <meta property="og:description" content="Hi I'm a Data Analyst and Administration from México, and enthusiast for technology, code.">
+  <title>Isaac Martinez</title>
+  <link rel="icon" href="img/portada.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans|Schoolbell&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="https://kit.fontawesome.com/5d0d4b16a1.js" crossorigin="anonymous"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-147891800-1');
+  </script>
+</head>
+<body class="body-page">
+  <!-- Main Hero -->
+  <section class="hero hero-princ is-fullheight">
+    <div class="hero-body">
+      <div class="lang-div">
+        <select id="lang-opt" onchange="selectLan(this)">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
+      <div class="container hero-princ-container is-flex f-d-col center-y">
+        <img class="gif-animated" src="img/portada.png" alt="img perfil">
+        <div class="hero-princ-content is-flex f-d-col center-y text">
+          <h1 class="title has-text-white has-text-centered">
+            Isaac Martinez
+          </h1>
+          <br>
+          <h2 class="subtitle has-text-grey-lighter en-opt">
+            Data Analyst  and  Administration
+          </h2>                    
+          <h2 class="subtitle has-text-grey-lighter es-opt">
+            Analisis de Datos y Administración
+          </h2>
+        </div>
+        <div class="social-media">
+          <ul class="col is-flex">
+            <li class="li-smedia es-opt">
+              <a href="mailto:isaac.amr15@gmail.com?Subject=Hola%20Isaac!%20Vengo%20de%20tu%20sitio%20web" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-envelope" title="Gmail"></i>
+              </a>
+            </li>
+            <li class="li-smedia en-opt">
+                <a href="mailto:isaac.amr15@gmail.com?Subject=Hi%20Isaac!%20I%20come%20from%20your%20website" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-solid fa-envelope" title="Gmail"></i>
+                </a>
+              </li>
+            <li class="li-smedia">
+              <a href="www.linkedin.com/in/isaacmtz" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin" title="LinkedIn"></i>
+              </a>      
+            </li>
+            <li class="li-smedia">
+              <a href="https://github.com/isaacmartinez23" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" title="GitHub"></i>
+              </a>      
+            </li>
+            <li class="li-smedia">
+              <a href="https://isaacmtz.notion.site/Martinez-Rios-Isaac-Antonio-0411b5df238e422e88e74f4fb414e3e8?pvs=4" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-n" title="Notion"></i>
+              </a> 
+            </li>
+            <li class="li-smedia">
+              <a href="" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-address-book" title="CV"></i>
+              </a> 
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="hero-princ-footer">
+      <div class="container">
+        <ul class="menu is-flex center-x">
+          <a href="#about" class="no-deco">
+            <li class="en-opt">About</li>
+            <li class="es-opt">Acerca</li>
+          </a>
+          <li>/</li>
+          <a href="#skills" class="no-deco">
+            <li class="en-opt">Skills</li>
+            <li class="es-opt">Habilidades</li>
+          </a>
+          <li>/</li>
+          <a href="#projects" class="no-deco">
+            <li class="en-opt">Projects</li>
+            <li class="es-opt">Proyectos</li>
+          </a>              
+          <li>/</li>
+          <a href="#contact" onclick="toContact()" class="no-deco">
+            <li class="en-opt">Contact</li>
+            <li class="es-opt">Contacto</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="hero about" id="about">
+    <div class="columns about-columns">
+      <div class="column about col-1 is-flex center-y center-x">
+        <h1 class="title is-1 has-text-white en-opt">About</h1>
+        <h1 class="title is-1 has-text-white es-opt">Acerca de mí</h1>
+      </div>
+      <div class="column about col-2">
+        <div class="about-content">
+          <h3 class="subtitle is-3 en-opt">Hi! 👋</h3>
+          <h3 class="subtitle is-3 es-opt">Hola! 👋</h3>
+          <h5 class="subtitle is-6 en-opt">
+            I am passionate about information sciences and data analysis, which led me to specialize in Business Intelligence and Data Analysis after completing my Bachelor's degree in Business Administration. I firmly believe in the power of data to drive decision-making and optimize business processes. Throughout my roles, I have consistently demonstrated being a quick learner, easily adapting to new situations and challenges. My skills in teamwork and critical thinking have always been appreciated by my peers and superiors. I am excited for future opportunities and ready to bring my passion and skills to the business world.   <br>
+          </h5>
+          <h5 class="subtitle is-6 es-opt">
+            Soy una persona apasionada por las ciencias de la información y el análisis de datos, lo que me llevó a especializarme en Business Intelligence y Data Analysis después de mi licenciatura en Administración de Empresas. Creo firmemente en el poder de los datos para impulsar la toma de decisiones y optimizar los procesos empresariales.<br>
+          </h5>
+          <img src="img/perfil3.png" class="about-img" alt="my photo">          
+          <br>
+          <h6 class="subtitle is-6 en-opt">
+
+          <h5 class="subtitle is-6 en-opt">My goal is to become a versatile professional capable of tackling the dynamic challenges of today's business environment. The combination of my studies in Business Administration with a specialization in Business Intelligence and Data Analysis places me in a unique position to contribute significantly to the growth and success of any organization.<br>
+          </h5>
+          <h5 class="subtitle is-6 es-opt">Mi objetivo es convertirme en un profesional versátil capaz de enfrentar los retos dinámicos del ámbito empresarial actual. La fusión de mis estudios en Administración de Empresas con la especialización en Business Intelligence y Data Analysis me coloca en una posición única para contribuir significativamente al crecimiento y éxito de cualquier organización. <br>
+          </h5>
+          <h5 class="subtitle is-6 en-opt">Thank you for exploring my profile! I am excited about future opportunities and ready to contribute my passion and skills to the business world.<br>
+          </h5>
+          <h5 class="subtitle is-6 es-opt">¡Gracias por explorar mi perfil! Estoy entusiasmado por las oportunidades futuras y dispuesto a aportar mi pasión y habilidades al mundo empresarial. <br>
+          </h5>
+          <br>                                        
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="hero skills" id="skills">
+    <div class="hero-body">
+      <div class="container skills">
+        <h1 class="title is-1 has-text-centered en-opt">What did I use in Tech?</h1>
+        <h1 class="title is-1 has-text-centered es-opt">¿Qué tecnologías he usado?</h1>
+        <div class="container programming">
+          <h3 class="title is-3 en-opt">Data Analyst tools</h3>
+          <h3 class="title is-3 es-opt">Herramientas de Analisis de Datos</h3>
+          <div class="columns skills">
+            <div class="img" data-desc="Excel">
+              <img src="img/excel2.jpg" alt="excel image">
+            </div>
+            <div class="img" data-desc="Python">
+              <img src="img/python.jpg" alt="python image">
+            </div>
+            <div class="img" data-desc="Power BI">
+              <img src="img/powerbi2.jpg" alt="power_bi image">
+            </div>
+            <div class="img" data-desc="Tableu">
+              <img src="img/tableu2.png" alt="tableu image">
+            </div>
+            <div class="img" data-desc="PostgreSQL">
+              <img src="img/postgresql.png" alt="PostgreSQL image">
+            </div>
+          </div>
+        </div>
+        <div class="see-more-skills is-flex center-x en-opt">
+          <a class="button is-rounded skills-more-btn no-deco en-opt" onclick="seeMoreSkills()">
+            See More
+          </a>
+        <br>
+        </div>
+        <div class="see-more-skills is-flex center-x es-opt">
+          <a class="button is-rounded skills-more-btn no-deco es-opt" onclick="seeMoreSkills()">
+            Ver mas
+          </a>
+        <br>
+        </div>
+        <div class="more-skills d-none">
+          <div class="container css-libraries">
+            <h3 class="title is-3 en-opt">Python libraries</h3>
+            <h3 class="title is-3 es-opt">Librerias de Python</h3>
+            <div class="columns skills">
+              <div class="img" data-desc="Pandas">
+                <img src="img/pandas2.png" alt="Pandas image">
+              </div>
+              <div class="img" data-desc="NumPy">
+                <img src="img/numpy2.png" alt="NumPy image">
+              </div>
+              <div class="img" data-desc="Seaborn">
+                <img src="img/seaborn2.png" alt="Seaborn image">
+              </div>
+              <div class="img" data-desc="Matplotlib">
+                <img src="img/matplotlib2.png" alt="Matplotlib image">
+              </div>
+            </div>                                
+        </div>
+        <br>
+        <div class="container css-libraries">
+            <h3 class="title is-3 en-opt">Management tools</h3>
+            <h3 class="title is-3 es-opt">Herramientas de Administración</h3>
+            <div class="columns skills">
+              <div class="img" data-desc="Microsoft Suite">
+                <img src="img/office.jpg" alt="Microsoft office image">
+              </div>
+              <div class="img" data-desc="Salesforce">
+                <img src="img/salesforce.png" alt="salesforce image">
+              </div>
+              <div class="img" data-desc="Notion">
+                <img src="img/notion.png" alt="Notion image">
+              </div>
+              <div class="img" data-desc="Airtable">
+                <img src="img/airtable.png" alt="Airtable image">
+              </div>
+            </div>                                
+        </div>
+        <br>
+        <div class="container css-libraries">
+            <h3 class="title is-3 en-opt">Programming</h3>
+            <h3 class="title is-3 es-opt">Programación</h3>
+            <div class="columns skills">
+              <div class="img" data-desc="GitHub">
+                <img src="img/github.png" alt="GitHub image">
+              </div>
+              <div class="img" data-desc="GIT">
+                <img src="img/gti.png" alt="gitimage">
+              </div>
+              <div class="img" data-desc="HTML">
+                <img src="img/html.png" alt="html image">
+              </div>
+              <div class="img" data-desc="CSS">
+                <img src="img/css.jpg" alt="css image">
+              </div>
+            </div>                                
+        </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="hero projects" id="projects">
+    <div class="hero-body">
+      <div class="container projects-wrapper is-flex f-d-col center-x">
+        <h1 class="title is-1 has-text-centered en-opt">My projects</h1>
+        <h1 class="title is-1 has-text-centered es-opt">Mis proyectos</h1>
+        <div class="all-projects is-flex center-x center-y f-d-col">
+          <div class="container projects">
+            <!-- Shoe Store -->
+            <div class="column project has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="Tennis Store"
+                data-link=""
+                data-desc="This project involved the collection and analysis of sales data, enabling me to generate detailed and visually appealing reports."                
+                data-tools="Excel"
+                >
+                <img class="project" src="img/tienda_tennis.png" alt="Elegimos.pe Project image">
+                
+              </div>
+              <a href="" class="no-deco" target="_blank">
+                Tennis store
+              </a>
+            </div>
+            <div class="column project has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="tienda_tennis"
+                data-link=""
+                data-desc="Este proyecto implicó la recopilación y análisis de datos de ventas, lo que me permitió generar informes detallados y visualmente atractivos."
+                                  
+                data-tools="Excel"
+                >
+                <img class="project" src="img/tienda_tennis.png" alt="Proyecto tienda tennis imagen">
+              </div>
+              <a href="" class="no-deco" target="_blank">
+                Tienda de tennis
+              </a>
+            </div>
+
+            <!-- Analisis Netflix -->
+            <div class="column project has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="Netflix Data Analyst"
+                data-link="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/EDA_Netflix.ipynb"
+                data-desc="This project involves a detailed data analysis of the movies and TV shows available on Netflix. Several areas have been explored, including the amount of content, the countries producing the most content, changes in the amount of content over time, the most common content classifications, the average length of content, the most common content categories. The study also presents a detailed description of each column in the dataset. The project culminates with a set of key conclusions drawn from the analysis."
+                data-tools="Pyhton, Pandas, NumPy, Seaborn, Matplotlib"
+                >
+                <img class="project" src="img/Analisis_Netflix.png" alt="Netflix_analyst">
+              </div>
+              <a href="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/EDA_Netflix.ipynb" class="no-deco" target="_blank">
+                Netflix Data Analyst
+              </a>
+            </div>
+            <div class="column project has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="Análisis de Datos Netflix"
+                data-link="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/EDA_Netflix.ipynb"
+                data-desc="Este proyecto implica un análisis detallado de los datos de las películas y programas de televisión disponibles en Netflix. Se han explorado varias áreas, incluyendo la cantidad de contenido, los países que producen la mayoría del contenido, los cambios en la cantidad de contenido a lo largo del tiempo, las clasificaciones de contenido más comunes, la duración promedio del contenido, las categorías de contenido más comunes. El estudio también presenta una descripción detallada de cada columna en el conjunto de datos. El proyecto culmina con un conjunto de conclusiones clave extraídas del análisis."
+                data-tools="Pyhton, Pandas, NumPy, Seaborn, Matplotlib"
+                >
+                <img class="project" src="img/Analisis_Netflix.png" alt="netflix_analisis">
+              </div>
+              <a href="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/EDA_Netflix.ipynb" class="no-deco" target="_blank">
+                Análisis de Datos Netflix
+              </a>
+            </div>
+
+            
+            <!-- Penguin_Data -->
+            <div class="column project has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="EDA Penguin Dataset"
+                data-link="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/An%C3%A1lisis_Ping%C3%BCinos.ipynb"
+                data-desc="This notebook is an exploratory data analysis of the Palmer penguin data set. 
+                It explores the distributions of numerical and categorical variables, and calculates several descriptive statistics, such as mean, median, mode, range, standard deviation, and interquartile range.
+                
+                Finally, the notebook investigates relationships between variables through the use of scatter plots, box plots, and correlation matrices."
+                data-tools="Pandas, NumPy, Scipy, Seaborn"
+                >
+                <img class="project" src="img/analisis_pinguinos.png" alt="BCP Form image">
+              </div>
+              <a href="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/An%C3%A1lisis_Ping%C3%BCinos.ipynb" class="no-deco" target="_blank">
+                EDA Penguin Dataset
+              </a>
+            </div>
+            <div class="column project has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="EDA Datos de Pingüinos"
+                data-link="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/An%C3%A1lisis_Ping%C3%BCinos.ipynb"
+                data-desc="Este notebook es un análisis exploratorio de datos del conjunto de datos de pingüinos de Palmer.
+                Explora las distribuciones de las variables numéricas y categóricas, y calcula varios estadísticos descriptivos, como la media, la mediana, la moda, el rango, la desviación estándar y el rango intercuartílico.
+                
+                Finalmente, el notebook investiga las relaciones entre las variables mediante el uso de gráficos de dispersión, diagramas de caja y matrices de correlación."
+                data-tools="Pandas, NumPy, Scipy, Seaborn"
+                >
+                <img class="project" src="img/analisis_pinguinos.png" alt="BCP Formulario imagen">
+              </div>
+              <a href="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/An%C3%A1lisis_Ping%C3%BCinos.ipynb" class="no-deco" target="_blank">
+                EDA Datos de Pingüinos
+              </a>
+            </div>   
+
+            <!-- Project -->
+            <div class="column project has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="EDA"
+                data-link=""
+                data-desc=""
+                data-tools="Pandas, NumPy, Scipy, Seaborn"
+                >
+                <img class="project" src="img/analisis_pinguinos.png" alt="BCP Form image">
+              </div>
+              <a href="" class="no-deco" target="_blank">
+                EDA
+              </a>
+            </div>
+            <div class="column project has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="EDA"
+                data-link=""
+                data-desc=""
+                data-tools="Pandas, NumPy, Scipy, Seaborn"
+                >
+                <img class="project" src="img/analisis_pinguinos.png" alt="BCP Formulario imagen">
+              </div>
+              <a href="https://bolsadetrabajo.laborum.pe/bcpForm/" class="no-deco" target="_blank">
+                EDA
+              </a>
+            </div>   
+            
+            <!-- Project -->
+            <div class="column project has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="EDA"
+                data-link=""
+                data-desc=""
+                data-tools="Pandas, NumPy, Scipy, Seaborn"
+                >
+                <img class="project" src="img/analisis_pinguinos.png" alt="BCP Form image">
+              </div>
+              <a href="" class="no-deco" target="_blank">
+                EDA
+              </a>
+            </div>
+            <div class="column project has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="EDA"
+                data-link=""
+                data-desc=""
+                data-tools="Pandas, NumPy, Scipy, Seaborn"
+                >
+                <img class="project" src="img/analisis_pinguinos.png" alt="BCP Formulario imagen">
+              </div>
+              <a href="https://bolsadetrabajo.laborum.pe/bcpForm/" class="no-deco" target="_blank">
+                EDA
+              </a>
+            </div>
+
+            <!-- Project -->
+            <div class="column project has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="EDA"
+                data-link=""
+                data-desc=""
+                data-tools="Pandas, NumPy, Scipy, Seaborn"
+                >
+                <img class="project" src="img/analisis_pinguinos.png" alt="BCP Form image">
+              </div>
+              <a href="" class="no-deco" target="_blank">
+                EDA
+              </a>
+            </div>
+            <div class="column project has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showProject(this)" 
+                data-title="EDA"
+                data-link=""
+                data-desc=""
+                data-tools="Pandas, NumPy, Scipy, Seaborn"
+                >
+                <img class="project" src="img/analisis_pinguinos.png" alt="BCP Formulario imagen">
+              </div>
+              <a href="https://bolsadetrabajo.laborum.pe/bcpForm/" class="no-deco" target="_blank">
+                EDA
+              </a>
+            </div>
+            <!-- Add more... -->
+          </div>
+        </div>   
+      </div>
+    </div>
+    <div id="project-popup" class="hero project d-none">
+      <div class="hero-body is-flex center-y">
+        <a class="close project" onclick="closeProject()">&times;</a>
+        <div class="container">
+          <div class="columns">
+            <div class="column is-two-thirds is-flex center-y">
+              <a id="project-link" target="_blank">
+                <img class="img-project" id="project-img">
+              </a>
+            </div>
+            <div class="column project-desc">
+              <h4 class="title is-4" id="project-name"></h4>
+              <div class="characteristics">
+                <div class="container">
+                  <h5 class="subtitle is-5 en-opt">Technologies</h5>
+                  <h5 class="subtitle is-5 es-opt">Tecnologías</h5>
+                  <ul class="lis" id="project-list">
+                  </ul>
+                </div>
+    
+                <div class="container">
+                  <h5 class="subtitle is-5 en-opt">About the Project?</h5>
+                  <h5 class="subtitle is-5 es-opt">¿Acerca del Proyecto?</h5>
+                  <h6 class="subtitle is-6" id="project-desc"></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificate -->  
+  <section class="hero certificate" id="certificate">
+    <div class="hero-body">
+        <div class="container certificate is-flex f-d-col center-x">
+          <h1 class="title is-1 has-text-centered en-opt">Certificates</h1>
+          <h1 class="title is-1 has-text-centered es-opt">Certificados</h1>
+          <div class="all-certificate is-flex center-x center-y f-d-col">
+            <div class="container certificate">
+            <!-- Data Analyst --> 
+            <div class="column certificate has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showCertificate(this)" 
+                data-title="Data analyst"
+                data-link=""
+                data-desc="My training included the ability to identify and define business problems, apply data analysis techniques to generate effective solutions, and communicate key insights through clear and effective visualizations. Additionally, I have enhanced my ability to transform raw data into meaningful and actionable information, enabling organizations to make more informed and strategic decisions."                
+                data-tools="Excel, SQL, Tableau, Power BI, Statistics, Business Metrics, Python"
+                >
+                <img class="certificate" src="img/data analyst.png" alt="Certificate_image">                
+              </div>              
+            </div>
+            <div class="column certificate has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showCertificate(this)" 
+                data-title="Analisis de Datos"
+                data-link=""
+                data-desc="Mi capacitación incluyó la capacidad de identificar y definir problemas comerciales, aplicar técnicas de análisis de datos para generar soluciones efectivas y comunicar insights clave a través de visualizaciones claras y efectivas. Además, he mejorado mi capacidad para transformar datos brutos en información significativa y accionable, lo que permite a las organizaciones tomar decisiones más informadas y estratégicas."                                  
+                data-tools="Excel, SQL, Tableu, Power BI, Estadistica, Metricas de Negocios, Python"
+                >
+                <img class="certificate" src="img/data analyst.png" alt="Certificados_imagen">
+              </div>              
+            </div>
+            <!-- Business Intelligence --> 
+            <div class="column certificate has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showCertificate(this)" 
+                data-title="Data analyst"
+                data-link=""
+                data-desc="My certification in Business Intelligence has been a transformative experience where I have acquired key skills to interpret and harness the power of data in the business environment. Throughout the program, I have immersed myself in essential tools like Excel for creating charts and advanced formulas, enabling me to manipulate data effectively and visualize trends clearly and concisely."                
+                data-tools="Excel, Power BI, Metricas de Negocios"
+                >
+                <img class="certificate" src="img/bi.png" alt="Certificate_image">                
+              </div>              
+            </div>
+            <div class="column certificate has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showCertificate(this)" 
+                data-title="Analisis de Datos"
+                data-link=""
+                data-desc="Mi certificación en Business Intelligence ha sido una experiencia transformadora donde he adquirido habilidades clave para interpretar y aprovechar el poder de los datos en el entorno empresarial. A lo largo del programa, me he sumergido en herramientas esenciales como Excel para la creación de gráficos y fórmulas avanzadas, lo que me ha permitido manipular datos de manera efectiva y visualizar tendencias de manera clara y concisa."                                  
+                data-tools="Excel, Power BI, Metricas de Negocios"
+                >
+                <img class="certificate" src="img/bi.png" alt="Proyecto tienda tennis imagen">
+              </div>              
+            </div>
+            <!-- Data visualization with Python --> 
+            <div class="column certificate has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showCertificate(this)" 
+                data-title="Data visualization with Python"
+                data-link=""
+                data-desc="Data visualization has been the central focus of my training, where I have explored advanced techniques using libraries such as Matplotlib and Seaborn. These powerful tools have allowed me to create striking and clear visualizations that uncover hidden patterns and trends in the data, facilitating informed decision-making"                
+                data-tools="Python, Colab, Matplotlib, Seaborn, Pandas, NumPy, Jupyter Notebooks"
+                >
+                <img class="certificate" src="img/dataviz.png" alt="Certificate_image">                
+              </div>              
+            </div>
+            <div class="column certificate has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showCertificate(this)" 
+                data-title="Visualización de datos con Python"
+                data-link=""
+                data-desc="La visualización de datos ha sido el foco central de mi formación, donde he explorado técnicas avanzadas utilizando bibliotecas como Matplotlib y Seaborn. Estas herramientas poderosas me han permitido crear visualizaciones impactantes y claras que revelan patrones y tendencias ocultas en los datos, lo que facilita la toma de decisiones informadas ."                                  
+                data-tools="Python, Colab, Matplotlib, Seaborn, Jupyter Notebooks"
+                >
+                <img class="certificate" src="img/dataviz.png" alt="Proyecto tienda tennis imagen">
+              </div>              
+            </div>
+            <!-- Excel --> 
+            <div class="column certificate has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showCertificate(this)" 
+                data-title="Excel"
+                data-link=""
+                data-desc="My Excel certification has been a valuable experience where I have developed fundamental skills for the analysis and efficient manipulation of data using this powerful tool. Throughout the program, I have thoroughly explored dashboard analysis and formulas, enabling me to organize and process data effectively to gain meaningful insights."
+                data-tools="Excel, Visual Basic, Macros"
+                >
+                
+                <img class="certificate" src="img/excelC.png" alt="Certificate_image">                
+              </div>              
+            </div>
+            <div class="column certificate has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showCertificate(this)" 
+                data-title="Excel"
+                data-link=""
+                data-desc="Mi certificación en Excel ha sido una experiencia valiosa donde he desarrollado habilidades fundamentales para el análisis y la manipulación eficiente de datos utilizando esta poderosa herramienta. Durante el programa, he explorado a fondo el análisis de tableros y fórmulas, lo que me ha permitido organizar y procesar datos de manera efectiva para obtener insights significativos."                                  
+                data-tools="Excel, Visual Basic, Macros"
+                >
+                <img class="certificate" src="img/excelC.png" alt="Proyecto tienda tennis imagen">
+              </div>              
+            </div>
+             <!-- IA --> 
+             <div class="column certificate has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showCertificate(this)" 
+                data-title="Introduction to Data Science and Artificial Intelligence"
+                data-link=""
+                data-desc="My certification in Introduction to Data Science and Artificial Intelligence has been a transformative experience where I have gained a deep understanding of the fundamentals of Artificial Intelligence (AI) and its application in the field of Data Science. Throughout the program, I have explored the essential concepts of AI, including its applications, algorithms, and fundamental techniques."                
+                data-tools="Chat GPT, Hugging Face"
+                >
+                <img class="certificate" src="img/IA.png" alt="Certificate_image">                
+              </div>              
+            </div>
+            <div class="column certificate has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showCertificate(this)" 
+                data-title="Introducción a Data Science e Inteligencia Artificial"
+                data-link=""
+                data-desc="Mi certificación en Introducción a Data Science e Inteligencia Artificial ha sido una experiencia transformadora donde he adquirido un profundo conocimiento de los fundamentos de la Inteligencia Artificial (IA) y su aplicación en el ámbito de Data Science. Durante el programa, he explorado los conceptos esenciales de la IA, incluyendo sus aplicaciones, algoritmos y técnicas fundamentales."                                  
+                data-tools="Chat GPT, Hugging Face"
+                >
+                <img class="certificate" src="img/IA.png" alt="Proyecto tienda tennis imagen">
+              </div>              
+            </div>
+              <!-- Intro Data --> 
+              <div class="column certificate has-text-centered en-opt">
+                <div 
+                  class="img-container" 
+                  onclick="showCertificate(this)" 
+                  data-title="Data Fundamentals"
+                  data-link=""
+                  data-desc="My certification in Data Fundamentals has been a enriching experience where I have acquired a solid understanding of the fundamental principles that underpin the world of data analysis. Throughout the program, I explored essential concepts related to data collection, storage, cleaning, and analysis."                
+                  data-tools="ETL"
+                  >
+                  <img class="certificate" src="img/data.png" alt="Certificate_image">                
+                </div>              
+              </div>
+              <div class="column project has-text-centered es-opt">
+                <div 
+                  class="img-container" 
+                  onclick="showCertificate(this)" 
+                  data-title="Fundamentos de Datos"
+                  data-link=""
+                  data-desc="Mi certificación en Fundamentos de Data ha sido una experiencia enriquecedora donde he adquirido una comprensión sólida de los principios fundamentales que sustentan el mundo del análisis de datos. Durante el programa, exploré conceptos esenciales relacionados con la recolección, el almacenamiento, la limpieza y el análisis de datos."                                  
+                  data-tools="ETL"
+                  >
+                  <img class="certificate" src="img/data.png" alt="Proyecto tienda tennis imagen">
+                </div>              
+              </div>
+          </div>              
+        </div>            
+      </div>            
+    </div>
+    </div>
+    <!-- Add more... -->
+    <div id="certificate-popup" class="hero certificate d-none">
+      <div class="hero-body is-flex center-y">
+        <a class="close certificate" onclick="closeCertificate()">&times;</a>
+        <div class="container">
+          <div class="columns">
+            <div class="column is-two-thirds is-flex center-y">
+              <a id="certificate-link" target="_blank">
+                <img class="img-certificate" id="certificate-img">
+              </a>
+            </div>
+            <div class="column certificate-desc">
+              <h3 class="title is-3" id="certificate-name"></h3>
+              <div class="characteristics">
+                <div class="container">
+                  <h5 class="subtitle is-5 en-opt">Tools</h5>
+                  <h5 class="subtitle is-5 es-opt">Herramientas</h5>
+                  <ul class="lis" id="certificate-list"></ul>                                                  
+                </div> 
+                <div class="container">
+                  <h5 class="subtitle is-5 en-opt">What i learned</h5>
+                  <h5 class="subtitle is-5 es-opt">Lo que aprendí</h5>
+                  <h6 class="subtitle is-6" id="certificate-desc"></h6>
+                </div>                                
+                </div>                    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact -->
+  <section class="hero hero-contact is-fullheight" id="contact">
+    <div class="hero-body is-flex f-d-col">
+      <div class="container hero-contact-container is-flex f-d-col center-y center-x">
+        <div class="hero-contact-content is-flex center-y f-d-col text">
+          <h2 class="title is-2 has-text-white has-text-centered en-opt">
+            Want to get in touch?
+          </h2>
+          <h2 class="title is-2 has-text-white has-text-centered es-opt">
+            ¿Quieres ponerte en Contacto?
+          </h2>
+          <h4 class="subtitle is-4 has-text-white has-text-centered is-spaced en-opt">
+            Find me on LinkedIn or GitHub
+          </h4>
+          <h4 class="subtitle is-4 has-text-white has-text-centered is-spaced es-opt">
+            Encuentrame en LinkedIn o GitHub
+          </h4>
+        </div>
+        <div class="social-media">
+          <ul class="col is-flex">              
+            <li class="li-smedia">
+              <a href="www.linkedin.com/in/isaacmtz" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin en-opt" title="Follow me on LinkedIn"></i>
+                <i class="fa-brands fa-linkedin es-opt" title="Sígueme en LinkedIn"></i>
+              </a>      
+            </li>
+            <li class="li-smedia">
+              <a href="https://github.com/isaacmartinez23" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github en-opt" title="Follow me on GitHub"></i>
+                <i class="fa-brands fa-github es-opt" title="Sígueme en GitHub"></i>
+              </a>      
+            </li>                            
+            <li class="li-smedia">
+              <a href="https://isaacmtz.notion.site/Martinez-Rios-Isaac-Antonio-0411b5df238e422e88e74f4fb414e3e8?pvs=4" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-n en-opt" title="Check out my Notion"></i>
+                <i class="fa-solid fa-n es-opt" title="Mira mi Notion"></i>
+              </a> 
+            </li>
+            <li class="li-smedia">
+              <a href="" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-address-book en-opt" title="Check out my CV"></i>
+                <i class="fa-solid fa-address-book es-opt" title="Mira mi CV"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="emailme">
+          <h6 class="subtitle is-6 has-text-white has-text-centered en-opt">
+            Or email me at 
+            <a href="mailto:isaac.amr15@gmail.com?Subject=Hi%20Isaac!%20I%20come%20from%20your%20website" 
+              class="no-deco"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+            <b>isaac.amr15@gmail.com</b>            
+            </a>
+          </h6>
+          <h6 class="subtitle is-6 has-text-white has-text-centered es-opt">
+            O envíame un email a 
+            <a href="mailto:isaac.amr15@gmail.com?Subject=Hola%20Isaac!%20Vengo%20de%20tu%20sitio%20web" 
+              class="no-deco"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+            <b>isaac.amr15@gmail.com</b>
+            </a>
+          </h6>
+        </div>
+      </div>    
+    </div>
+  </section>
+
+  <!-- Loader -->
+  <div id="loader_ctn">
+    <img src="" alt="">
+  </div>
+</body>
+<script src="js/index.js"></script>
+</html>
