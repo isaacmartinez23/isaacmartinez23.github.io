@@ -363,16 +363,16 @@ html {
   /*********************************/
   /* Certificate
   /*********************************/
-  .hero.certificate {
+  .hero.certificates {
     background-color: #f8f8f8;
   }
 
-  .container.certificate-wrapper {
+  .container.certificates-wrapper {
     width: 100%;
     margin-bottom: 2rem;
   }
   
-  .container.certificate,
+  .container.certificates,
   .container.more-certificates {
     display: grid;
     grid-template-columns: 320px 320px 320px;
