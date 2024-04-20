@@ -647,6 +647,13 @@ html {
     .container.more-projects {
       grid-template-columns: auto auto;
     }
+
+    /* Certificate 
+    /*********************************/
+    .container.certificate,
+    .container.container.more-certificates {
+      grid-template-columns: auto auto;
+    }
   
     /* Helpers 
     /*********************************/
@@ -706,6 +713,28 @@ html {
       margin: 2rem 1rem;
     }
     .project-desc .characteristics .container:first-child {
+      margin-bottom: 1rem;
+    }
+
+    /* Certificate
+    /*********************************/
+    .container.certificate,
+    .container.more-certificates {
+      grid-template-columns: auto;
+    }
+    .container.more-certificates {
+      display: none;
+    }
+    .certificates-more-btn {
+      margin-top: 1.5rem;
+      background-color: #f8f8f8;
+      border: none;
+      display: block;
+    }
+    .certificate.popup .hero-body {
+      margin: 2rem 1rem;
+    }
+    .certificate-desc .characteristics .container:first-child {
       margin-bottom: 1rem;
     }
   
