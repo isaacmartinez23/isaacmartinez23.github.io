@@ -619,6 +619,14 @@ html {
   }
   
   /**************************************************************************************************/
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: white; /* Fondo blanco */
+      color: black; /* Texto negro */
+    }
+  }
+  
   
   @media (max-width: 992px) {
     /* About 
