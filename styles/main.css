@@ -658,7 +658,7 @@ html {
 
     /* Certificate 
     /*********************************/
-    .container.certificate,
+    .container.certificates,
     .container.container.more-certificates {
       grid-template-columns: auto auto;
     }
@@ -726,7 +726,7 @@ html {
 
     /* Certificate
     /*********************************/
-    .container.certificate,
+    .container.certificates,
     .container.more-certificates {
       grid-template-columns: auto;
     }
