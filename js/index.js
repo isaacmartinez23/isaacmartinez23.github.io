@@ -182,7 +182,7 @@
     let title = certificate.dataset.title
     let image = certificate.children[0].src
     let link = certificate.dataset.link
-    let desc = certificate.dataset.desc
+    let desc = certificate.dataset.desc.split('|').map(item => item.trim())
     let tools = certificate.dataset.tools.split(',')
   
     let toolsSize = tools.length
@@ -199,7 +199,17 @@
     certificateTitle.textContent = title
     certificateImage.src = image
     certificateLink.href = link
-    certificateDesc.textContent = desc
+    
+    /* Limpiando el contenido anterior */
+    certificateDesc.innerHTML = ''
+    certificateList.innerHTML = ''
+    
+    /* Agregando cada sección de la descripción */
+    desc.forEach(section => {
+      let p = document.createElement('p')
+      p.innerHTML = section // Usa innerHTML en lugar de textContent
+      certificateDesc.appendChild(p)
+  })
   
     /* Iterando sobre un array, mientras esto pasa también se crea una lista */
     for (let i = 0; i < toolsSize; i++) {  
@@ -210,7 +220,7 @@
     }
     popup.style.display = 'flex'
     popup.classList.replace('d-none', 'popup')
-  }
+}
   
   function closeCertificate() {
     let popup = document.getElementById('certificate-popup')

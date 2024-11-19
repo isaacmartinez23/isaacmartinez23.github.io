@@ -23,11 +23,11 @@ html {
   /* My Styles
   /*********************************/
   :root {
-    --mightygray: #052759;
-    --pacifica: #7da0ca;
-    --applechic: #5482b3;
+    --mightygray: #102C57;
+    --pacifica: #CBAF87;
+    --applechic: #CBAF87;
     --cheerypink: #fd0911;
-    --grandmapink: #ff5e4c;
+    --grandmapink: #40556A;
   
     --schoolbell: "Schoolbell", cursive;
     --quatrocen: "Quattrocento Sans", sans-serif;
@@ -217,7 +217,7 @@ html {
   .columns.skills .img::after {
     content: attr(data-desc);
     color: var(--mightygray);
-    font-size: 12px;
+    font-size: 15px;
     display: block;
     margin-top: -6px;
     font-weight: bold;
