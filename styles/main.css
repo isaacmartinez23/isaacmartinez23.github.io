@@ -27,7 +27,7 @@ html {
     --pacifica: #CBAF87;
     --applechic: #CBAF87;
     --cheerypink: #fd0911;
-    --grandmapink: #4F000B;
+    --grandmapink: #a30016;
   
     --schoolbell: "Schoolbell", cursive;
     --quatrocen: "Quattrocento Sans", sans-serif;
@@ -171,8 +171,8 @@ html {
   }
   
   .about-img {
-    width: 200px;
-    height: 200px;
+    width: 320px;
+    height: 320px;
     display: flex;
     margin: auto;
   }
