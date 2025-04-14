@@ -182,7 +182,7 @@ function showDashboard(dashboard) {
   let title = dashboard.dataset.title;
   let image = dashboard.children[0].src;
   let link = dashboard.dataset.link;
-  let desc = dashboard.dataset.desc;
+  let desc = dashboard.dataset.desc.replace(/\|/g, '<br>'); // Reemplaza "|" con "<br>"
   let tools = dashboard.dataset.tools.split(',');
 
   let toolsSize = tools.length;
@@ -199,7 +199,7 @@ function showDashboard(dashboard) {
   dashboardTitle.textContent = title;
   dashboardImage.src = image;
   dashboardLink.href = link;
-  dashboardDesc.textContent = desc;
+  dashboardDesc.innerHTML = desc; // Usa innerHTML para procesar los <br>
 
   /* Iterating over the tools array and creating a list */
   for (let i = 0; i < toolsSize; i++) {
