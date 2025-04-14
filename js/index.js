@@ -175,6 +175,67 @@
   }
 
   /**********************************************/
+/*  Dashboards
+/**********************************************/
+function showDashboard(dashboard) {
+  /* Descriptions and Titles */
+  let title = dashboard.dataset.title;
+  let image = dashboard.children[0].src;
+  let link = dashboard.dataset.link;
+  let desc = dashboard.dataset.desc;
+  let tools = dashboard.dataset.tools.split(',');
+
+  let toolsSize = tools.length;
+
+  /* Components of pop up Dashboard */
+  let popup = document.getElementById('dashboard-popup');
+  let dashboardTitle = document.getElementById('dashboard-name');
+  let dashboardImage = document.getElementById('dashboard-img');
+  let dashboardLink = document.getElementById('dashboard-link');
+  let dashboardDesc = document.getElementById('dashboard-desc');
+  let dashboardList = document.getElementById('dashboard-list');
+
+  /* Adding data-* attributes to the pop-up */
+  dashboardTitle.textContent = title;
+  dashboardImage.src = image;
+  dashboardLink.href = link;
+  dashboardDesc.textContent = desc;
+
+  /* Iterating over the tools array and creating a list */
+  for (let i = 0; i < toolsSize; i++) {
+    let li = document.createElement('li');
+    dashboardList.appendChild(li);
+    li.textContent = tools[i];
+    li.setAttribute('id', 'dashboard-tool');
+  }
+  popup.style.display = 'flex';
+  popup.classList.replace('d-none', 'popup');
+}
+
+function closeDashboard() {
+  let popup = document.getElementById('dashboard-popup');
+  let dashboardList = document.getElementById('dashboard-list');
+
+  let dashboardListSize = dashboardList.childElementCount;
+
+  for (let i = 0; i < dashboardListSize; i++) {
+    dashboardList.removeChild(dashboardList.children[0]);
+  }
+  popup.style.display = 'none';
+}
+
+function seeMoreDashboards() {
+  let moreDashboards = document.getElementsByClassName('container more-dashboards');
+  let moreDashboards_0 = moreDashboards[0];
+  let moreDashboardsBtn = document.getElementsByClassName('dashboards-more-btn');
+  let moreDashboardsBtn_0 = moreDashboardsBtn[0];
+
+  moreDashboards_0.style.display = 'block';
+  moreDashboardsBtn_0.style.display = 'none';
+  console.log('Here are more dashboards I\'ve created 🐶');
+}
+
+  /**********************************************/
   /*  Certificates
   /**********************************************/
   function showCertificate(certificate) {

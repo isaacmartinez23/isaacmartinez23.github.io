@@ -396,7 +396,7 @@
               <a href="" class="no-deco" target="_blank">
                 limpieza_amazon
               </a>
-            </div>  
+            </div>                      
             
             
             <!-- Add more... -->
@@ -435,6 +435,112 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Dashboards -->
+  <section class="hero dashboards" id="dashboards">
+    <div class="hero-body">
+      <div class="container dashboards-wrapper is-flex f-d-col center-x">
+        <h1 class="title is-1 has-text-centered en-opt">My Dashboards</h1>
+        <h1 class="title is-1 has-text-centered es-opt">Mis Dashboards</h1>
+        <h3 class="title is-3 has-text-centered en-opt">Explore my interactive dashboards by clicking on the images</h3>
+        <h3 class="title is-3 has-text-centered es-opt">Explora mis dashboards interactivos haciendo clic en las imágenes</h3>
+        <div class="all-dashboards is-flex center-x center-y f-d-col">
+          <div class="container dashboards">
+            <!-- Netflix Dashboard -->
+            <div class="column dashboard has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showDashboard(this)" 
+                data-title="Netfilx Dashboard"
+                data-link=""
+                data-desc="This dashboard provides insights into sales performance, including revenue trends, top-performing products, and regional sales distribution."
+                data-tools="Tableau, Excel"
+                >
+                <img class="dashboard" src="img/Netflix Dashboard.png" alt="Sales Dashboard">
+              </div>
+              <a href="https://example.com/sales-dashboard" class="no-deco" target="_blank">
+                Netfilx Dashboard
+              </a>
+            </div>
+            <div class="column dashboard has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showDashboard(this)" 
+                data-title="Dashboard de Ventas"
+                data-link="https://example.com/sales-dashboard"
+                data-desc="Este dashboard proporciona información sobre el rendimiento de ventas, incluidas las tendencias de ingresos, los productos más vendidos y la distribución de ventas por región."
+                data-tools="Tableau, Excel"
+                >
+                <img class="dashboard" src="img/Netflix Dashboard.png" alt="Dashboard de Ventas">
+              </div>
+              <a href="https://example.com/sales-dashboard" class="no-deco" target="_blank">
+                Dashboard de Ventas
+              </a>
+            </div>
+
+            <!-- Dashboard Example -->
+            <div class="column dashboard has-text-centered en-opt">
+              <div 
+                class="img-container" 
+                onclick="showDashboard(this)" 
+                data-title="Netfilx Dashboard"
+                data-link=""
+                data-desc="This dashboard provides insights into sales performance, including revenue trends, top-performing products, and regional sales distribution."
+                data-tools="Tableau, Excel"
+                >
+                <img class="dashboard" src="img/Netflix Dashboard.png" alt="Sales Dashboard">
+              </div>
+              <a href="https://example.com/sales-dashboard" class="no-deco" target="_blank">
+                Netfilx Dashboard
+              </a>
+            </div>
+            <div class="column dashboard has-text-centered es-opt">
+              <div 
+                class="img-container" 
+                onclick="showDashboard(this)" 
+                data-title="Dashboard de Ventas"
+                data-link="https://example.com/sales-dashboard"
+                data-desc="Este dashboard proporciona información sobre el rendimiento de ventas, incluidas las tendencias de ingresos, los productos más vendidos y la distribución de ventas por región."
+                data-tools="Tableau, Excel"
+                >
+                <img class="dashboard" src="img/sales_dashboard.png" alt="Dashboard de Ventas">
+              </div>
+              <a href="https://example.com/sales-dashboard" class="no-deco" target="_blank">
+                Dashboard de Ventas
+              </a>
+            </div>
+            <!-- Add more dashboards here -->
+            <div id="dashboard-popup" class="hero dashboard d-none">
+              <div class="hero-body is-flex center-y">
+                <a class="close dashboard" onclick="closeDashboard()">&times;</a>
+                <div class="container">
+                  <div class="columns">
+                    <div class="column is-two-thirds is-flex center-y">
+                      <a id="dashboard-link" target="_blank">
+                        <img class="img-dashboard" id="dashboard-img">
+                      </a>
+                    </div>
+                    <div class="column dashboard-desc">
+                      <h4 class="title is-4" id="dashboard-name"></h4>
+                      <div class="characteristics">
+                        <div class="container">
+                          <h5 class="subtitle is-5 en-opt">Technologies</h5>
+                          <h5 class="subtitle is-5 es-opt">Tecnologías</h5>
+                          <ul class="lis" id="dashboard-list"></ul>
+                        </div>
+                        <div class="container">
+                          <h5 class="subtitle is-5 en-opt">About the Dashboard</h5>
+                          <h5 class="subtitle is-5 es-opt">Acerca del Dashboard</h5>
+                          <h6 class="subtitle is-6" id="dashboard-desc"></h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
   </section>
 
   <!-- Certificate -->  
