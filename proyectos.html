@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Isaac Martínez Ríos</title>
+    <meta name="description" content="Portafolio de proyectos de análisis de datos y Business Intelligence de Isaac Martínez Ríos.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/portada.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Isaac Martínez Ríos</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sobre_mi.html" class="nav-link">Sobre Mí</a>
+                </li>
+                <li class="nav-item">
+                    <a href="proyectos.html" class="nav-link active">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contacto.html" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Mis Proyectos</h1>
+            <p class="page-subtitle">Portafolio de Análisis de Datos y Business Intelligence</p>
+        </div>
+    </section>
+
+    <!-- Projects Filter -->
+    <section class="projects-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="data-analysis">Análisis de Datos</button>
+                <button class="filter-btn" data-filter="dashboard">Dashboards</button>
+                <button class="filter-btn" data-filter="eda">EDA</button>
+                <button class="filter-btn" data-filter="business">Business Intelligence</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="projects-grid">
+                <!-- Netflix Data Analysis -->
+                <div class="project-card" data-category="data-analysis" id="netflix">
+                    <div class="project-image">
+                        <img src="assets/images/project_netflix.jpeg" alt="Netflix Data Analysis">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary project-modal-btn" data-project="netflix">Ver detalles</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Netflix Data Analyst</h3>
+                        <p>Análisis completo de datos de Netflix incluyendo tendencias de contenido, análisis de audiencia y insights de negocio.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Data Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://isaacmtz.notion.site/An-lisis-Exploratorio-del-Cat-logo-de-Contenido-de-Netflix-1a7f24169c5780e3b701ceb466d2725d?pvs=4" target="_blank" rel="noopener" class="project-link" data-project="netflix">
+                                <i class="fas fa-external-link-alt"></i> Ver proyecto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pizza Sales Analysis -->
+                <div class="project-card" data-category="data-analysis" id="pizza">
+                    <div class="project-image">
+                        <img src="assets/images/project_pizza.jpeg" alt="Pizza Sales Analysis">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary project-modal-btn" data-project="pizza">Ver detalles</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Ventas Pizzería</h3>
+                        <p>Análisis integral de ventas de pizzería que proporciona insights valiosos para la optimización de operaciones.</p>
+                        <div class="project-tags">
+                            <span class="tag">Excel</span>
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Python</span>                            
+                        </div>
+                        <div class="project-links">
+                            <a href="https://isaacmtz.notion.site/Ventas-Pizzeria-1a7f24169c5780b2a971dc9383a228ac?pvs=4" class="project-link" data-project="pizza">
+                                <i class="fas fa-external-link-alt"></i> Ver proyecto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Penguin Dataset EDA -->
+                <div class="project-card" data-category="eda" id="penguin">
+                    <div class="project-image">
+                        <img src="assets/images/analisis_pinguinos2.png" alt="Penguin Dataset EDA">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary project-modal-btn" data-project="penguin">Ver detalles</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>EDA Datos de Pingüinos</h3>
+                        <p>Análisis exploratorio de datos del dataset de pingüinos usando Python y librerías de visualización.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Seaborn</span>
+                            <span class="tag">Matplotlib</span>
+                            <span class="tag">EDA</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/An%C3%A1lisis_Ping%C3%BCinos.ipynb" class="project-link" data-project="penguin">
+                                <i class="fas fa-external-link-alt"></i> Ver proyecto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Netflix Dashboard -->
+                <div class="project-card" data-category="dashboard" id="netflix-dashboard">
+                    <div class="project-image">
+                        <img src="assets/images/Netflix_Dashboard.png" alt="Netflix Dashboard">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary project-modal-btn" data-project="netflix-dashboard">Ver detalles</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Netflix Dashboard</h3>
+                        <p>Dashboard interactivo de análisis de datos de Netflix con visualizaciones dinámicas y filtros avanzados.</p>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Dashboard</span>                            
+                        </div>
+                        <div class="project-links">
+                            <a href="https://public.tableau.com/views/Netflix_Dashboard_17405133855050/NetflixDashboard?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="project-link" data-project="netflix-dashboard">
+                                <i class="fas fa-external-link-alt"></i> Ver dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pizza Sales Dashboard -->
+                <div class="project-card" data-category="dashboard business" id="pizza-dashboard">
+                    <div class="project-image">
+                        <img src="assets/images/pizza_Dashboard.png" alt="Pizza Sales Dashboard">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary project-modal-btn" data-project="pizza-dashboard">Ver detalles</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Dashboard de Ventas de Pizza</h3>
+                        <p>Dashboard ejecutivo para análisis de ventas de pizzería con KPIs en tiempo real y análisis de tendencias.</p>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Dashboard</span>                            
+                        </div>
+                        <div class="project-links">
+                            <a href="https://public.tableau.com/views/VentasPizzas_17406214590730/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="project-link" data-project="pizza-dashboard">
+                                <i class="fas fa-external-link-alt"></i> Ver dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chocolate Sales Dashboard -->
+                <div class="project-card" data-category="dashboard business" id="chocolate-dashboard">
+                    <div class="project-image">
+                        <img src="assets/images/chocolate_dashboard.png" alt="Chocolate Sales Dashboard">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary project-modal-btn" data-project="chocolate-dashboard">Ver detalles</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Chocolate Sales Dashboard</h3>
+                        <p>Dashboard de ventas de chocolate con análisis de productos, tendencias temporales y métricas de rendimiento.</p>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Sales Analysis</span>
+                            <span class="tag">Dashboard</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://public.tableau.com/views/VentasdeChocolates/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="project-link" data-project="chocolate-dashboard">
+                                <i class="fas fa-external-link-alt"></i> Ver dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users Profile Dashboard -->
+                <div class="project-card" data-category="dashboard" id="users-dashboard">
+                    <div class="project-image">
+                        <img src="assets/images/Web_chart.jpeg" alt="Users Profile Dashboard">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary project-modal-btn" data-project="users-dashboard">Ver detalles</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Users Profile Dashboard</h3>
+                        <p>Dashboard de perfil de usuarios con análisis demográfico, comportamiento y segmentación de clientes.</p>
+                        <div class="project-tags">
+                            <span class="tag">Google Analytics</span>
+                            <span class="tag">Looker Studio</span>
+                            <span class="tag">WEB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://lookerstudio.google.com/s/jli7t4ha2Hg" class="project-link" data-project="users-dashboard">
+                                <i class="fas fa-external-link-alt"></i> Ver dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Freshmart Dashboard -->
+                <div class="project-card" data-category="dashboard" id="freshmart-dashboard">
+                    <div class="project-image">
+                        <img src="assets/images/Freshmart.png" alt="Freshmart Dashboard">
+                        <div class="project-overlay">
+                            <button class="btn btn-primary project-modal-btn" data-project="freshmart-dashboard">Ver detalles</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Freshmart Dashboard</h3>
+                        <p>Dashboard completo para supermercado Freshmart con análisis de inventario, ventas y rendimiento por categoría.</p>
+                        <div class="project-tags">
+                            <span class="tag">Looker Studio</span>
+                            <span class="tag">Retail Analytics</span>
+                            <span class="tag">Inventario</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://lookerstudio.google.com/s/uLwW-dFcgLo" class="project-link" data-project="freshmart-dashboard">
+                                <i class="fas fa-external-link-alt"></i> Ver dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="projectModal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Título del Proyecto</h2>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="modal-text">
+                    <div id="modalDescription"></div>
+                    <div class="modal-details">
+                        <h3>Tecnologías Utilizadas</h3>
+                        <div id="modalTechnologies"></div>
+                        
+                        <h3>Características Principales</h3>
+                        <ul id="modalFeatures"></ul>
+                        
+                        <h3>Resultados</h3>
+                        <div id="modalResults"></div>
+                    </div>
+                    <div class="modal-links">
+                        <a href="#" class="btn btn-primary" id="modalProjectLink" target="_blank" rel="noopener">
+                            <i class="fas fa-external-link-alt"></i> Ver proyecto completo
+                        </a>
+                        <a href="#" class="btn btn-secondary" id="modalCodeLink" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> Ver código
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">                                
+                <div class="footer-section">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/isaacmartinez23/" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/isaacmartinez23/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:isaac.amr15@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html> 

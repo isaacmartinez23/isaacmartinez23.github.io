@@ -1,977 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light dark">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Isaac's portafolio">
-  <meta name="keywords" content="portafolio,Isaac Martinez Rios, Data Analyst">
-  <meta name="author" content="Isaac Martinez">
-  <meta name="google" content="notranslate" />
-  <meta property="og:title" content="Isaac Martinez, Data Analyst">
-  <meta property="og:image" content="img/portada.png">
-  <meta property="og:description" content="Hi I'm a Data Analyst and Administration from México, and enthusiast for technology, code.">
-  <title>Isaac Martinez</title>
-  <link rel="icon" href="img/portada.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans|Schoolbell&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css">
-  <script src="https://kit.fontawesome.com/5d0d4b16a1.js" crossorigin="anonymous"></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0244QQM6F0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-0244QQM6F0');
-  </script>
-</head>
-<body class="body-page">
-  <!-- Main Hero -->
-  <section class="hero hero-princ is-fullheight">
-    <div class="hero-body">
-      <div class="lang-div">
-        <select id="lang-opt" onchange="selectLan(this)">
-          <option value="en">English</option>
-          <option value="es">Español</option>
-        </select>
-      </div>
-      <div class="container hero-princ-container is-flex f-d-col center-y">
-        <img class="gif-animated" src="img/portada.png" alt="img perfil">
-        <div class="hero-princ-content is-flex f-d-col center-y text">
-          <h1 class="title has-text-white has-text-centered">
-            Isaac Martinez Rios
-          </h1>
-          <br>
-          <h2 class="subtitle has-text-grey-lighter en-opt">
-            Data Analyst  and  Administration
-          </h2>                    
-          <h2 class="subtitle has-text-grey-lighter es-opt">
-            Analisis de Datos y Administración
-          </h2>
-        </div>
-        <div class="social-media">
-          <ul class="col is-flex">
-            <li class="li-smedia es-opt">
-              <a href="mailto:isaac.amr15@gmail.com?Subject=Hola%20Isaac!%20Vengo%20de%20tu%20sitio%20web" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-envelope" title="Gmail"></i>
-              </a>
-            </li>
-            <li class="li-smedia en-opt">
-                <a href="mailto:isaac.amr15@gmail.com?Subject=Hi%20Isaac!%20I%20come%20from%20your%20website" target="_blank" rel="noopener noreferrer">
-                  <i class="fa-solid fa-envelope" title="Gmail"></i>
-                </a>
-              </li>
-            <li class="li-smedia">
-              <a href="https://www.linkedin.com/in/isaacmartinez23/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin" title="LinkedIn"></i>
-              </a>      
-            </li>
-            <li class="li-smedia">
-              <a href="https://github.com/isaacmartinez23" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github" title="GitHub"></i>
-              </a>      
-            </li>        
-            <li class="li-smedia es-opt">
-              <a href="img/Isaac Martinez CV.pdf" target="_blank" rel="noopener noreferrer">
-                <i class="" title="CV">CV</i>          
-              </a> 
-            </li>
-            <li class="li-smedia en-opt">
-              <a href="img/Isaac Martinez CV english.pdf" target="_blank" rel="noopener noreferrer">
-                <i class="" title="CV">CV</i>          
-              </a> 
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="hero-princ-footer">
-      <div class="container">
-        <ul class="menu is-flex center-x">
-          <a href="#about" class="no-deco">
-            <li class="en-opt">About</li>
-            <li class="es-opt">Acerca</li>
-          </a>
-          <li>/</li>
-          <a href="#skills" class="no-deco">
-            <li class="en-opt">Skills</li>
-            <li class="es-opt">Habilidades</li>
-          </a>
-          <li>/</li>
-          <a href="#projects" class="no-deco">
-            <li class="en-opt">Projects</li>
-            <li class="es-opt">Proyectos</li>
-          </a>              
-          <li>/</li>
-          <a href="#contact" onclick="toContact()" class="no-deco">
-            <li class="en-opt">Contact</li>
-            <li class="es-opt">Contacto</li>
-          </a>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="hero about" id="about">
-    <div class="columns about-columns">
-      <div class="column about col-1 is-flex center-y center-x">
-        <h1 class="title is-1 has-text-white en-opt">About me</h1>
-        <h1 class="title is-1 has-text-white es-opt">Acerca de mí</h1>
-      </div>
-      <div class="column about col-2">
-        <div class="about-content">
-          <h3 class="subtitle is-3 en-opt">Hi! 👋</h3>
-          <h3 class="subtitle is-3 es-opt">Hola! 👋</h3>
-          <h5 class="subtitle is-6 en-opt">
-            I am passionate about information sciences and data analysis. After earning my <b>degree in Business Administration</b>, I specialized in <b>Business Intelligence and Data Analysis</b>, driven by a firm belief in the power of data to optimize business processes and enhance decision-making.<br>
-          </h5>
-          <h5 class="subtitle is-6 es-opt">
-            Soy una persona apasionada por las ciencias de la información y el análisis de datos. Después de obtener mi <b>licenciatura en Administración de Empresas</b>, me especialicé en <b>Business Intelligence y Data Analysis</b>, impulsado por la firme creencia en el poder de los datos para optimizar procesos empresariales y mejorar la toma de decisiones.<br>
-          <br>
-          </h5>
-          <img src="img/perfil3.png" class="about-img" alt="my photo">          
-          <br>
-          <h6 class="subtitle is-6 en-opt">
-        
-          <h5 class="subtitle is-6 en-opt">My goal is to become a versatile and adaptable professional capable of tackling the dynamic challenges of today's business environment. I am confident that my experience and skills can significantly contribute to the growth and success of any organization.
-          </h5>
-          <h5 class="subtitle is-6 es-opt">Mi objetivo es convertirme en un profesional versátil y adaptativo, capaz de enfrentar los retos dinámicos del entorno empresarial actual. Estoy convencido de que mi experiencia y habilidades pueden contribuir significativamente al crecimiento y éxito de cualquier organización.
-          </h5>                                                                     
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section class="hero skills" id="skills">
-    <div class="hero-body">
-      <div class="container skills">
-        <h1 class="title is-1 has-text-centered en-opt">What did I use in Tech?</h1>
-        <h1 class="title is-1 has-text-centered es-opt">¿Qué tecnologías he usado?</h1>
-        <div class="container programming">
-          <h3 class="title is-3 en-opt">Data Analyst tools</h3>
-          <h3 class="title is-3 es-opt">Herramientas de Analisis de Datos</h3>
-          <div class="columns skills">
-            <div class="img" data-desc="Excel">
-              <img src="img/excel2.jpg" alt="excel image">
-            </div>
-            <div class="img" data-desc="Python">
-              <img src="img/python.jpg" alt="python image">
-            </div>          
-            <div class="img" data-desc="Tableau">
-              <img src="img/tableu2.png" alt="tableu image">
-            </div>
-            <div class="img" data-desc="PostgreSQL">
-              <img src="img/postgresql.png" alt="PostgreSQL image">
-            </div>
-            <div class="img" data-desc="Pandas">
-              <img src="img/pandas2.png" alt="Pandas image">
-            </div>
-            <div class="img" data-desc="NumPy">
-              <img src="img/numpy2.png" alt="NumPy image">
-            </div>
-            <div class="img" data-desc="Seaborn">
-              <img src="img/seaborn2.png" alt="Seaborn image">
-            </div>
-            <div class="img" data-desc="Matplotlib">
-              <img src="img/matplotlib2.png" alt="Matplotlib image">
-            </div>
-          </div>
-        </div>      
-        </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="hero projects" id="projects">
-    <div class="hero-body">
-      <div class="container projects-wrapper is-flex f-d-col center-x">
-        <h1 class="title is-1 has-text-centered en-opt">My projects</h1>
-        <h1 class="title is-1 has-text-centered es-opt">Mis proyectos</h1>
-        <h3 class="title is-3 has-text-centered en-opt">You can see more information about my project by clicking on the image</h3>
-        <h3 class="title is-3 has-text-centered es-opt">Puedes ver más Informacion de mi proyecto haciendo click en la imagen</h3>
-        <div class="all-projects is-flex center-x center-y f-d-col">
-          <div class="container projects">
-            <!-- Analisis Netflix -->
-            <div class="column project has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showProject(this)" 
-                data-title="Netflix Project"
-                data-link="https://isaacmtz.notion.site/An-lisis-Exploratorio-del-Cat-logo-de-Contenido-de-Netflix-1a7f24169c5780e3b701ceb466d2725d?pvs=4"
-                data-desc="This project involves a detailed data analysis of the movies and TV shows available on Netflix. Several areas have been explored, including the amount of content, the countries producing the most content, changes in the amount of content over time, the most common content classifications, the average length of content, the most common content categories. The study also presents a detailed description of each column in the dataset. The project culminates with a set of key conclusions drawn from the analysis."
-                data-tools="Pyhton, Pandas, NumPy, Seaborn, Matplotlib"
-                >
-                <img class="project" src="img/project_netflix.jpeg" alt="Netflix_analyst">
-              </div>
-              <a href="https://isaacmtz.notion.site/An-lisis-Exploratorio-del-Cat-logo-de-Contenido-de-Netflix-1a7f24169c5780e3b701ceb466d2725d?pvs=4" class="no-deco" target="_blank">
-                Netflix Data Analyst
-              </a>
-            </div>
-            <div class="column project has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showProject(this)" 
-                data-title="Análisis de Datos Netflix"
-                data-link="https://isaacmtz.notion.site/An-lisis-Exploratorio-del-Cat-logo-de-Contenido-de-Netflix-1a7f24169c5780e3b701ceb466d2725d?pvs=4"
-                data-desc="Este proyecto implica un análisis detallado de los datos de las películas y programas de televisión disponibles en Netflix. Se han explorado varias áreas, incluyendo la cantidad de contenido, los países que producen la mayoría del contenido, los cambios en la cantidad de contenido a lo largo del tiempo, las clasificaciones de contenido más comunes, la duración promedio del contenido, las categorías de contenido más comunes. El estudio también presenta una descripción detallada de cada columna en el conjunto de datos. El proyecto culmina con un conjunto de conclusiones clave extraídas del análisis."
-                data-tools="Pyhton, Pandas, NumPy, Seaborn, Matplotlib"
-                >
-                <img class="project" src="img/project_netflix.jpeg" alt="netflix_analisis">
-              </div>
-              <a href="https://isaacmtz.notion.site/An-lisis-Exploratorio-del-Cat-logo-de-Contenido-de-Netflix-1a7f24169c5780e3b701ceb466d2725d?pvs=4" class="no-deco" target="_blank">
-                Análisis de Datos Netflix
-              </a>
-            </div>                                    
-
-            <!-- sales pizza -->
-            <div class="column project has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showProject(this)" 
-                data-title="Sales Pizza"
-                data-link="https://isaacmtz.notion.site/Ventas-Pizzeria-1a7f24169c5780b2a971dc9383a228ac?pvs=4"
-                data-desc="In this project, I conducted an analysis of a pizzeria's transactional data over a full year, transforming more than 48,000 records into strategic business information. Using Python and Tableau, I identified key sales patterns, customer preferences, and growth opportunities. The analysis revealed that classic pizzas dominate the market, weekends account for 46% of total sales of $817,860, and the average ticket is $16.82."
-                data-tools="Numpy, Pandas, Seaborn, Tableau"
-                >
-                <img class="project" src="img/project_pizza.jpeg" alt="BCP Form image">
-              </div>
-              <a href="https://isaacmtz.notion.site/Ventas-Pizzeria-1a7f24169c5780b2a971dc9383a228ac?pvs=4" class="no-deco" target="_blank">
-                Sales pizzas
-              </a>
-            </div>
-            <div class="column project has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showProject(this)" 
-                data-title="Ventas Pizzeria"
-                data-link="https://isaacmtz.notion.site/Ventas-Pizzeria-1a7f24169c5780b2a971dc9383a228ac?pvs=4"
-                data-desc="En este proyecto realicé un análisis de datos transaccionales de una pizzería durante un año completo, transformando más de 48,000 registros en información estratégica para el negocio. Utilizando Python y Tableau, identifiqué patrones clave de ventas, preferencias de clientes y oportunidades de crecimiento. El análisis reveló que las pizzas clásicas dominan el mercado, los fines de semana concentran el 46% de las ventas totales de $817,860, y el ticket promedio es de $16.82. "
-                data-tools="Numpy, Pandas, Seaborn, Tableau"
-                >
-                <img class="project" src="img/project_pizza.jpeg" alt="BCP Formulario imagen">
-              </div>
-              <a href="https://isaacmtz.notion.site/Ventas-Pizzeria-1a7f24169c5780b2a971dc9383a228ac?pvs=4" class="no-deco" target="_blank">
-                Ventas Pizzeria
-              </a>
-            </div>       
-            
-            <!-- Penguin_Data -->
-            <div class="column project has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showProject(this)" 
-                data-title="EDA Penguin Dataset"
-                data-link="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/An%C3%A1lisis_Ping%C3%BCinos.ipynb"
-                data-desc="This notebook is an exploratory data analysis of the Palmer penguin data set. 
-                It explores the distributions of numerical and categorical variables, and calculates several descriptive statistics, such as mean, median, mode, range, standard deviation, and interquartile range.
-                
-                Finally, the notebook investigates relationships between variables through the use of scatter plots, box plots, and correlation matrices."
-                data-tools="Pandas, NumPy, Scipy, Seaborn"
-                >
-                <img class="project" src="img/analisis_pinguinos2.png" alt="BCP Form image">
-              </div>
-              <a href="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/An%C3%A1lisis_Ping%C3%BCinos.ipynb" class="no-deco" target="_blank">
-                EDA Penguin Dataset
-              </a>
-            </div>
-            <div class="column project has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showProject(this)" 
-                data-title="EDA Datos de Pingüinos"
-                data-link="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/An%C3%A1lisis_Ping%C3%BCinos.ipynb"
-                data-desc="Este notebook es un análisis exploratorio de datos del conjunto de datos de pingüinos de Palmer.
-                Explora las distribuciones de las variables numéricas y categóricas, y calcula varios estadísticos descriptivos, como la media, la mediana, la moda, el rango, la desviación estándar y el rango intercuartílico.
-                
-                Finalmente, el notebook investiga las relaciones entre las variables mediante el uso de gráficos de dispersión, diagramas de caja y matrices de correlación."
-                data-tools="Pandas, NumPy, Scipy, Seaborn"
-                >
-                <img class="project" src="img/analisis_pinguinos2.png" alt="BCP Formulario imagen">
-              </div>
-              <a href="https://github.com/isaacmartinez23/portafolio-Data-Analyst/blob/main/An%C3%A1lisis_Ping%C3%BCinos.ipynb" class="no-deco" target="_blank">
-                EDA Datos de Pingüinos
-              </a>
-            </div> 
-            
-            
-            <!-- Add more... -->
-          </div>
-        </div>   
-      </div>
-    </div>
-    <div id="project-popup" class="hero project d-none">
-      <div class="hero-body is-flex center-y">
-        <a class="close project" onclick="closeProject()">&times;</a>
-        <div class="container">
-          <div class="columns">
-            <div class="column is-two-thirds is-flex center-y">
-              <a id="project-link" target="_blank">
-                <img class="img-project" id="project-img">
-              </a>
-            </div>
-            <div class="column project-desc">
-              <h4 class="title is-4" id="project-name"></h4>
-              <div class="characteristics">
-                <div class="container">
-                  <h5 class="subtitle is-5 en-opt">Technologies</h5>
-                  <h5 class="subtitle is-5 es-opt">Tecnologías</h5>
-                  <ul class="lis" id="project-list">
-                  </ul>
-                </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac Martínez Ríos - Data Analyst & Business Intelligence Specialist</title>
+    <meta name="description" content="Data Analyst and Business Intelligence Specialist. Passionate about transforming data into actionable insights for business growth.">
     
-                <div class="container">
-                  <h5 class="subtitle is-5 en-opt">About the Project?</h5>
-                  <h5 class="subtitle is-5 es-opt">¿Acerca del Proyecto?</h5>
-                  <h6 class="subtitle is-6" id="project-desc"></h6>
-                </div>
-              </div>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/portada.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Isaac Martínez Ríos</a>
             </div>
-          </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sobre_mi.html" class="nav-link">Sobre Mí</a>
+                </li>
+                <li class="nav-item">
+                    <a href="proyectos.html" class="nav-link">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contacto.html" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Dashboards -->
-  <section class="hero dashboards" id="dashboards">
-    <div class="hero-body">
-      <div class="container dashboards-wrapper is-flex f-d-col center-x">
-        <h1 class="title is-1 has-text-centered en-opt">My Dashboards</h1>
-        <h1 class="title is-1 has-text-centered es-opt">Mis Dashboards</h1>
-        <h3 class="title is-3 has-text-centered en-opt">Explore my interactive dashboards by clicking on the images</h3>
-        <h3 class="title is-3 has-text-centered es-opt">Explora mis dashboards interactivos haciendo clic en las imágenes</h3>
-        <div class="all-dashboards is-flex center-x center-y f-d-col">
-          <div class="container dashboards">
-            <!-- Netflix Dashboard -->
-            <div class="column dashboard has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Netfilx Dashboard"
-                data-link="https://public.tableau.com/views/Netflix_Dashboard_17405133855050/NetflixDashboard?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                data-desc="- <b>Temporal evolution (2008-2020)</b>: The upper graph shows catalog growth since 2015, with a peak in 2019, differentiating between Movies and TV Shows.|
-                - <b>Content type distribution</b>: The pie chart shows that movies dominate the catalog with 68.42% (4,265 titles), while series represent 31.58% (1,969 titles).|
-                - <b>Top 10 Genres</b>: Documentaries lead with 299 titles, followed by Stand-Up Comedy (273) and International Dramas (247). The bar graph shows a clear preference for these genres.|
-                - <b>Rating</b>: Shows the distribution of age ratings, with TV-MA and TV-14 being the most common.|
-                - <b>Geographic distribution</b>: The world map shows the concentration of content by country, with darker shades indicating higher content production."
-                data-tools="Tableau"
-                >
-                <img class="dashboard" src="img/Netflix Dashboard.png" alt="Sales Dashboard">
-              </div>
-              <a href="https://public.tableau.com/views/Netflix_Dashboard_17405133855050/NetflixDashboard?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="no-deco" target="_blank">
-                Netfilx Dashboard
-              </a>
-            </div>
-            <div class="column dashboard has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Dashboard de Ventas"
-                data-link="https://public.tableau.com/views/Netflix_Dashboard_17405133855050/NetflixDashboard?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                data-desc="- <b>Evolución temporal (2008-2020)</b>: El gráfico superior muestra un crecimiento del catálogo desde 2015, con un pico en 2019, diferenciando entre películas (Movie) y series (TV Show).|
-                - <b>Distribución por tipo de contenido</b>: El gráfico circular muestra que las películas dominan el catálogo con 68.42% (4,265 títulos), mientras que las series representan el 31.58% (1,969 títulos).|
-                - <b>Top 10 Géneros</b>: Los documentales lideran con 299 títulos, seguidos por Stand-Up Comedy (273) y Dramas Internacionales (247). La gráfica de barras muestra una clara preferencia por estos géneros.|
-                - <b>Clasificación</b>: Se muestra la distribución de las clasificaciones por edad, con TV-MA y TV-14 siendo las más comunes.|
-                - <b>Distribución geográfica</b>: El mapa mundial muestra la concentración de contenido por países, con tonalidades más oscuras indicando mayor producción de contenido."
-                data-tools="Tableau"
-                >
-                <img class="dashboard" src="img/Netflix Dashboard.png" alt="Dashboard de Ventas">
-              </div>
-              <a href="https://public.tableau.com/views/Netflix_Dashboard_17405133855050/NetflixDashboard?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="no-deco" target="_blank">
-                Dashboard de Ventas
-              </a>
-            </div>
-
-            <!-- Dashboard Web -->
-            <div class="column dashboard has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Dashboard of this website"
-                data-link="https://lookerstudio.google.com/s/jli7t4ha2Hg"
-                data-desc="This dashboard provides an analysis of my portfolio's web traffic, allowing me to monitor key metrics such as visits, traffic sources, and user behavior. I used Google Data Analytics to process and structure the data, while Looker Studio enabled me to visualize it dynamically and intuitively."
-                data-tools="Looker Studio, Google Data Analytics"
-                >
-                <img class="dashboard" src="img/Web_chart.jpeg" alt="Sales Dashboard">
-              </div>
-              <a href="https://lookerstudio.google.com/s/jli7t4ha2Hg" class="no-deco" target="_blank">
-                Dashboard of this website
-              </a>
-            </div>
-            <div class="column dashboard has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Dashboard de esta web"
-                data-link="https://lookerstudio.google.com/s/jli7t4ha2Hg"
-                data-desc="Este dashboard  proporciona un análisis  del tráfico web de mi portafolio, permitiéndome monitorear métricas clave como visitas, fuentes de tráfico, y comportamiento de los usuarios. Utilicé Google Data Analytics para procesar y estructurar los datos, mientras que Looker Studio me permitió visualizarlos de manera dinámica e intuitiva."
-                data-tools="Looker Studio, Google Data Analytics"
-                >
-                <img class="dashboard" src="img/Web_chart.jpeg" alt="Dashboard de Ventas">
-              </div>
-              <a href="https://lookerstudio.google.com/s/jli7t4ha2Hg" class="no-deco" target="_blank">
-                Dashboard de esta web
-              </a>
-            </div>
-
-            <!-- Dashboard Pizza -->
-            <div class="column dashboard has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Pizza Sales Dashboard"
-                data-link="https://public.tableau.com/views/VentasPizzas_17406214590730/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                data-desc="This dashboard provides a comprehensive view of a pizzeria's sales performance, presenting key metrics and important trends:|
-                - <b>The average ticket per sale</b> is $16.82, with total revenue of $817,860.| 
-                - <b>Sales by pizza size</b> show a clear preference for size L (large), followed by M (medium) and S (small).| 
-                - <b>Analysis by day of the week</b> reveals that Friday is the day with the highest sales, reaching $136,074.|                 
-                - <b>The best-selling pizza</b> is 'The Classic Deluxe Pizza' with 2,453 units sold.|
-
-                This dashboard enables informed decisions about inventory, staffing, and marketing strategies based on identified sales patterns."
-                data-tools="Tableau"
-                >
-                <img class="dashboard" src="img/pizza_Dashboard.png" alt="Sales Dashboard">
-              </div>
-              <a href="https://public.tableau.com/views/VentasPizzas_17406214590730/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="no-deco" target="_blank">
-                Pizza Sales Dashboard
-              </a>
-            </div>
-            <div class="column dashboard has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Dashboard de Ventas"
-                data-link="https://public.tableau.com/views/VentasPizzas_17406214590730/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                data-desc="Este dashboard proporciona una visión integral del rendimiento de ventas de una pizzería, presentando métricas clave y tendencias importantes:|
-                - <b>El ticket promedio por venta</b> es de $16.82, con ingresos totales de $817,860.| 
-                - <b>Las ventas por tamaño de pizza</b> muestran una clara preferencia por el tamaño L (grande), seguido por M (mediano) y S (pequeño).| 
-                - <b>El análisis por días de la semana</b> revela que el viernes es el día con más ventas, alcanzando $136,074.|                 
-                - <b>La pizza más vendida</b> es 'The Classic Deluxe Pizza' con 2,453 unidades vendidas.|
-                Este dashboard permite tomar decisiones informadas sobre inventario, personal y estrategias de marketing basadas en los patrones de venta identificados."
-                data-tools="Tableau"
-                >
-                <img class="dashboard" src="img/pizza_Dashboard.png" alt="Dashboard de Ventas">
-              </div>
-              <a href="https://public.tableau.com/views/VentasPizzas_17406214590730/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="no-deco" target="_blank">
-                Ventas de Pizza Dashboard
-              </a>
-            </div>
-            
-            <!-- Dashboard Chocolate -->
-            <div class="column dashboard has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Chocolate Sales Dashboard"
-                data-link="https://public.tableau.com/views/VentasdeChocolates/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                data-desc="This dashboard provides a detailed analysis of chocolate sales at an international level:|
-                - <b>Total sales by country</b> show that Australia leads with 1,137,367 units, followed by the United Kingdom with 1,051,792 and India with 1,045,800 units.| 
-                - <b>Among the top 10 best-selling products</b>, '50% Dark Bites' tops the list with 9,792 units, followed by 'Smooth Silky Salty' with 8,810 and 'Éclairs' with 8,757 units.| 
-                - <b>Monthly sales trends</b> show fluctuations throughout the year, with notable peaks in May and June.|"
-                data-tools="Tableau"
-                >
-                <img class="dashboard" src="img/chocolate_dashboard.png" alt="Chocolate Sales Dashboard">
-              </div>
-              <a href="https://public.tableau.com/views/VentasdeChocolates/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="no-deco" target="_blank">
-                Chocolate Sales Dashboard
-              </a>
-            </div>
-            <div class="column dashboard has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Chocolate Dashboard"
-                data-link="https://public.tableau.com/views/VentasdeChocolates/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                data-desc="Este dashboard muestra un análisis detallado de las ventas de chocolates a nivel internacional:|
-                - <b>Las ventas totales por país</b> muestran que Australia lidera con 1,137,367 unidades, seguido por Reino Unido con 1,051,792 y India con 1,045,800 unidades.| 
-                - <b>Entre los 10 productos más vendidos</b>, el '50% Dark Bites' encabeza la lista con 9,792 unidades, seguido por 'Smooth Silky Salty' con 8,810 y 'Éclairs' con 8,757 unidades.| 
-                - <b>La tendencia de ventas mensuales</b> muestra fluctuaciones a lo largo del año, con picos notables en mayo y junio.|"
-                data-tools="Tableau"
-                >
-                <img class="dashboard" src="img/chocolate_dashboard.png" alt="Chocolate Dashboard">
-              </div>
-              <a href="https://public.tableau.com/views/VentasdeChocolates/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="no-deco" target="_blank">
-                Ventas de Chocolate Dashboard
-              </a>
-            </div>
-
-            <!-- Dashboard Marketplace -->
-            <div class="column dashboard has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Pizza Sales Dashboard"
-                data-link="https://public.tableau.com/shared/B9Q348PG9?:display_count=n&:origin=viz_share_link"
-                data-desc="This dashboard provides an analysis of the user profile of a membership store, highlighting key metrics:|
-                - <b>The average app usage</b> is 11.30, while the average basket size is 436.7 and the average engagement is 51.83.| 
-                - <b>Two types of memberships are observed</b>: premium with 136,964 users and standard with 94,940 users.| 
-                - <b>Engagement by membership</b> is shown through a boxplot, with values primarily ranging between 60 and 70."
-                data-tools="Tableau"
-                >
-                <img class="dashboard" src="img/users_Dashboard.png" alt="Sales Dashboard">
-              </div>
-              <a href="https://public.tableau.com/shared/B9Q348PG9?:display_count=n&:origin=viz_share_link" class="no-deco" target="_blank">
-                Users Profile Dashboard
-              </a>
-            </div>
-            <div class="column dashboard has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Dashboard de Ventas"
-                data-link="https://public.tableau.com/shared/B9Q348PG9?:display_count=n&:origin=viz_share_link"
-                data-desc="Este dashboard muestra un análisis del perfil de usuarios de una tienda de membresía, destacando métricas importantes:|
-                - <b>El uso promedio de la aplicación</b> es de 11.30, mientras que el promedio de la canasta es 436.7 y el engagement promedio es 51.83.| 
-                - <b>Se observan dos tipos de membresía</b>: premium con 136,964 usuarios y standard con 94,940 usuarios.| 
-                - <b>El engagement por membresía</b> muestra una distribución mediante un boxplot, con valores que oscilan principalmente entre 60 y 70."
-                data-tools="Tableau"
-                >
-                <img class="dashboard" src="img/users_Dashboard.png" alt="Dashboard de Ventas">
-              </div>
-              <a href="https://public.tableau.com/shared/B9Q348PG9?:display_count=n&:origin=viz_share_link" class="no-deco" target="_blank">
-                Perfil de Usuarios Dashboard
-              </a>
-            </div>
-
-            <!-- Freshmart Dashboard -->
-            <div class="column dashboard has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Freshmart Dashboard"
-                data-link="https://lookerstudio.google.com/s/uLwW-dFcgLo"
-                data-desc="This project has the following main objectives:|
-                - <b>Provide an overview of FreshMart's business performance</b> through detailed analysis of <b>sales</b>, <b>inventory</b>, and <b>customers</b>.| 
-                - <b>Evaluate data from multiple branches</b> from January 2023 to January 2024.| 
-                - <b>Identify trends and improvement opportunities</b> to optimize operations.|
-
-                The analysis focuses on three key areas:|
-                - <b>Sales:</b> Examine the volume of products sold and revenue by branch.| 
-                - <b>Inventory:</b> Optimize product management and reduce losses.| 
-                - <b>Customers:</b> Understand purchasing habits to improve loyalty strategies."
-                data-tools="Looker Studio"
-                >
-                <img class="dashboard" src="img/Freshmart.png" alt="Freshmart Dashboard">
-              </div>
-              <a href="https://lookerstudio.google.com/s/uLwW-dFcgLo" class="no-deco" target="_blank">
-                Freshmart Dashboard
-              </a>
-            </div>
-            <div class="column dashboard has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showDashboard(this)" 
-                data-title="Freshmart Dashboard"
-                data-link="https://lookerstudio.google.com/s/uLwW-dFcgLo"
-                data-desc="Este proyecto tiene los siguientes objetivos principales:|
-                - <b>Proporcionar una visión del desempeño comercial de FreshMart</b> a través del análisis detallado de <b>ventas</b>, <b>inventario</b> y <b>clientes</b>.| 
-                - <b>Evaluar datos de múltiples sucursales</b> desde enero 2023 hasta enero 2024.| 
-                - <b>Identificar tendencias y oportunidades de mejora</b> para optimizar operaciones.|
-
-                El análisis se enfoca en tres áreas clave:|
-                - <b>Ventas:</b> Examinar volumen de productos vendidos e ingresos por sucursal.| 
-                - <b>Inventario:</b> Optimizar gestión de productos y reducir pérdidas.| 
-                - <b>Clientes:</b> Comprender hábitos de compra para mejorar estrategias de fidelización."
-                data-tools="Looker Studio"
-                >
-                <img class="dashboard" src="img/Freshmart.png" alt="Freshmart Dashboard">
-              </div>
-              <a href="https://lookerstudio.google.com/s/uLwW-dFcgLo" class="no-deco" target="_blank">
-                Freshmart Dashboard
-              </a>
-            </div>
-
-            <!-- Add more dashboards here -->
-            <div id="dashboard-popup" class="hero dashboard d-none">
-              <div class="hero-body is-flex center-y">
-                <a class="close dashboard" onclick="closeDashboard()">&times;</a>
-                <div class="container">
-                  <div class="columns">
-                    <div class="column is-two-thirds is-flex center-y">
-                      <a id="dashboard-link" target="_blank">
-                        <img class="img-dashboard" id="dashboard-img">
-                      </a>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Isaac Martínez Ríos
+                        <span class="hero-subtitle">Data Analyst & Business Intelligence Specialist</span>
+                    </h1>
+                    <!-- ICONOS DE REDES SOCIALES Y CV -->
+                    <div class="hero-social">
+                        <a href="https://github.com/isaacmartinez23" target="_blank"  aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/isaacmartinez23/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:isaac.amr15@gmail.com" aria-label="Correo">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="assets/images/Isaac Martinez CV.pdf" target="_blank" aria-label="CV">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
                     </div>
-                    <div class="column dashboard-desc">
-                      <h4 class="title is-4" id="dashboard-name"></h4>
-                      <div class="characteristics">
-                        <div class="container">
-                          <h5 class="subtitle is-5 en-opt">Technologies</h5>
-                          <h5 class="subtitle is-5 es-opt">Tecnologías</h5>
-                          <ul class="lis" id="dashboard-list"></ul>
-                        </div>
-                        <div class="container">
-                          <h5 class="subtitle is-5 en-opt">About the Dashboard</h5>
-                          <h5 class="subtitle is-5 es-opt">Acerca del Dashboard</h5>
-                          <h6 class="subtitle is-6" id="dashboard-desc"></h6>
-                        </div>
-                      </div>
+                    <!-- FIN ICONOS -->
+                    <p class="hero-description">
+                        Soy apasionado por las ciencias de la información y el análisis de datos. 
+                        Después de obtener mi <strong>licenciatura en Administración de Empresas</strong>, 
+                        me especialicé en <strong>Business Intelligence y Data Analysis</strong>, 
+                        impulsado por la firme creencia en el poder de los datos para optimizar 
+                        procesos empresariales y mejorar la toma de decisiones.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="sobre_mi.html" class="btn btn-primary">Conoce más sobre mí</a>
+                        <a href="proyectos.html" class="btn btn-primary">Ver proyectos</a>
                     </div>
-                  </div>
                 </div>
-              </div>
+                <div class="hero-image">
+                    <div class="profile-image">
+                        <img src="assets/images/portada.png" alt="Isaac Martínez Ríos" id="profile-img">
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-  </section>
-
-  <!-- Certificate -->  
-  <section class="hero certificates" id="certificates">
-    <div class="hero-body">
-        <div class="container certificates-wrapper is-flex f-d-col center-x">
-          <h1 class="title is-1 has-text-centered en-opt">Certificates</h1>
-          <h1 class="title is-1 has-text-centered es-opt">Certificados</h1>
-          <div class="all-certificates is-flex center-x center-y f-d-col">
-            <div class="container certificates">
-            <!-- Data Analyst --> 
-            <div class="column certificate has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Data analyst"
-                data-link=""
-                data-desc="
-                <b>📊 Business Analysis for Data Science:</b> I learned to apply data analysis techniques in business contexts.|              
-                <b>📈 Data Visualization:</b> I developed skills to create effective visualizations and tell stories with data.|
-                <b>💾 Databases:</b> I acquired solid knowledge in database management and querying.|
-                <b>🔒 Data Ethics and Management:</b> I learned the importance of handling data responsibly and ethically.|
-                <b>📐 Statistics and Probability:</b> I deepened my understanding of essential mathematical concepts for data analysis."
-                data-tools="Python, Numpy, Pandas, Matplotlib, Tableau, Colab"
-                >
-                <img class="certificate" src="img/data analyst.png" alt="Certificate_image">                
-              </div>              
-            </div>
-            <div class="column certificate has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Analisis de Datos"
-                data-link=""
-                data-desc="
-                <b>📊 Análisis de Negocios:</b> Implementación de metodologías analíticas para impulsar decisiones empresariales estratégicas y orientadas a resultados.|              
-                <b>📈 Data Visualization: </b> Dominio de técnicas avanzadas para transformar datos complejos en narrativas visuales impactantes y accionables.|
-                <b>💾 Bases de Datos:</b> Experiencia sólida en diseño, optimización y gestión de bases de datos para análisis eficiente.|
-                <b>🔒Ética y Manejo de Datos:</b> Implementación de mejores prácticas en privacidad de datos y cumplimiento normativo.|
-                <b>📐Estadística y Probabilidad:</b> Profundicé en conceptos matemáticos esenciales para el análisis de datos."                                  
-                data-tools="Python, Numpy, Pandas, Matplotlib, Tableau, Colab"
-                >
-                <img class="certificate" src="img/data analyst.png" alt="Certificados_imagen">
-              </div>              
-            </div>
-            <!-- Business Intelligence --> 
-            <div class="column certificate has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Business Intelligence"
-                data-link=""
-                data-desc="
-                <b>Business Intelligence Fundamentals:</b> I explored the basic concepts and their application in the business world.|
-                <b>Business Analysis:</b> I learned to apply data analysis techniques to solve concrete business problems.|
-                <b>Data Visualization for BI:</b> I developed skills to create effective dashboards and tell stories with business data.|        
-                <b>Data-Driven Decision Making:</b>I learned methodologies to use data in strategic decision-making.|
-                <b>Metrics and KPIs:</b> I deepened my understanding of defining and tracking key performance indicators for businesses.|
-                "               
-                data-tools="Advanced Excel, Tableau, Business Metrics, Google Analytics"
-                >
-                <img class="certificate" src="img/bi.png" alt="Certificate_image">                
-              </div>              
-            </div>
-            <div class="column certificate has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Inteligencia de Negocios"
-                data-link=""
-                data-desc="
-                <b>Fundamentos de Business Intelligence:</b> Exploré los conceptos básicos y su aplicación en el mundo empresarial.|
-                <b>Análisis de Negocios:</b> Aprendí a aplicar técnicas de análisis de datos para resolver problemas empresariales concretos.|
-                <b>Visualización de Datos para BI:</b> Desarrollé habilidades para crear dashboards efectivos y contar historias con datos empresariales.|        
-                <b>Toma de Decisiones Basadas en Datos:</b> Aprendí metodologías para utilizar datos en la toma de decisiones estratégicas.|
-                <b>Métricas y KPIs:</b> Profundicé en la definición y seguimiento de indicadores clave de rendimiento para negocios.|
-                "                                  
-                data-tools="Excel Avanzado, Tableau, Metricas de Negocios, Google Analisis"
-                >
-                <img class="certificate" src="img/bi.png" alt="Proyecto tienda tennis imagen">
-              </div>              
-            </div>
-            <!-- Data visualization with Python --> 
-            <div class="column certificate has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Data visualization with Python"
-                data-link=""
-                data-desc="
-                <b>Matplotlib:</b> I learned to create static, animated, and interactive graphs in Python.|
-                <b>Seaborn:</b> I developed skills to create attractive statistical visualizations.|
-                <b>Plotly:</b> I explored the creation of interactive graphs for web.|
-                <b>Visual design principles:</b> I understood how to apply color theory, composition, and design in visualizations.|
-                <b>Data storytelling:</b> I learned to construct compelling narratives using visualizations."                 
-                data-tools="Numpy, Pandas, Seaborn, Matplotlib, Colab"
-                >
-                <img class="certificate" src="img/dataviz.png" alt="Certificate_image">                
-              </div>              
-            </div>
-            <div class="column certificate has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Visualización de datos con Python"
-                data-link=""
-                data-desc="
-                <b>Matplotlib:</b> Aprendí a crear gráficos estáticos, animados e interactivos en Python.|
-                <b>Seaborn:</b> Desarrollé habilidades para crear visualizaciones estadísticas atractivas.|
-                <b>Plotly:</b> Exploré la creación de gráficos interactivos para web.|
-                <b>Principios de diseño visual:</b> Comprendí cómo aplicar teoría del color, composición y diseño en las visualizaciones.|
-                <b>Storytelling con datos:</b> Aprendí a construir narrativas convincentes utilizando visualizaciones."                                  
-                data-tools="Numpy, Pandas, Seaborn, Matplotlib, Colab"
-                >
-                <img class="certificate" src="img/dataviz.png" alt="Proyecto tienda tennis imagen">
-              </div>              
-            </div>
-            <!-- Excel --> 
-            <div class="column certificate has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Excel"
-                data-link=""
-                data-desc="
-                <b>Intermediate Excel:</b> Proficiency in business information analysis, creation of interactive dashboards and development of dynamic reports that facilitate the visualization and understanding of complex data..|
-                <b>Advanced Excel:</b> Experience in developing and implementing custom macros for automating repetitive processes, optimizing workflows and improving operational efficiency in business environments.|                
-                <b>Forecasting with Excel:</b> Advanced implementation of statistical techniques and predictive models for trend projection, time series analysis and data-driven strategic planning.|" 
-                data-tools="Excel, Google Sheets"
-                >
-                
-                <img class="certificate" src="img/excelC.png" alt="Certificate_image">                
-              </div>              
-            </div>
-            <div class="column certificate has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Excel"
-                data-link=""
-                data-desc="
-                <b>Excel Intermedio:</b> Dominio en el análisis de información empresarial, creación de dashboards interactivos y desarrollo de informes dinámicos que facilitan la visualización y comprensión de datos complejos.|
-                <b>Excel Avanzado:</b> Experiencia en el desarrollo y implementación de macros personalizadas para la automatización de procesos repetitivos, optimización de flujos de trabajo y mejora de la eficiencia operativa en entornos empresariales.|              
-                <b>Forecasting con Excel:</b> Implementación avanzada de técnicas estadísticas y modelos predictivos para la proyección de tendencias, análisis de series temporales y planificación estratégica basada en datos históricos.|"                                  
-                data-tools="Excel, Google Sheets"
-                >
-                <img class="certificate" src="img/excelC.png" alt="Proyecto tienda tennis imagen">
-              </div>              
-            </div>
-             <!-- IA --> 
-             <div class="column certificate has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Introduction to Data Science and Artificial Intelligence"
-                data-link=""
-                data-desc="My certification in Introduction to Data Science and Artificial Intelligence has been a transformative experience where I have gained a deep understanding of the fundamentals of Artificial Intelligence (AI) and its application in the field of Data Science. Throughout the program, I have explored the essential concepts of AI, including its applications, algorithms, and fundamental techniques."                
-                data-tools="Chat GPT, Hugging Face"
-                >
-                <img class="certificate" src="img/IA.png" alt="Certificate_image">                
-              </div>              
-            </div>
-            <div class="column certificate has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Introducción a Data Science e Inteligencia Artificial"
-                data-link=""
-                data-desc="Mi certificación en Introducción a Data Science e Inteligencia Artificial ha sido una experiencia transformadora donde he adquirido un profundo conocimiento de los fundamentos de la Inteligencia Artificial (IA) y su aplicación en el ámbito de Data Science. Durante el programa, he explorado los conceptos esenciales de la IA, incluyendo sus aplicaciones, algoritmos y técnicas fundamentales."                                  
-                data-tools="Chat GPT, Hugging Face"
-                >
-                <img class="certificate" src="img/IA.png" alt="Proyecto tienda tennis imagen">
-              </div>              
-            </div>
-            
-            <!-- Administracion diploma --> 
-            <div class="column certificate has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Administration"
-                data-link=""
-                data-desc="During my Bachelor's in Administration, I gained a solid understanding of the essential principles and practices for effective organizational management. I learned to analyze and evaluate business problems, design strategies to improve operational efficiency, and make informed decisions based on financial and market data.
-
-                The degree allowed me to develop skills in key areas such as accounting, marketing, human resources management, and economics. Through projects and practical cases, I was able to apply administrative theories in real situations, which strengthened my ability to lead teams and manage resources effectively."                
-                data-tools="Excel, Decision-making"
-                >
-                <img class="certificate" src="img/diploma_unam.png" alt="certificate_admin">                
-              </div>              
-            </div>
-            
-            <div class="column project has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Administración"
-                data-link=""
-                data-desc="
-                <b>🎓</b> Durante mi Licenciatura en Administración en la UNAM, desarrollé una sólida base en gestión empresarial y liderazgo estratégico. |
-                <b>▪️ </b>Análisis y resolución de problemas empresariales complejos|              
-                <b>▪️ </b>Diseño e implementación de estrategias para optimización operativa|
-                <b>▪️ </b>Toma de decisiones basada en datos financieros y de mercado|
-                <b>▪️ </b>Gestión integral en áreas clave: finanzas, marketing y economía|
-                <b>💪</b> A través de proyectos prácticos, demostré capacidad para liderar equipos multidisciplinarios y gestionar recursos eficientemente, aplicando teorías administrativas en contextos reales del mercado.|"                                    
-                data-tools="Excel, Toma de decisiones"
-                >
-                <img class="certificate" src="img/diploma_unam.png" alt="diploma Administración">
-              </div>              
-            </div>
-
-
-            <!-- Transformacion --> 
-            <div class="column certificate has-text-centered en-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Data Fundamentals"
-                data-link=""
-                data-desc="<b>Digital Transformation Diploma</b> in Business, an enriching experience that significantly broadened my understanding of the current business landscape. | <b>Digitalization Strategies:</b> I learned to identify opportunities to implement digital technologies that optimize processes and improve operational efficiency. | 
-                <b>Data Analysis:</b> I developed skills to interpret large volumes of data and use them in strategic decision-making.|
-                <b>Innovation and Digital Business Models:</b> I explored how companies can adapt and create new business models in the digital era.|
-                <b>Digital Customer Experience:</b> I learned strategies to improve customer interaction through digital channels.|
-                <b>Leadership in the Digital Era:</b> I acquired tools to guide teams in increasingly digitalized work environments."               
-                data-tools="Google Analytics, Colab, Model Canvas, Dashboards"
-                >
-                <img class="certificate" src="img/DIPLOMA TRANSFORMACIÓN.png" alt="Certificate_image">                
-              </div>              
-            </div>
-            <div class="column project has-text-centered es-opt">
-              <div 
-                class="img-container" 
-                onclick="showCertificate(this)" 
-                data-title="Transformación Digital en los Negocios"
-                data-link=""
-                data-desc="<b>Diplomado en Transformación Digital</b> en los Negocios, una experiencia enriquecedora que amplió significativamente mi comprensión del panorama empresarial actual. | <b>Estrategias de digitalización:</b> Aprendí a identificar oportunidades para implementar tecnologías digitales que optimizan procesos y mejoran la eficiencia operativa. | 
-                <b>Análisis de datos:</b> Desarrollé habilidades para interpretar grandes volúmenes de datos y utilizarlos en la toma de decisiones estratégicas.|
-                <b>Innovación y modelos de negocio digitales:</b> Exploré cómo las empresas pueden adaptarse y crear nuevos modelos de negocio en la era digital.|
-                <b>Experiencia del cliente digital:</b> Aprendí estrategias para mejorar la interacción con los clientes a través de canales digitales.|
-                <b>Liderazgo en la era digital:</b> Adquirí herramientas para guiar equipos en entornos de trabajo cada vez más digitalizados."
-                data-tools="Google Analytics, Colab, Model Canvas, Dashboards"
-                >
-                <img class="certificate" src="img/DIPLOMA TRANSFORMACIÓN.png" alt="Proyecto tienda tennis imagen">
-              </div>              
-            </div>
-          </div>              
-        </div>            
-      </div>            
-    </div>
-    </div>
-    <!-- Add more... -->
-    <div id="certificate-popup" class="hero certificate d-none">
-      <div class="hero-body is-flex center-y">
-        <a class="close certificate" onclick="closeCertificate()">&times;</a>
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
         <div class="container">
-          <div class="columns">
-            <div class="column is-two-thirds is-flex center-y">
-              <a id="certificate-link" target="_blank">
-                <img class="img-certificate" id="certificate-img">
-              </a>
+            <h2 class="section-title">¿Qué tecnologías he usado?</h2>
+            <div class="skills-grid">
+                <div class="skill-category">                    
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fas fa-table"></i>
+                            <span>Excel</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Tableau</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-calculator"></i>
+                            <span>NumPy</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Seaborn</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-area"></i>
+                            <span>Matplotlib</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-robot"></i>
+                            <span>scikit-learn</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Looker Studio</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>n8n</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-google"></i>
+                            <span>Google Analytics</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub Copilot</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="column certificate-desc">
-              <h3 class="title is-3" id="certificate-name"></h3>
-              <div class="characteristics">
-                <div class="container">
-                  <h5 class="subtitle is-5 en-opt">Tools</h5>
-                  <h5 class="subtitle is-5 es-opt">Herramientas</h5>
-                  <ul class="lis" id="certificate-list"></ul>                                                  
-                </div> 
-                <div class="container">
-                  <h5 class="subtitle is-5 en-opt">What i learned</h5>
-                  <h5 class="subtitle is-5 es-opt">Lo que aprendí</h5>
-                  <h6 class="subtitle is-6" id="certificate-desc"></h6>
-                </div>                                
-                </div>                    
-              </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="featured-projects" id="featured-projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/Netflix_Dashboard.png" alt="Netflix Data Analysis">
+                    </div>
+                    <div class="project-content">
+                        <h3>Netflix Data Analyst</h3>
+                        <p>Análisis completo de datos de Netflix incluyendo tendencias de contenido, análisis de audiencia y insights de negocio.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Tableau</span>
+                        </div>
+                        <a href="proyectos.html#netflix" class="btn btn-outline">Ver proyecto</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/pizza_Dashboard.png" alt="Pizza Sales Analysis">
+                    </div>
+                    <div class="project-content">
+                        <h3>Ventas Pizzería</h3>
+                        <p>Análisis integral de ventas de pizzería que proporciona insights valiosos para la optimización de operaciones.</p>
+                        <div class="project-tags">
+                            <span class="tag">Excel</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                        </div>
+                        <a href="proyectos.html#pizza" class="btn btn-outline">Ver proyecto</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/analisis_pinguinos2.png" alt="Penguin Dataset EDA">
+                    </div>
+                    <div class="project-content">
+                        <h3>EDA Datos de Pingüinos</h3>
+                        <p>Análisis exploratorio de datos del dataset de pingüinos usando Python y librerías de visualización.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Seaborn</span>
+                            <span class="tag">EDA</span>
+                        </div>
+                        <a href="proyectos.html#penguin" class="btn btn-outline">Ver proyecto</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">                                
+                <div class="footer-section">
+                    <h4>Encuentrame en LinkedIn, GitHub y Correo</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/isaacmartinez23/" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/isaacmartinez23/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:isaac.amr15@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </footer>
 
-  <!-- Contact -->
-  <section class="hero hero-contact is-fullheight" id="contact">
-    <div class="hero-body is-flex f-d-col">
-      <div class="container hero-contact-container is-flex f-d-col center-y center-x">
-        <div class="hero-contact-content is-flex center-y f-d-col text">
-          <h2 class="title is-2 has-text-white has-text-centered en-opt">
-            Want to get in touch?
-          </h2>
-          <h2 class="title is-2 has-text-white has-text-centered es-opt">
-            ¿Quieres ponerte en Contacto?
-          </h2>
-          <h4 class="subtitle is-4 has-text-white has-text-centered is-spaced en-opt">
-            Find me on LinkedIn or GitHub
-          </h4>
-          <h4 class="subtitle is-4 has-text-white has-text-centered is-spaced es-opt">
-            Encuentrame en LinkedIn o GitHub
-          </h4>
-        </div>
-        <div class="social-media">
-          <ul class="col is-flex">              
-            <li class="li-smedia">
-              <a href="https://www.linkedin.com/in/isaacmartinez23/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin en-opt" title="Follow me on LinkedIn"></i>
-                <i class="fa-brands fa-linkedin es-opt" title="Sígueme en LinkedIn"></i>
-              </a>      
-            </li>
-            <li class="li-smedia">
-              <a href="https://github.com/isaacmartinez23" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github en-opt" title="Follow me on GitHub"></i>
-                <i class="fa-brands fa-github es-opt" title="Sígueme en GitHub"></i>
-              </a>      
-            </li>                                        
-            <li class="li-smedia">
-              <a href="img/Isaac Martinez CV.pdf" target="_blank" rel="noopener noreferrer">
-                <i class="en-opt" title="Check out my CV">CV</i>
-                <i class="es-opt" title="Mira mi CV">CV</i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="emailme">
-          <h6 class="subtitle is-6 has-text-white has-text-centered en-opt">
-            Or email me at 
-            <a href="mailto:isaac.amr15@gmail.com?Subject=Hi%20Isaac!%20I%20come%20from%20your%20website" 
-              class="no-deco"
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-            <b>isaac.amr15@gmail.com</b>            
-            </a>
-          </h6>
-          <h6 class="subtitle is-6 has-text-white has-text-centered es-opt">
-            O envíame un email a 
-            <a href="mailto:isaac.amr15@gmail.com?Subject=Hola%20Isaac!%20Vengo%20de%20tu%20sitio%20web" 
-              class="no-deco"
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-            <b>isaac.amr15@gmail.com</b>
-            </a>
-          </h6>
-        </div>
-      </div>    
-    </div>
-  </section>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-  <!-- Loader -->
-  <div id="loader_ctn">
-    <img src="" alt="">
-  </div>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
 </body>
-<script src="js/index.js"></script>
-</html>
+</html> 
