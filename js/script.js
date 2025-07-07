@@ -84,16 +84,16 @@ const projectData = {
     netflix: {
         title: 'Netflix Data Analyst',
         image: 'assets/images/project_netflix.jpeg',
-        description: 'Análisis completo de datos de Netflix que incluye tendencias de contenido, análisis de audiencia y insights de negocio. Este proyecto demuestra habilidades avanzadas en limpieza de datos, análisis estadístico y visualización.',
+        description: 'Este proyecto realiza un análisis exploratorio del catálogo global de contenido de Netflix. Se enfoca en identificar patrones de distribución, duración, clasificación, país de origen y géneros. El objetivo principal es entender la estrategia de contenido de Netflix y ofrecer insights clave sobre tendencias en el mercado global de streaming.',
         technologies: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Tableau'],
         features: [
-            'Limpieza y preparación de datos masivos',
-            'Análisis de tendencias temporales',
-            'Segmentación de audiencia',
-            'Visualizaciones interactivas',
-            'Recomendaciones de negocio'
+            'Análisis por tipo de contenido: Compara la proporción de películas y series en la plataforma.',
+            'Evaluación temporal: Examina la evolución anual de estrenos desde 2008 hasta 2020.',
+            'Clasificación por edades: Visualiza el enfoque del contenido hacia diferentes grupos etarios.',
+            'Preferencias por género: Identifica los géneros más representados como dramas o comedias.',
+            'Distribución geográfica: Muestra los países con mayor producción en el catálogo de Netflix.'
         ],
-        results: 'Identificación de patrones de consumo, optimización de recomendaciones de contenido y mejora en la retención de usuarios.',
+        results: 'El análisis revela que el catálogo de Netflix está dominado por películas (68.42%) y se concentra en producciones de Estados Unidos, India y Reino Unido. La mayoría de las películas tienen una duración óptima de entre 75 y 120 minutos, lo cual responde a las preferencias de los usuarios por contenido de consumo rápido. Los géneros más populares son dramas, comedias e internacionales, reflejando una estrategia orientada a satisfacer audiencias globales diversas. Estos insights permiten comprender mejor la dirección editorial de la plataforma y pueden guiar decisiones sobre adquisición de contenido, segmentación de mercado y expansión regional.',
         projectLink: 'https://isaacmtz.notion.site/An-lisis-Exploratorio-del-Cat-logo-de-Contenido-de-Netflix-1a7f24169c5780e3b701ceb466d2725d?pvs=4',
         codeLink: '#'
     },
