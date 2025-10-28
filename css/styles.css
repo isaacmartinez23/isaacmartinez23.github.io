@@ -1149,3 +1149,308 @@ body {
     padding-bottom: 2.2rem;
     font-weight: 400;
 }
+
+/* ==================================================== */
+/* ===== CÓDIGO AÑADIDO PARA PÁGINA "SOBRE MÍ" ===== */
+/* ==================================================== */
+
+.about-flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Para que se apilen en móviles */
+    gap: 40px; /* Espacio entre texto e imagen */
+    align-items: flex-start; /* Alinea el inicio del texto con la imagen */
+}
+
+.about-columna-texto {
+    flex: 2; /* El texto ocupa 2/3 del espacio */
+    min-width: 300px; /* Ancho mínimo para legibilidad */
+}
+
+.about-columna-imagen {
+    flex: 1; /* La imagen ocupa 1/3 del espacio */
+    min-width: 250px;
+    max-width: 350px; /* Tamaño máximo coherente */
+    margin: 0 auto; /* Centra la columna de imagen */
+}
+
+.about-columna-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%; /* Tu imagen 'portada.png' es circular */
+    
+    /* Reutilizamos estilos de tu .profile-image-large img */
+    box-shadow: var(--shadow-hover);
+    border: 4px solid #fff;
+}
+
+/* ===== RESPONSIVE PARA "SOBRE MÍ" ===== */
+@media (max-width: 768px) {
+    .about-flex-container {
+        flex-direction: column; /* Apila los elementos verticalmente */
+    }
+
+    .about-columna-texto, .about-columna-imagen {
+        flex: 1 1 100%; /* Ocupan todo el ancho */
+        max-width: 100%;
+    }
+    
+    .about-columna-imagen {
+        order: -1; /* Mueve la imagen arriba del texto en móvil */
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center; /* Centra la imagen en su fila */
+    }
+
+    .about-columna-imagen img {
+        /* Ajustamos el tamaño en móvil para que no sea gigante */
+        max-width: 250px; 
+    }
+}
+
+/* ==================================================== */
+/* ===== 9. ESTILOS DEL MODAL DE CERTIFICADOS ===== */
+/* ==================================================== */
+
+/*
+  Reutilizamos el estilo de tu .modal-overlay existente (línea 480)
+  pero le damos un ID único para controlarlo por separado.
+*/
+#certModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Un poco más oscuro para foco */
+    display: none; /* Se activa con JS */
+    align-items: center;
+    justify-content: center;
+    z-index: 2500; /* Más alto que el navbar (1000) y el modal de proyectos (2000) */
+    padding: 20px;
+    cursor: zoom-out; /* Indica que se puede cerrar haciendo clic */
+}
+
+/* El botón de cierre se hereda de .modal-close (línea 498), 
+   pero ajustamos su z-index para estar sobre la imagen */
+#certModalClose {
+    z-index: 2510;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem; /* Más grande para ser más fácil de presionar */
+    color: white;
+}
+
+.cert-modal-content {
+    max-width: 90%;
+    max-height: 90vh; /* Ocupa máximo el 90% de la altura de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#certModalImage {
+    width: auto;
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+    height: auto;
+    max-height: 90vh; /* Asegura que la imagen no se desborde verticalmente */
+    object-fit: contain; /* CRUCIAL: Mantiene la proporción de la imagen */
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    cursor: default; /* El cursor normal sobre la imagen */
+}
+
+/* ==================================================== */
+/* ===== 11. ESTILOS DE LISTAS DE CERTIFICADOS ===== */
+/* ==================================================== */
+
+.cert-category:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+}
+
+.cert-category h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.cert-category ul {
+    list-style: none; /* Quitamos los bullet points */
+    padding-left: 0;
+}
+
+.cert-category li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0; /* Separador sutil */
+}
+
+.cert-category li:last-child {
+    border-bottom: none;
+}
+
+.cert-category a {
+    /* Reutilizamos el estilo de tus enlaces de cursos */
+    color: #2d3e7b;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 1rem; /* Tamaño de fuente legible */
+}
+
+.cert-category a:hover {
+    color: var(--primary-dark);
+}
+
+/* ==================================================== */
+/* ===== 12. ESTILOS DE LINKS EN EDUCACIÓN         ===== */
+/* ==================================================== */
+
+/*
+* Esto aplica el mismo estilo de link (color, hover, etc.)
+* de los certificados a los títulos <h3> de la sección Educación.
+*/
+.education-content h3 a {
+    color: #2d3e7b; /* Mismo color que .cert-category a */
+    text-decoration: underline;
+    transition: color 0.2s;
+    /* * IMPORTANTE: No definimos 'font-size' ni 'font-weight'.
+    * Dejamos que los herede del tag <h3> para que 
+    * se mantenga grande y en negritas.
+    */
+}
+
+.education-content h3 a:hover {
+    color: var(--primary-dark); /* Mismo color hover (#FD0911) */
+}
+
+/* ========================================================== */
+/* ===== 13 & 15. ESTILOS FINALES P/ ACORDEÓN CERTIF.   ===== */
+/* ========================================================== */
+
+/* 1. LAYOUT DE CUADRÍCULA (GRID) */
+.skills-detailed .container .certification-grid {
+    width: 100%; /* Asegura que tome el ancho del .container */
+    max-width: none; /* Anula cualquier max-width heredado */
+    margin: 0; /* Anula cualquier margin: auto heredado */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+/* 2. ESTILO DE TARJETA BASE (Acordeón) */
+/* Usamos .faq-item porque el JS lo necesita, pero lo aplicamos DENTRO de .certification-grid */
+.certification-grid .cert-category.faq-item {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    padding: 1.5rem; /* Coincide con .education-card */
+    margin-bottom: 0; /* Anula margen del .faq-item original */
+    transition: var(--transition);
+}
+.certification-grid .cert-category.faq-item:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+}
+
+.certification-grid > .cert-category.faq-item {
+    margin-bottom: 0; 
+}
+
+/* 3. ESTILO DEL ENCABEZADO CLICKEABLE */
+.certification-grid .cert-category .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente */
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    transition: var(--transition);
+}
+.certification-grid .cert-category .faq-question:hover {
+    background-color: transparent;
+}
+
+/* 4. ESTILO DEL TÍTULO DENTRO DEL ENCABEZADO */
+.certification-grid .cert-category .faq-question h3 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* 5. ESTILO DEL ICONO DE FLECHA */
+.certification-grid .cert-category .faq-question i {
+    color: var(--primary-color);
+    transition: var(--transition);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+/* 6. ESTILO DEL CONTENIDO DESPLEGABLE */
+.certification-grid .cert-category .faq-answer {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; /* Animación suave */
+}
+.certification-grid .cert-category .faq-answer ul {
+    margin-top: 1rem;
+    padding-left: 0;
+    list-style: none;
+}
+.certification-grid .cert-category .faq-answer li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.certification-grid .cert-category .faq-answer li:last-child {
+    border-bottom: none;
+}
+
+/* 7. LÓGICA DE EXPANSIÓN (JS añade .active a .faq-item) */
+.certification-grid .cert-category.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+.certification-grid .cert-category.faq-item.active .faq-answer {
+    max-height: 1000px; /* Ajusta si es necesario */
+}
+
+/* ==================================================== */
+/* ===== 14. ALINEACIÓN VISUAL EDUCACIÓN         ===== */
+/* ==================================================== */
+
+/*
+* Aplicamos el estilo de "tarjeta" (card) a la sección de educación
+* para que sea visualmente coherente con los acordeones de certificados.
+*/
+.education-card {
+    /* Estilos clave para imitar la tarjeta del acordeón */
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden; /* Buena práctica con border-radius */
+    padding: 1.5rem; /* Coincide con .cert-category */
+    
+    /* Ajuste para el layout de icono + contenido que ya tienes */
+    display: flex;
+    gap: 1.5rem; /* Espacio entre icono y texto */
+    align-items: flex-start; /* Alinea icono y texto en la parte superior */
+}
+
+/* Ajustes al icono que ya tienes */
+.education-icon {
+    flex-shrink: 0; /* Evita que el icono se encoja */
+    font-size: 1.5rem; /* Tamaño de icono consistente */
+    color: var(--primary-color); /* Coherencia de color */
+    padding-top: 0.25rem; /* Pequeño ajuste de alineación vertical */
+}
+
+.education-content {
+    flex-grow: 1; /* El contenido toma el espacio restante */
+}

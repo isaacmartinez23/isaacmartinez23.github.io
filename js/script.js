@@ -6,72 +6,84 @@ const backToTopBtn = document.getElementById('backToTop');
 const contactForm = document.getElementById('contactForm');
 
 // ===== NAVEGACIÓN RESPONSIVE =====
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Cerrar menú al hacer clic en un enlace
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
-});
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+} else {
+    // Si no existen elementos del nav, evitamos errores silenciosos
+    // console.log('Nav elements not found');
+}
 
 // ===== NAVEGACIÓN SCROLL =====
 window.addEventListener('scroll', () => {
-    // Cambiar navbar al hacer scroll
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+    // Cambiar navbar al hacer scroll (solo si existe)
+    if (navbar) {
+        if (window.scrollY > 100) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        }
     }
 
-    // Mostrar/ocultar botón back to top
-    if (window.scrollY > 300) {
-        backToTopBtn.classList.add('show');
-    } else {
-        backToTopBtn.classList.remove('show');
+    // Mostrar/ocultar botón back to top (solo si existe)
+    if (backToTopBtn) {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
     }
 });
 
 // ===== BACK TO TOP =====
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
-});
+}
 
 // ===== FILTRO DE PROYECTOS =====
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remover clase active de todos los botones
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Agregar clase active al botón clickeado
-        button.classList.add('active');
+if (filterButtons.length > 0 && projectCards.length > 0) {
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remover clase active de todos los botones
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Agregar clase active al botón clickeado
+            button.classList.add('active');
 
-        const filter = button.getAttribute('data-filter');
+            const filter = button.getAttribute('data-filter');
 
-        projectCards.forEach(card => {
-            const categories = card.getAttribute('data-category').split(' ');
-            
-            if (filter === 'all' || categories.includes(filter)) {
-                card.style.display = 'block';
-                card.classList.add('fade-in-up');
-            } else {
-                card.style.display = 'none';
-                card.classList.remove('fade-in-up');
-            }
+            projectCards.forEach(card => {
+                const categories = (card.getAttribute('data-category') || '').split(' ');
+                if (filter === 'all' || categories.includes(filter)) {
+                    card.style.display = 'block';
+                    card.classList.add('fade-in-up');
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('fade-in-up');
+                }
+            });
         });
     });
-});
+}
 
 // ===== MODAL DE PROYECTOS =====
 const modalOverlay = document.getElementById('modalOverlay');
@@ -211,73 +223,72 @@ const projectData = {
     }
 };
 
-// Abrir modal
-projectModalBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const projectId = btn.getAttribute('data-project');
-        const project = projectData[projectId];
-        
-        if (project) {
-            document.getElementById('modalTitle').textContent = project.title;
-            document.getElementById('modalImage').src = project.image;
-            document.getElementById('modalImage').alt = project.title;
-            document.getElementById('modalDescription').innerHTML = `<p>${project.description}</p>`;
-            
-            // Tecnologías
-            const technologiesHtml = project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('');
-            document.getElementById('modalTechnologies').innerHTML = technologiesHtml;
-            
-            // Características
-            const featuresHtml = project.features.map(feature => `<li>${feature}</li>`).join('');
-            document.getElementById('modalFeatures').innerHTML = featuresHtml;
-            
-            // Resultados
-            document.getElementById('modalResults').innerHTML = `<p>${project.results}</p>`;
-            
-            // Enlaces
-            const projectLinkBtn = document.getElementById('modalProjectLink');
-            const codeLinkBtn = document.getElementById('modalCodeLink');
-            projectLinkBtn.href = project.projectLink;
-            codeLinkBtn.href = project.codeLink;
+// Abrir modal (solo si existen botones y overlay)
+if (projectModalBtns.length > 0 && modalOverlay) {
+    projectModalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const projectId = btn.getAttribute('data-project');
+            const project = projectData[projectId];
 
-            // Mostrar u ocultar los botones según si hay enlace válido
-            if (project.projectLink && project.projectLink !== '#') {
-                projectLinkBtn.style.display = 'inline-block';
-            } else {
-                projectLinkBtn.style.display = 'none';
+            if (project) {
+                const titleEl = document.getElementById('modalTitle');
+                const imageEl = document.getElementById('modalImage');
+                const descEl = document.getElementById('modalDescription');
+                const techEl = document.getElementById('modalTechnologies');
+                const featuresEl = document.getElementById('modalFeatures');
+                const resultsEl = document.getElementById('modalResults');
+                const projectLinkBtn = document.getElementById('modalProjectLink');
+                const codeLinkBtn = document.getElementById('modalCodeLink');
+
+                if (titleEl) titleEl.textContent = project.title;
+                if (imageEl) { imageEl.src = project.image; imageEl.alt = project.title; }
+                if (descEl) descEl.innerHTML = `<p>${project.description}</p>`;
+                if (techEl) techEl.innerHTML = project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('');
+                if (featuresEl) featuresEl.innerHTML = project.features.map(feature => `<li>${feature}</li>`).join('');
+                if (resultsEl) resultsEl.innerHTML = `<p>${project.results}</p>`;
+
+                if (projectLinkBtn) projectLinkBtn.href = project.projectLink || '#';
+                if (codeLinkBtn) codeLinkBtn.href = project.codeLink || '#';
+
+                if (projectLinkBtn) projectLinkBtn.style.display = (project.projectLink && project.projectLink !== '#') ? 'inline-block' : 'none';
+                if (codeLinkBtn) codeLinkBtn.style.display = (project.codeLink && project.codeLink !== '#') ? 'inline-block' : 'none';
+
+                modalOverlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
             }
-            if (project.codeLink && project.codeLink !== '#') {
-                codeLinkBtn.style.display = 'inline-block';
-            } else {
-                codeLinkBtn.style.display = 'none';
-            }
-            
-            modalOverlay.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Cerrar modal (si existe boton de cierre)
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+
+    // Cerrar al hacer clic en overlay
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
         }
     });
-});
 
-// Cerrar modal
-modalClose.addEventListener('click', closeModal);
-modalOverlay.addEventListener('click', (e) => {
-    if (e.target === modalOverlay) {
-        closeModal();
-    }
-});
-
-function closeModal() {
-    modalOverlay.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    // Cerrar modal con Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.style.display === 'flex') {
+            closeModal();
+        }
+    });
 }
 
-// Cerrar modal con Escape
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalOverlay.style.display === 'flex') {
-        closeModal();
+// Función para cerrar modal de proyectos (definida aquí para seguridad)
+function closeModal() {
+    if (modalOverlay) {
+        modalOverlay.style.display = 'none';
     }
-});
+    const modalImg = document.getElementById('modalImage');
+    if (modalImg) modalImg.src = '';
+    document.body.style.overflow = 'auto';
+}
 
 // ===== FORMULARIO DE CONTACTO =====
 if (contactForm) {
@@ -537,3 +548,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 }); 
+
+/* ==================================================== */
+/* ===== 10. LÓGICA DEL MODAL DE CERTIFICADOS ===== */
+/* ==================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Seleccionamos los elementos del nuevo modal
+    const certModalOverlay = document.getElementById('certModalOverlay');
+    const certModalImage = document.getElementById('certModalImage');
+    const certModalCloseBtn = document.getElementById('certModalClose');
+    
+    // Seleccionamos TODOS los enlaces que deben abrir este modal
+    const openCertBtns = document.querySelectorAll('.open-cert-modal');
+
+    // Función para cerrar el modal de certificados
+    function closeCertModal() {
+        if (certModalOverlay) {
+            certModalOverlay.style.display = 'none';
+            certModalImage.src = ""; // Limpia el 'src' para detener la carga
+            document.body.style.overflow = 'auto'; // Restaura el scroll
+        }
+    }
+
+    // Si existen los botones y el modal...
+    if (openCertBtns.length > 0 && certModalOverlay) {
+        
+        // 1. Asignar evento a cada enlace de certificado
+        openCertBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault(); // Previene que el enlace '#' mueva la página
+                
+                // Obtenemos la ruta de la imagen desde el atributo 'data'
+                const imgSrc = btn.getAttribute('data-cert-image');
+                
+                if (imgSrc) {
+                    // Asignamos la ruta a la imagen del modal
+                    certModalImage.src = imgSrc;
+                    
+                    // Mostramos el modal
+                    certModalOverlay.style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // Bloquea el scroll
+                }
+            });
+        });
+
+        // 2. Asignar evento al botón de cerrar
+        if (certModalCloseBtn) {
+            certModalCloseBtn.addEventListener('click', closeCertModal);
+        }
+
+        // 3. Asignar evento para cerrar al hacer clic en el fondo
+        certModalOverlay.addEventListener('click', (e) => {
+            // Si el clic fue en el overlay (el fondo) y no en la imagen...
+            if (e.target === certModalOverlay) {
+                closeCertModal();
+            }
+        });
+    }
+
+    // 4. Asignar evento para cerrar con la tecla 'Escape'
+    // (Añadimos este listener separado del que ya tenías para el modal de proyectos)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && certModalOverlay && certModalOverlay.style.display === 'flex') {
+            closeCertModal();
+        }
+    });
+
+});
