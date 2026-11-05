@@ -1,255 +1,370 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"
+  data-title-es="Isaac Martínez Ríos · Análisis y ciencia de datos"
+  data-title-en="Isaac Martínez Ríos · Data analysis and data science"
+  data-desc-es="Portafolio de Isaac Martínez Ríos: casos de estudio de pronóstico de demanda e inventario, precios de la canasta PROFECO y disponibilidad de ECOBICI."
+  data-desc-en="Portfolio of Isaac Martínez Ríos: case studies on demand forecasting and inventory, PROFECO food basket prices and ECOBICI bike availability.">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaac Martínez Ríos</title>
-    <meta name="description" content="Data Analyst and Business Intelligence Specialist. Passionate about transforming data into actionable insights for business growth.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/portada.png">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0244QQM6F0"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-0244QQM6F0');
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Isaac Martínez Ríos · Análisis y ciencia de datos</title>
+  <meta name="description" content="Portafolio de Isaac Martínez Ríos: casos de estudio de pronóstico de demanda e inventario, precios de la canasta PROFECO y disponibilidad de ECOBICI.">
+  <link rel="canonical" href="https://isaacmartinez.space/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Isaac Martínez Ríos · Del dato a la decisión">
+  <meta property="og:description" content="Casos de estudio: pronóstico de demanda e inventario, canasta PROFECO y ECOBICI.">
+  <meta property="og:url" content="https://isaacmartinez.space/">
+  <meta property="og:image" content="https://isaacmartinez.space/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f4f0">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="es"&&l!=="en"){l=(navigator.language||"es").slice(0,2)==="en"?"en":"es"}document.documentElement.lang=l})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0244QQM6F0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-0244QQM6F0");</script>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Isaac Martínez Ríos</a>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="sobre_mi.html" class="nav-link">Sobre Mí</a>
-                </li>
-                <li class="nav-item">
-                    <a href="proyectos.html" class="nav-link">Proyectos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contacto.html" class="nav-link">Contacto</a>
-                </li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+  <a class="skip" href="#main"><span lang="es">Ir al contenido</span><span lang="en">Skip to content</span></a>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        Isaac Martínez Ríos
-                        <span class="hero-subtitle">Data Analyst & Business Intelligence Specialist</span>
-                    </h1>
-                    <!-- ICONOS DE REDES SOCIALES Y CV -->
-                    <div class="hero-social">
-                        <a href="https://github.com/isaacmartinez23" target="_blank"  aria-label="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/isaacmartinez23/" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:isaac.amr15@gmail.com" aria-label="Correo">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="assets/images/Isaac Martinez CV.pdf" target="_blank" aria-label="CV">
-                            <i class="fas fa-file-alt"></i>
-                        </a>
-                    </div>
-                    <!-- FIN ICONOS -->
-                    <p class="hero-description">
-                        Soy apasionado por las ciencias de la información y el análisis de datos. 
-                        Después de obtener mi <strong>licenciatura en Administración de Empresas</strong>, 
-                        me especialicé en <strong>Business Intelligence y Data Analysis</strong>, 
-                        impulsado por la firme creencia en el poder de los datos para optimizar 
-                        procesos empresariales y mejorar la toma de decisiones.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="sobre_mi.html" class="btn btn-primary">Conoce más sobre mí</a>
-                        <a href="proyectos.html" class="btn btn-primary">Ver proyectos</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="profile-image">
-                        <img src="assets/images/portada.png" alt="Isaac Martínez Ríos" id="profile-img">
-                    </div>
-                </div>
-            </div>
+  <header class="masthead">
+    <div class="wrap">
+      <a class="masthead__name" href="/">Isaac Martínez Ríos</a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="#casos"><span lang="es">Casos</span><span lang="en">Case studies</span></a></li>
+          <li><a href="#archivo"><span lang="es">Archivo</span><span lang="en">Archive</span></a></li>
+          <li><a href="#sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About</span></a></li>
+          <li><a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a></li>
+        </ul>
+      </nav>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es" aria-pressed="true" title="Español">ES</button>
+        <button type="button" data-set-lang="en" aria-pressed="false" title="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cover">
+      <div class="wrap cover__grid">
+        <div>
+          <h1><span lang="es">Del dato a la decisión.</span><span lang="en">From data to decision.</span></h1>
+          <p class="cover__lede" lang="es">Soy Isaac Martínez Ríos, analista y científico de datos. Tomo una pregunta de negocio y la llevo hasta una respuesta concreta: cuánto pedir de cada producto, en qué cadena sale más barata la canasta, cuántas bicicletas mover y a qué hora.</p>
+          <p class="cover__lede" lang="en">I'm Isaac Martínez Ríos, a data analyst and data scientist. I take a business question all the way to a concrete answer: how much of each product to order, which chain sells the cheapest food basket, how many bikes to move and when.</p>
+          <ul class="byline">
+            <li lang="es"><strong>Lic. en Administración</strong>, UNAM</li>
+            <li lang="en"><strong>B.A. in Business Administration</strong>, UNAM</li>
+            <li lang="es"><strong>Ruta Data Scientist</strong>, Platzi</li>
+            <li lang="en"><strong>Data Scientist path</strong>, Platzi</li>
+            <li lang="es">Actualizado en noviembre de 2026</li>
+            <li lang="en">Updated November 2026</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn--primary" href="#casos"><span lang="es">Leer los casos de estudio</span><span lang="en">Read the case studies</span></a>
+            <a class="btn" href="/assets/images/Isaac%20Martinez%20CV.pdf" lang="es" download>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v9m0 0L4.5 7M8 10.5 11.5 7M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Descargar CV
+            </a>
+            <a class="btn" href="/assets/images/Isaac%20Martinez%20CV%20english.pdf" lang="en" download>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v9m0 0L4.5 7M8 10.5 11.5 7M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Download CV
+            </a>
+          </div>
         </div>
+
+        <figure class="fig">
+          <div class="fig__plate" data-chart="stations"
+            data-label-es="Mapa de 537 estaciones de ECOBICI coloreadas por su balance de viajes."
+            data-label-en="Map of 537 ECOBICI stations colored by their trip balance."></div>
+          <p class="fig__readout" aria-live="polite"></p>
+          <figcaption>
+            <span lang="es"><b>Figura 1.</b> Las 537 estaciones de ECOBICI según su balance de viajes entre julio y septiembre de 2026. En azul, las que pierden bicicletas porque salen más viajes de los que llegan; en ocre, las que las acumulan. El tamaño indica la magnitud.</span>
+            <span lang="en"><b>Figure 1.</b> The 537 ECOBICI stations by trip balance, July to September 2026. Blue stations lose bikes because more trips leave than arrive; ochre ones pile them up. Size shows magnitude.</span>
+            <span class="fig__source" lang="es">Fuente: datos abiertos de ECOBICI, 4.46 M de viajes. Análisis propio.</span>
+            <span class="fig__source" lang="en">Source: ECOBICI open data, 4.46 M trips. Own analysis.</span>
+          </figcaption>
+        </figure>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2 class="section-title">¿Qué tecnologías he usado?</h2>
-            <div class="skills-grid">
-                <div class="skill-category">                    
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <i class="fas fa-table"></i>
-                            <span>Excel</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>Tableau</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Pandas</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-calculator"></i>
-                            <span>NumPy</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-pie"></i>
-                            <span>Seaborn</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-area"></i>
-                            <span>Matplotlib</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-robot"></i>
-                            <span>scikit-learn</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-pie"></i>
-                            <span>Looker Studio</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>n8n</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-google"></i>
-                            <span>Google Analytics</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub Copilot</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="section" id="casos" aria-labelledby="casos-t">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="casos-t"><span lang="es">Casos de estudio</span><span lang="en">Case studies</span></h2>
+          <p lang="es">Tres proyectos completos, cada uno con su pregunta, sus datos, un modelo que se compara contra una línea base y lo que el análisis no permite afirmar.</p>
+          <p lang="en">Three end-to-end projects, each with its question, its data, a model measured against a baseline, and what the analysis cannot claim.</p>
         </div>
+
+        <article class="case">
+          <div class="case__meta">
+            <dl>
+              <div><dt lang="es">Área</dt><dt lang="en">Field</dt><dd lang="es">Cadena de suministro</dd><dd lang="en">Supply chain</dd></div>
+              <div><dt lang="es">Datos</dt><dt lang="en">Data</dt><dd lang="es">M5 Forecasting (Walmart), 1,429 productos, 2011–2016</dd><dd lang="en">M5 Forecasting (Walmart), 1,429 products, 2011–2016</dd></div>
+              <div><dt>Stack</dt><dd>Python · LightGBM · statsforecast · DuckDB · GitHub Actions</dd></div>
+            </dl>
+          </div>
+          <div class="case__body">
+            <div>
+              <h3><a href="/proyectos/demanda-inventario/"><span lang="es">Pronóstico de demanda y política de inventario</span><span lang="en">Demand forecasting and inventory policy</span></a></h3>
+              <p class="case__q" lang="es">¿Cuánto vamos a vender de cada producto en las próximas cuatro semanas, y cuánto inventario hace falta para cumplir un 95 % de nivel de servicio sin sobre-stock?</p>
+              <p class="case__q" lang="en">How much of each product will we sell over the next four weeks, and how much inventory do we need to hit a 95% service level without overstocking?</p>
+              <p lang="es">Un modelo de demanda por producto se traduce en safety stock, punto de reorden y cantidad a pedir. Después, la política se simula día a día contra demanda real que el modelo no vio. Con el mismo nivel de servicio, necesita 14 % menos inventario que una política clásica de media móvil.</p>
+              <p lang="en">A per-product demand model becomes safety stock, reorder point and order quantity. The policy is then simulated day by day against real demand the model never saw. At the same service level it needs 14% less inventory than a classic moving-average policy.</p>
+              <div class="case__links">
+                <a class="link-arrow" href="/proyectos/demanda-inventario/"><span lang="es">Leer el caso</span><span lang="en">Read the case</span></a>
+                <a href="https://isaacmartinez.space/Pronostico-de-Demanda-y-Politica-de-Inventario/"><span lang="es">Dashboard en vivo</span><span lang="en">Live dashboard</span></a>
+                <a href="https://github.com/isaacmartinez23/Pronostico-de-Demanda-y-Politica-de-Inventario"><span lang="es">Código</span><span lang="en">Code</span></a>
+              </div>
+            </div>
+            <figure class="fig">
+              <ul class="legend"></ul>
+              <div class="fig__plate" data-chart="frontier"
+                data-label-es="Curva servicio–inventario: el modelo alcanza cada nivel de servicio con menos inventario que las políticas de referencia."
+                data-label-en="Service–inventory curve: the model reaches every service level with less inventory than the reference policies."></div>
+              <p class="fig__readout" aria-live="polite"></p>
+              <figcaption>
+                <span lang="es"><b>Figura 2.</b> Inventario promedio necesario para cada fill rate, con 7 días de lead time. Más abajo es mejor.</span>
+                <span lang="en"><b>Figure 2.</b> Average inventory needed for each fill rate, with a 7-day lead time. Lower is better.</span>
+                <span class="fig__source" lang="es">Fuente: simulación de 12 semanas fuera de muestra, tienda CA_1.</span>
+                <span class="fig__source" lang="en">Source: 12-week out-of-sample simulation, store CA_1.</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case__meta">
+            <dl>
+              <div><dt lang="es">Área</dt><dt lang="en">Field</dt><dd lang="es">Precios y consumo</dd><dd lang="en">Prices and consumers</dd></div>
+              <div><dt lang="es">Datos</dt><dt lang="en">Data</dt><dd lang="es">Quién es Quién en los Precios (PROFECO), 35.6 M de precios, ene 2024 – jul 2026</dd><dd lang="en">PROFECO "Quién es Quién en los Precios", 35.6 M prices, Jan 2024 – Jul 2026</dd></div>
+              <div><dt>Stack</dt><dd>Python · DuckDB · dbt · PostgreSQL · GitHub Actions</dd></div>
+            </dl>
+          </div>
+          <div class="case__body">
+            <div>
+              <h3><a href="/proyectos/canasta-qqp/"><span lang="es">Precios de la canasta QQP</span><span lang="en">The QQP food basket</span></a></h3>
+              <p class="case__q" lang="es">¿Cuánto cuesta la misma canasta de 16 alimentos en distintas cadenas y municipios, y cuánto puede ahorrar una familia al elegir bien la tienda?</p>
+              <p class="case__q" lang="en">How much does the same 16-item food basket cost across chains and cities, and how much can a household save by picking the right store?</p>
+              <p lang="es">Un pipeline reproducible lleva los archivos abiertos de PROFECO a un modelo dimensional con pruebas en cada paso y genera un dashboard sin servidor. Elegir bien la tienda vale entre 48 y 64 pesos por canasta y semana, y cinco productos frescos explican el 73 % de la diferencia.</p>
+              <p lang="en">A reproducible pipeline turns PROFECO's open files into a tested dimensional model and builds a serverless dashboard. Picking the right store is worth 48 to 64 pesos per basket per week, and five fresh items explain 73% of the gap.</p>
+              <div class="case__links">
+                <a class="link-arrow" href="/proyectos/canasta-qqp/"><span lang="es">Leer el caso</span><span lang="en">Read the case</span></a>
+                <a href="https://isaacmartinez.space/analisis_profeco/"><span lang="es">Dashboard en vivo</span><span lang="en">Live dashboard</span></a>
+                <a href="https://github.com/isaacmartinez23/analisis_profeco"><span lang="es">Código</span><span lang="en">Code</span></a>
+              </div>
+            </div>
+            <figure class="fig">
+              <div class="fig__plate" data-chart="basket"
+                data-label-es="Costo mediano de la canasta por cadena: Chedraui 663.94, Bodega Aurrera 693.09, Soriana 703.03, Wal-mart 713.11 pesos."
+                data-label-en="Median basket cost by chain: Chedraui 663.94, Bodega Aurrera 693.09, Soriana 703.03, Wal-mart 713.11 pesos."></div>
+              <p class="fig__readout"></p>
+              <figcaption>
+                <span lang="es"><b>Figura 3.</b> Costo mediano semanal de la misma canasta de 16 alimentos, en pesos. El eje no empieza en cero para mostrar la distancia entre cadenas.</span>
+                <span lang="en"><b>Figure 3.</b> Median weekly cost of the same 16-item basket, in pesos. The axis does not start at zero, to show the gap between chains.</span>
+                <span class="fig__source" lang="es">Fuente: PROFECO, 135 semanas, comparaciones pareadas por municipio y semana.</span>
+                <span class="fig__source" lang="en">Source: PROFECO, 135 weeks, comparisons paired by city and week.</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case__meta">
+            <dl>
+              <div><dt lang="es">Área</dt><dt lang="en">Field</dt><dd lang="es">Movilidad urbana</dd><dd lang="en">Urban mobility</dd></div>
+              <div><dt lang="es">Datos</dt><dt lang="en">Data</dt><dd lang="es">Histórico abierto de ECOBICI y feed GBFS, 4.46 M de viajes, jul–sep 2026</dd><dd lang="en">ECOBICI open trip history and GBFS feed, 4.46 M trips, Jul–Sep 2026</dd></div>
+              <div><dt>Stack</dt><dd>Python · DuckDB · scikit-learn · Streamlit · GitHub Actions</dd></div>
+            </dl>
+          </div>
+          <div class="case__body">
+            <div>
+              <h3><a href="/proyectos/ecobici/"><span lang="es">ECOBICI: dónde faltan bicicletas y a qué hora</span><span lang="en">ECOBICI: where bikes run out, and when</span></a></h3>
+              <p class="case__q" lang="es">¿Qué estaciones se quedan sin bicicletas, en qué franjas, y cuántas convendría mover y desde dónde para reducir el desabasto?</p>
+              <p class="case__q" lang="en">Which stations run out of bikes, at what times, and how many bikes should be moved, and from where, to reduce shortages?</p>
+              <p lang="es">Un modelo de demanda por estación y hora supera a la línea base y casi elimina su sesgo. Encima, un algoritmo de rebalanceo propone 117 movimientos que evitarían cerca del 22.6 % del desabasto estimado en la ventana evaluada.</p>
+              <p lang="en">A per-station, per-hour demand model beats the baseline and nearly removes its bias. On top of it, a rebalancing algorithm proposes 117 moves that would avoid about 22.6% of the estimated shortage in the evaluated window.</p>
+              <div class="case__links">
+                <a class="link-arrow" href="/proyectos/ecobici/"><span lang="es">Leer el caso</span><span lang="en">Read the case</span></a>
+                <a href="https://isaacmartinez.space/ecobici/"><span lang="es">Sitio del análisis</span><span lang="en">Analysis site</span></a>
+                <a href="https://github.com/isaacmartinez23/ecobici"><span lang="es">Código</span><span lang="en">Code</span></a>
+              </div>
+            </div>
+            <figure class="fig">
+              <ul class="legend"></ul>
+              <div class="fig__plate" data-chart="hourly"
+                data-label-es="Salidas y llegadas promedio por estación y hora: picos a las 8:00 y entre 17:00 y 18:00."
+                data-label-en="Average departures and arrivals per station per hour: peaks at 8:00 and between 17:00 and 18:00."></div>
+              <p class="fig__readout" aria-live="polite"></p>
+              <figcaption>
+                <span lang="es"><b>Figura 4.</b> Viajes promedio por estación en cada hora del día. Las franjas sombreadas marcan los picos de las 8:00 y de 17:00 a 18:00.</span>
+                <span lang="en"><b>Figure 4.</b> Average trips per station for each hour of the day. Shaded bands mark the peaks at 8:00 and from 17:00 to 18:00.</span>
+                <span class="fig__source" lang="es">Fuente: datos abiertos de ECOBICI, julio a septiembre de 2026.</span>
+                <span class="fig__source" lang="en">Source: ECOBICI open data, July to September 2026.</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Featured Projects Section -->
-    <section class="featured-projects" id="featured-projects">
-        <div class="container">
-            <h2 class="section-title">Proyectos Destacados</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/Netflix_Dashboard.png" alt="Netflix Data Analysis">
-                    </div>
-                    <div class="project-content">
-                        <h3>Netflix Data Analyst</h3>
-                        <p>Análisis completo de datos de Netflix incluyendo tendencias de contenido, análisis de audiencia y insights de negocio.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Pandas</span>
-                            <span class="tag">Tableau</span>
-                        </div>
-                        <a href="proyectos.html#netflix" class="btn btn-outline">Ver proyecto</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/pizza_Dashboard.png" alt="Pizza Sales Analysis">
-                    </div>
-                    <div class="project-content">
-                        <h3>Ventas Pizzería</h3>
-                        <p>Análisis integral de ventas de pizzería que proporciona insights valiosos para la optimización de operaciones.</p>
-                        <div class="project-tags">
-                            <span class="tag">Excel</span>
-                            <span class="tag">Power BI</span>
-                            <span class="tag">DAX</span>
-                        </div>
-                        <a href="proyectos.html#pizza" class="btn btn-outline">Ver proyecto</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/analisis_pinguinos2.png" alt="Penguin Dataset EDA">
-                    </div>
-                    <div class="project-content">
-                        <h3>EDA Datos de Pingüinos</h3>
-                        <p>Análisis exploratorio de datos del dataset de pingüinos usando Python y librerías de visualización.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Seaborn</span>
-                            <span class="tag">EDA</span>
-                        </div>
-                        <a href="proyectos.html#penguin" class="btn btn-outline">Ver proyecto</a>
-                    </div>
-                </div>
-            </div>
+    <section class="section" id="metodo" aria-labelledby="metodo-t">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="metodo-t"><span lang="es">Cómo trabajo</span><span lang="en">How I work</span></h2>
+          <p lang="es">Los tres casos siguen el mismo método. Cualquiera puede reproducirlos con un solo comando, y cada cifra sale de un reporte que está en el repositorio.</p>
+          <p lang="en">All three cases follow the same method. Anyone can reproduce them with a single command, and every number comes from a report kept in the repository.</p>
         </div>
+        <div class="method">
+          <div>
+            <h3><span lang="es">Pregunta</span><span lang="en">Question</span></h3>
+            <p lang="es">Empiezo por la decisión que alguien tiene que tomar y por la métrica que diría si salió bien.</p>
+            <p lang="en">I start from the decision someone has to make and the metric that would tell whether it went well.</p>
+          </div>
+          <div>
+            <h3><span lang="es">Datos</span><span lang="en">Data</span></h3>
+            <p lang="es">Ingesta automatizada, reglas de calidad y un contrato de datos. Si la fuente llega incompleta, el pipeline se detiene en lugar de publicar a medias.</p>
+            <p lang="en">Automated ingestion, quality rules and a data contract. If the source arrives incomplete, the pipeline stops instead of publishing half the data.</p>
+          </div>
+          <div>
+            <h3><span lang="es">Modelo</span><span lang="en">Model</span></h3>
+            <p lang="es">Siempre contra una línea base, evaluado en un periodo que el modelo no vio. Si una media móvil gana en un segmento, lo digo.</p>
+            <p lang="en">Always against a baseline, scored on a period the model never saw. If a moving average wins in some segment, I say so.</p>
+          </div>
+          <div>
+            <h3><span lang="es">Decisión</span><span lang="en">Decision</span></h3>
+            <p lang="es">El resultado se traduce a algo accionable: pesos, piezas, bicicletas. Lo acompaña una lista explícita de lo que no se puede afirmar.</p>
+            <p lang="en">The result is translated into something actionable: pesos, units, bikes. It comes with an explicit list of what cannot be claimed.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">                                
-                <div class="footer-section">
-                    <h4>Encuentrame en LinkedIn, GitHub y Correo</h4>
-                    <div class="social-links">
-                        <a href="https://github.com/isaacmartinez23/" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/isaacmartinez23/" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:isaac.amr15@gmail.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>            
+    <section class="section" id="archivo" aria-labelledby="archivo-t">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="archivo-t"><span lang="es">Archivo</span><span lang="en">Archive</span></h2>
+          <p lang="es">Dashboards anteriores de Business Intelligence en Tableau y Looker Studio.</p>
+          <p lang="en">Earlier Business Intelligence dashboards in Tableau and Looker Studio.</p>
         </div>
-    </footer>
+        <table class="archive">
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden"><span lang="es">Vista previa</span><span lang="en">Preview</span></span></th>
+              <th scope="col"><span lang="es">Proyecto</span><span lang="en">Project</span></th>
+              <th scope="col"><span lang="es">Herramienta</span><span lang="en">Tool</span></th>
+              <th scope="col"><span lang="es">Enlace</span><span lang="en">Link</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="archive__thumb"><img src="/assets/img/archivo-pizza.webp" alt="" width="800" height="466" loading="lazy"></td>
+              <td><span class="archive__name"><span lang="es">Ventas de una pizzería</span><span lang="en">Pizza restaurant sales</span></span>
+                <span class="archive__desc" lang="es">Dashboard ejecutivo con KPIs y tendencias de venta. <a href="https://isaacmtz.notion.site/Ventas-Pizzeria-1a7f24169c5780b2a971dc9383a228ac?pvs=4">Análisis escrito</a></span>
+                <span class="archive__desc" lang="en">Executive dashboard with sales KPIs and trends. <a href="https://isaacmtz.notion.site/Ventas-Pizzeria-1a7f24169c5780b2a971dc9383a228ac?pvs=4">Written analysis</a></span></td>
+              <td class="archive__tool">Tableau</td>
+              <td><a class="link-arrow" href="https://public.tableau.com/views/VentasPizzas_17406214590730/Dashboard1?:language=es-ES&amp;:display_count=n&amp;:origin=viz_share_link"><span lang="es">Ver</span><span lang="en">View</span></a></td>
+            </tr>
+            <tr>
+              <td class="archive__thumb"><img src="/assets/img/archivo-chocolate.webp" alt="" width="800" height="449" loading="lazy"></td>
+              <td><span class="archive__name"><span lang="es">Ventas de chocolate</span><span lang="en">Chocolate sales</span></span>
+                <span class="archive__desc" lang="es">Productos, tendencias en el tiempo y métricas de rendimiento.</span>
+                <span class="archive__desc" lang="en">Products, trends over time and performance metrics.</span></td>
+              <td class="archive__tool">Tableau</td>
+              <td><a class="link-arrow" href="https://public.tableau.com/views/VentasdeChocolates/Dashboard1?:language=es-ES&amp;:display_count=n&amp;:origin=viz_share_link"><span lang="es">Ver</span><span lang="en">View</span></a></td>
+            </tr>
+            <tr>
+              <td class="archive__thumb"><img src="/assets/img/archivo-usuarios.webp" alt="" width="800" height="504" loading="lazy"></td>
+              <td><span class="archive__name"><span lang="es">Perfil de usuarios web</span><span lang="en">Web user profile</span></span>
+                <span class="archive__desc" lang="es">Demografía, comportamiento y segmentación a partir de Google Analytics.</span>
+                <span class="archive__desc" lang="en">Demographics, behavior and segmentation from Google Analytics.</span></td>
+              <td class="archive__tool">Looker Studio</td>
+              <td><a class="link-arrow" href="https://lookerstudio.google.com/s/jli7t4ha2Hg"><span lang="es">Ver</span><span lang="en">View</span></a></td>
+            </tr>
+            <tr>
+              <td class="archive__thumb"><img src="/assets/img/archivo-freshmart.webp" alt="" width="800" height="516" loading="lazy"></td>
+              <td><span class="archive__name">Freshmart</span>
+                <span class="archive__desc" lang="es">Inventario, ventas y rendimiento por categoría de un supermercado.</span>
+                <span class="archive__desc" lang="en">Inventory, sales and category performance for a supermarket.</span></td>
+              <td class="archive__tool">Looker Studio</td>
+              <td><a class="link-arrow" href="https://lookerstudio.google.com/s/uLwW-dFcgLo"><span lang="es">Ver</span><span lang="en">View</span></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <section class="section" id="sobre-mi" aria-labelledby="sobre-t">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="sobre-t"><span lang="es">Sobre mí</span><span lang="en">About</span></h2>
+        </div>
+        <div class="about">
+          <figure class="about__photo">
+            <img src="/assets/img/isaac.webp" width="640" height="819" loading="lazy"
+              alt="Isaac Martínez Ríos con toga y estola de la UNAM frente a la Biblioteca Central de Ciudad Universitaria">
+            <figcaption lang="es">Ciudad Universitaria, UNAM.</figcaption>
+            <figcaption lang="en">Ciudad Universitaria, UNAM.</figcaption>
+          </figure>
+          <div class="about__text">
+            <p lang="es">Estudié Administración de Empresas en la UNAM. De ahí viene mi manera de trabajar: un análisis está terminado cuando alguien puede tomar una decisión con él.</p>
+            <p lang="en">I studied Business Administration at UNAM. That shapes how I work: an analysis is done when someone can make a decision with it.</p>
+            <p lang="es">Después me especialicé en Business Intelligence y análisis de datos, y hoy trabajo en todo el ciclo: ingesta y calidad de datos con DuckDB, dbt y PostgreSQL; modelos de pronóstico y clasificación con Python y scikit-learn; y dashboards que publico de forma automática.</p>
+            <p lang="en">I then specialized in Business Intelligence and data analysis, and today I work across the whole cycle: data ingestion and quality with DuckDB, dbt and PostgreSQL; forecasting and classification models with Python and scikit-learn; and dashboards that publish themselves.</p>
 
-    <!-- Custom JavaScript -->
-    <script src="js/script.js"></script>
+            <div class="edu">
+              <div>
+                <h3><span lang="es">Formación</span><span lang="en">Education</span></h3>
+                <ul>
+                  <li><span class="edu__name"><span lang="es">Licenciatura en Administración de Empresas</span><span lang="en">B.A. in Business Administration</span><span class="edu__sub">UNAM</span></span><span>2020–2024</span></li>
+                  <li><span class="edu__name"><span lang="es">Diplomado en Transformación Digital en Negocios</span><span lang="en">Diploma in Digital Business Transformation</span><span class="edu__sub" lang="es">REDEC UNAM · 245 horas</span><span class="edu__sub" lang="en">REDEC UNAM · 245 hours</span></span><span>2024</span></li>
+                </ul>
+              </div>
+              <div>
+                <h3><span lang="es">Rutas completadas en Platzi</span><span lang="en">Completed Platzi paths</span></h3>
+                <ul>
+                  <li><a class="edu__name" href="https://platzi.com/p/IsaacMartinez/ruta/35-ruta/diploma/detalle/">Data e Inteligencia Artificial</a><span><span lang="es">oct 2026</span><span lang="en">Oct 2026</span></span></li>
+                  <li><a class="edu__name" href="https://platzi.com/p/IsaacMartinez/ruta/7005-ruta/diploma/detalle/">Data Scientist</a><span><span lang="es">oct 2026</span><span lang="en">Oct 2026</span></span></li>
+                  <li><a class="edu__name" href="https://platzi.com/p/IsaacMartinez/ruta/8307-ruta/diploma/detalle/">Data Scientist con Python</a><span><span lang="es">jul 2026</span><span lang="en">Jul 2026</span></span></li>
+                  <li><a class="edu__name" href="https://platzi.com/p/IsaacMartinez/ruta/36417-ruta/diploma/detalle/">AI-Native: Productividad, Automatización y Agentes</a><span><span lang="es">feb 2026</span><span lang="en">Feb 2026</span></span></li>
+                  <li><a class="edu__name" href="https://platzi.com/p/IsaacMartinez/ruta/30083-ruta/diploma/detalle/">Análisis y Visualización de Datos</a><span><span lang="es">jun 2025</span><span lang="en">Jun 2025</span></span></li>
+                  <li><a class="edu__name" href="https://platzi.com/p/IsaacMartinez/ruta/13480-ruta/diploma/detalle/">Análisis de Datos y Business Intelligence</a><span><span lang="es">nov 2024</span><span lang="en">Nov 2024</span></span></li>
+                </ul>
+                <p class="edu__more" lang="es">232 cursos aprobados y 21 rutas completadas. <a class="link-arrow" href="https://platzi.com/p/IsaacMartinez/">Ver perfil completo</a></p>
+                <p class="edu__more" lang="en">232 courses passed and 21 paths completed. <a class="link-arrow" href="https://platzi.com/p/IsaacMartinez/">See full profile</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto" aria-labelledby="contacto-t">
+      <div class="wrap">
+        <h2 id="contacto-t"><span lang="es">¿Tienes una pregunta que los datos puedan responder?</span><span lang="en">Got a question data could answer?</span></h2>
+        <a class="contact__mail" href="mailto:isaac.amr15@gmail.com">isaac.amr15@gmail.com</a>
+        <ul class="contact__list">
+          <li><a href="https://www.linkedin.com/in/isaacmartinez23/">LinkedIn</a></li>
+          <li><a href="https://github.com/isaacmartinez23">GitHub</a></li>
+          <li lang="es"><a href="/assets/images/Isaac%20Martinez%20CV.pdf" download>CV en español (PDF)</a></li>
+          <li lang="en"><a href="/assets/images/Isaac%20Martinez%20CV%20english.pdf" download>CV in English (PDF)</a></li>
+          <li lang="es"><a href="/assets/images/Isaac%20Martinez%20CV%20english.pdf" download>CV en inglés (PDF)</a></li>
+          <li lang="en"><a href="/assets/images/Isaac%20Martinez%20CV.pdf" download>CV in Spanish (PDF)</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Isaac Martínez Ríos</span>
+      <span lang="es">Hecho a mano con HTML, CSS y JavaScript. Las figuras se dibujan con los datos de cada proyecto.</span>
+      <span lang="en">Hand-built with HTML, CSS and JavaScript. Figures are drawn from each project's data.</span>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
 </body>
-</html> 
+</html>

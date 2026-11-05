@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es"
+  data-title-es="ECOBICI: dónde faltan bicicletas y a qué hora · Isaac Martínez Ríos"
+  data-title-en="ECOBICI: where bikes run out, and when · Isaac Martínez Ríos"
+  data-desc-es="Caso de estudio: demanda por estación y hora con 4.46 millones de viajes de ECOBICI, y un rebalanceo que evitaría cerca del 22.6 % del desabasto estimado."
+  data-desc-en="Case study: per-station, per-hour demand from 4.46 million ECOBICI trips, and a rebalancing plan that would avoid about 22.6% of the estimated shortage.">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ECOBICI: dónde faltan bicicletas y a qué hora · Isaac Martínez Ríos</title>
+  <meta name="description" content="Caso de estudio: demanda por estación y hora con 4.46 millones de viajes de ECOBICI, y un rebalanceo que evitaría cerca del 22.6 % del desabasto estimado.">
+  <link rel="canonical" href="https://isaacmartinez.space/proyectos/ecobici/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ECOBICI: dónde faltan bicicletas y a qué hora">
+  <meta property="og:description" content="Qué estaciones se vacían, a qué hora, y cuántas bicicletas mover.">
+  <meta property="og:url" content="https://isaacmartinez.space/proyectos/ecobici/">
+  <meta property="og:image" content="https://isaacmartinez.space/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f4f0">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="es"&&l!=="en"){l=(navigator.language||"es").slice(0,2)==="en"?"en":"es"}document.documentElement.lang=l})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0244QQM6F0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-0244QQM6F0");</script>
+</head>
+<body>
+  <a class="skip" href="#main"><span lang="es">Ir al contenido</span><span lang="en">Skip to content</span></a>
+
+  <header class="masthead">
+    <div class="wrap">
+      <a class="masthead__name" href="/">Isaac Martínez Ríos</a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="/#casos" aria-current="page"><span lang="es">Casos</span><span lang="en">Case studies</span></a></li>
+          <li><a href="/#archivo"><span lang="es">Archivo</span><span lang="en">Archive</span></a></li>
+          <li><a href="/#sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About</span></a></li>
+          <li><a href="/#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a></li>
+        </ul>
+      </nav>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es" aria-pressed="true" title="Español">ES</button>
+        <button type="button" data-set-lang="en" aria-pressed="false" title="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="report-head">
+      <div class="wrap">
+        <p class="crumbs"><a href="/#casos"><span lang="es">← Casos de estudio</span><span lang="en">← Case studies</span></a></p>
+        <h1><span lang="es">ECOBICI: dónde faltan bicicletas y a qué hora</span><span lang="en">ECOBICI: where bikes run out, and when</span></h1>
+        <p class="report-head__dek" lang="es">¿Qué estaciones se quedan sin bicicletas, en qué días y horas, y cuántas bicicletas convendría mover, y desde dónde, para reducir el desabasto?</p>
+        <p class="report-head__dek" lang="en">Which stations run out of bikes, on which days and at what hours, and how many bikes should be moved, and from where, to reduce shortages?</p>
+      </div>
+    </header>
+
+    <div class="wrap report">
+      <aside class="report__aside">
+        <div>
+          <dl>
+            <div><dt lang="es">Datos</dt><dt lang="en">Data</dt>
+              <dd lang="es">Histórico abierto de ECOBICI: 4,464,138 viajes en 679 estaciones, jul–sep 2026</dd>
+              <dd lang="en">ECOBICI open trip history: 4,464,138 trips across 679 stations, Jul–Sep 2026</dd></div>
+            <div><dt lang="es">Disponibilidad</dt><dt lang="en">Availability</dt>
+              <dd lang="es">Feed GBFS en tiempo real, una captura del 7 oct 2026</dd>
+              <dd lang="en">Real-time GBFS feed, one snapshot from Oct 7, 2026</dd></div>
+            <div><dt>Stack</dt><dd>Python · DuckDB · LightGBM · Streamlit · pytest · GitHub Actions</dd></div>
+          </dl>
+          <a class="btn btn--primary" href="https://isaacmartinez.space/ecobici/"><span lang="es">Sitio del análisis</span><span lang="en">Analysis site</span></a>
+          <a class="btn" href="https://ecobici-bjwzsw9juhdpbjl6ht2xbt.streamlit.app/"><span lang="es">App en Streamlit</span><span lang="en">Streamlit app</span></a>
+          <a class="btn" href="https://github.com/isaacmartinez23/ecobici"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span></a>
+        </div>
+      </aside>
+
+      <article class="report__main">
+        <section>
+          <h2><span lang="es">Respuesta corta</span><span lang="en">Short answer</span></h2>
+          <p class="answer" lang="es">La demanda tiene dos picos entre semana, a las <strong>8:00</strong> y de <strong>17:00 a 18:00</strong>, y se concentra en estaciones que se vacían de forma sistemática. Con el rebalanceo propuesto se evitaría <strong>cerca del 22.6 % del desabasto estimado</strong> en la ventana evaluada.</p>
+          <p class="answer" lang="en">Demand has two weekday peaks, at <strong>8:00</strong> and from <strong>17:00 to 18:00</strong>, and it concentrates in stations that empty out systematically. The proposed rebalancing would avoid <strong>about 22.6% of the estimated shortage</strong> in the evaluated window.</p>
+
+          <figure class="fig">
+            <div class="fig__plate" data-chart="stations"
+              data-label-es="Mapa de 537 estaciones de ECOBICI coloreadas por su balance de viajes."
+              data-label-en="Map of 537 ECOBICI stations colored by their trip balance."></div>
+            <p class="fig__readout" aria-live="polite"></p>
+            <figcaption>
+              <span lang="es"><b>Figura 1.</b> Balance de viajes por estación, julio a septiembre de 2026. En azul, las que pierden bicicletas; en ocre, las que las acumulan y pueden donarlas. Solo aparecen las 537 estaciones que se pudieron emparejar con el feed GBFS.</span>
+              <span lang="en"><b>Figure 1.</b> Trip balance by station, July to September 2026. Blue stations lose bikes; ochre ones pile them up and can donate them. Only the 537 stations that could be matched to the GBFS feed are shown.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2><span lang="es">Lo que encontré</span><span lang="en">What I found</span></h2>
+          <ol class="findings" lang="es">
+            <li><strong>Dos picos entre semana:</strong> a las 8:00 (unas 5.9 salidas por estación y hora) y de 17:00 a 18:00 (5.6–5.8). El fin de semana la demanda cae cerca de 30 %.</li>
+            <li><strong>Las estaciones que más se vacían</strong> incluyen CE-278 Mier y Pesado–Obrero Mundial, CE-703 Miguel Hidalgo–Calzada General Anaya, CE-294 Nicolás San Juan–Eje 4 Sur Xola y CE-540 Eucalipto–Ricardo Flores Magón.</li>
+            <li><strong>El modelo supera a la línea base, sobre todo en errores grandes y en sesgo.</strong> El RMSE baja 7.7 % y el sesgo pasa de −0.259 a −0.010: deja de subestimar la demanda. En horas pico el RMSE baja de 3.77 a 3.43.</li>
+            <li><strong>El rebalanceo es concreto:</strong> 117 movimientos y 594 bicicletas, de 96 estaciones donantes a 314 receptoras. El déficit estimado baja de 886.5 a 686.0 bicicletas, sin dejar a ninguna donante por debajo de su nivel de seguridad.</li>
+            <li><strong>El histórico es de muy buena calidad:</strong> solo se descartó el 0.044 % de los viajes (1,963), por duraciones fuera de rango. No hay duplicados ni fechas inválidas.</li>
+          </ol>
+          <ol class="findings" lang="en">
+            <li><strong>Two weekday peaks:</strong> at 8:00 (about 5.9 departures per station per hour) and from 17:00 to 18:00 (5.6–5.8). On weekends demand drops by about 30%.</li>
+            <li><strong>The stations that drain the most</strong> include CE-278 Mier y Pesado–Obrero Mundial, CE-703 Miguel Hidalgo–Calzada General Anaya, CE-294 Nicolás San Juan–Eje 4 Sur Xola and CE-540 Eucalipto–Ricardo Flores Magón.</li>
+            <li><strong>The model beats the baseline, mostly on large errors and bias.</strong> RMSE drops 7.7% and bias goes from −0.259 to −0.010: it stops underestimating demand. At peak hours RMSE falls from 3.77 to 3.43.</li>
+            <li><strong>The rebalancing is concrete:</strong> 117 moves and 594 bikes, from 96 donor stations to 314 receivers. The estimated deficit drops from 886.5 to 686.0 bikes, without pushing any donor below its safety level.</li>
+            <li><strong>The trip history is very clean:</strong> only 0.044% of trips (1,963) were discarded, for out-of-range durations. No duplicates or invalid dates.</li>
+          </ol>
+
+          <figure class="fig">
+            <ul class="legend"></ul>
+            <div class="fig__plate" data-chart="hourly"
+              data-label-es="Salidas y llegadas promedio por estación y hora: picos a las 8:00 y entre 17:00 y 18:00."
+              data-label-en="Average departures and arrivals per station per hour: peaks at 8:00 and between 17:00 and 18:00."></div>
+            <p class="fig__readout" aria-live="polite"></p>
+            <figcaption>
+              <span lang="es"><b>Figura 2.</b> Viajes promedio por estación en cada hora del día. Las franjas sombreadas marcan los picos.</span>
+              <span lang="en"><b>Figure 2.</b> Average trips per station for each hour of the day. Shaded bands mark the peaks.</span>
+            </figcaption>
+          </figure>
+
+          <table class="metrics">
+            <caption class="visually-hidden"><span lang="es">Modelo contra línea base</span><span lang="en">Model versus baseline</span></caption>
+            <thead><tr>
+              <th scope="col"><span lang="es">Métrica (prueba: 12–30 sep 2026)</span><span lang="en">Metric (test: Sep 12–30, 2026)</span></th>
+              <th scope="col" class="num"><span lang="es">Línea base</span><span lang="en">Baseline</span></th>
+              <th scope="col" class="num"><span lang="es">Modelo</span><span lang="en">Model</span></th>
+              <th scope="col" class="num"><span lang="es">Cambio</span><span lang="en">Change</span></th>
+            </tr></thead>
+            <tbody>
+              <tr><td><span lang="es">MAE (salidas por hora)</span><span lang="en">MAE (departures per hour)</span></td><td class="num">1.534</td><td class="num">1.501</td><td class="num">−2.2 %</td></tr>
+              <tr><td>RMSE</td><td class="num">2.745</td><td class="num">2.535</td><td class="num"><strong>−7.7 %</strong></td></tr>
+              <tr><td>WAPE</td><td class="num">0.508</td><td class="num">0.497</td><td class="num">−1.1 pp</td></tr>
+              <tr><td><span lang="es">Sesgo medio</span><span lang="en">Mean bias</span></td><td class="num">−0.259</td><td class="num"><strong>−0.010</strong></td><td class="num"><span lang="es">casi insesgado</span><span lang="en">nearly unbiased</span></td></tr>
+            </tbody>
+          </table>
+          <p lang="es">La partición es temporal y la prueba tiene 300,560 observaciones estación-hora.</p>
+          <p lang="en">The split is temporal and the test set has 300,560 station-hour observations.</p>
+        </section>
+
+        <section>
+          <h2><span lang="es">Cómo lo construí</span><span lang="en">How I built it</span></h2>
+          <ol class="pipeline">
+            <li lang="es"><b>Ingesta</b>Descarga y normalización del histórico, más un colector del feed GBFS.</li>
+            <li lang="en"><b>Ingestion</b>Download and normalization of the trip history, plus a GBFS feed collector.</li>
+            <li lang="es"><b>Transformación</b>Capas en DuckDB: demanda y disponibilidad por estación y hora.</li>
+            <li lang="en"><b>Transformation</b>DuckDB layers: demand and availability per station and hour.</li>
+            <li lang="es"><b>Modelado</b>Línea base estadística y un modelo de gradient boosting (LightGBM).</li>
+            <li lang="en"><b>Modeling</b>A statistical baseline and a gradient boosting model (LightGBM).</li>
+            <li lang="es"><b>Rebalanceo</b>Empareja donantes y receptoras cercanas respetando niveles de seguridad.</li>
+            <li lang="en"><b>Rebalancing</b>Pairs nearby donors and receivers while respecting safety levels.</li>
+            <li lang="es"><b>Interfaz</b>Sitio estático con datos reales y app en Streamlit con datos de muestra.</li>
+            <li lang="en"><b>Interface</b>A static site with real data and a Streamlit app with sample data.</li>
+          </ol>
+          <p lang="es">Todo el sistema tiene pruebas y CI. Las cifras reales se reproducen descargando el histórico y corriendo <code>run_pipeline.py --full</code>.</p>
+          <p lang="en">The whole system has tests and CI. The real figures are reproduced by downloading the history and running <code>run_pipeline.py --full</code>.</p>
+
+          <figure class="fig">
+            <div class="fig__plate" data-chart="dow"
+              data-label-es="Salidas promedio por estación y hora según el día de la semana: de 4.3 a 4.65 entre semana y de 3.1 a 3.3 el fin de semana."
+              data-label-en="Average departures per station per hour by day of week: 4.3 to 4.65 on weekdays and 3.1 to 3.3 on weekends."></div>
+            <figcaption>
+              <span lang="es"><b>Figura 3.</b> Salidas promedio por estación y hora, según el día de la semana.</span>
+              <span lang="en"><b>Figure 3.</b> Average departures per station per hour, by day of week.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2><span lang="es">Lo que no se puede afirmar</span><span lang="en">What this can't claim</span></h2>
+          <ul class="limits" lang="es">
+            <li>Los viajes son demanda atendida. Cuando una estación ya está vacía, los intentos frustrados no se observan, así que en las estaciones que más se vacían la demanda real está subestimada.</li>
+            <li>La disponibilidad viene de una sola captura del feed GBFS. Todavía no permite medir "minutos sin bicicletas" ni validar faltantes reales; hacen falta capturas cada 5 minutos.</li>
+            <li>El emparejamiento de estaciones cubre el 79 % de las estaciones y el 54.7 % de los viajes, así que el mapa y el rebalanceo se limitan a esa cobertura.</li>
+            <li>El modelo no incorpora clima, tráfico ni costo de traslado, y el rebalanceo no modela rutas, tiempos ni capacidad de los vehículos.</li>
+          </ul>
+          <ul class="limits" lang="en">
+            <li>Trips are served demand. When a station is already empty, failed attempts aren't observed, so true demand at the most-drained stations is underestimated.</li>
+            <li>Availability comes from a single GBFS snapshot. It can't yet measure "minutes without bikes" or validate real shortages; that needs snapshots every 5 minutes.</li>
+            <li>Station matching covers 79% of stations and 54.7% of trips, so the map and the rebalancing are limited to that coverage.</li>
+            <li>The model ignores weather, traffic and moving costs, and the rebalancing doesn't model routes, timing or vehicle capacity.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+
+    <nav class="wrap next" aria-label="Más casos">
+      <a href="/proyectos/canasta-qqp/"><span lang="es">Caso anterior</span><span lang="en">Previous case</span><b lang="es">Precios de la canasta QQP</b><b lang="en">The QQP food basket</b></a>
+      <a href="/proyectos/demanda-inventario/"><span lang="es">Siguiente caso</span><span lang="en">Next case</span><b lang="es">Pronóstico de demanda y política de inventario</b><b lang="en">Demand forecasting and inventory policy</b></a>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Isaac Martínez Ríos · <a href="mailto:isaac.amr15@gmail.com">isaac.amr15@gmail.com</a> · <a href="https://www.linkedin.com/in/isaacmartinez23/">LinkedIn</a></span>
+      <span lang="es">Cifras tomadas del <a href="https://github.com/isaacmartinez23/ecobici/blob/main/reports/memo.md">memo ejecutivo</a> del repositorio.</span>
+      <span lang="en">Figures taken from the repository's <a href="https://github.com/isaacmartinez23/ecobici/blob/main/reports/memo.md">executive memo</a> (in Spanish).</span>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

@@ -1,65 +1,41 @@
-## 📊 Portafolio de Análisis de Datos - Isaac Martínez
+# Portafolio · Isaac Martínez Ríos
 
-Bienvenido a mi portafolio personal de análisis de datos. Este sitio web presenta una colección completa de proyectos y trabajos que he realizado utilizando diversas herramientas y técnicas de análisis de datos.
+Sitio en vivo: <https://isaacmartinez.space>
 
-## 🌐 Visita el Sitio
+Portafolio bilingüe (español / inglés) con tres casos de estudio de análisis y ciencia de datos:
 
-Puedes ver el portafolio en vivo en: [https://isaacmartinez.space](https://isaacmartinez23.github.io)
+- [Pronóstico de demanda y política de inventario](https://isaacmartinez.space/proyectos/demanda-inventario/)
+- [Precios de la canasta QQP (PROFECO)](https://isaacmartinez.space/proyectos/canasta-qqp/)
+- [ECOBICI: dónde faltan bicicletas y a qué hora](https://isaacmartinez.space/proyectos/ecobici/)
 
-## 🛠️ Tecnologías Utilizadas
+Además incluye un archivo de dashboards anteriores (Tableau y Looker Studio), la formación y el contacto.
 
-- **HTML (69.0%)** - Estructura del sitio web
-- **JavaScript (15.6%)** - Interactividad y funcionalidades dinámicas
-- **CSS (15.4%)** - Diseño y estilos visuales
-
-## 📁 Estructura del Proyecto
+## Estructura
 
 ```
-isaacmartinez23.github.io/
-├── assets/          # Recursos multimedia (imágenes, iconos, etc.)
-├── css/             # Archivos de estilos
-├── js/              # Scripts de JavaScript
-├── index.html       # Página principal
-├── sobre_mi.html    # Sección "Sobre mí"
-├── proyectos.html   # Portafolio de proyectos
-├── contacto.html    # Formulario de contacto
-└── [otras páginas]  # Páginas especializadas por categoría
-
+index.html                   Inicio: portada, casos, método, archivo, sobre mí, contacto
+proyectos/<caso>/index.html  Un caso de estudio por proyecto
+css/site.css                 Estilos y tokens de diseño
+js/site.js                   Selector de idioma y gráficas en SVG
+data/figures.json            Datos de las gráficas, extraídos de cada repositorio
+assets/img/                  Imágenes optimizadas (WebP) e imagen para redes (og.png)
+sobre_mi.html, proyectos.html, contacto.html   Redirecciones de las URLs anteriores
+PRODUCT.md, DESIGN.md        Contexto del producto y sistema visual
 ```
 
-## 📂 Secciones del Portafolio
+Es HTML, CSS y JavaScript sin dependencias ni paso de compilación. Para verlo en local:
 
-- **Análisis de Datos** - Proyectos de análisis exploratorio y visualizaciones
-- **Business Intelligence** - Dashboards y reportes
-- **Bases de Datos** - Diseño y gestión de bases de datos
-- **Python** - Proyectos de programación y automatización
-- **Excel** - Análisis avanzados en hojas de cálculo
-- **Estadística** - Aplicaciones de métodos estadísticos
-- **Inteligencia Artificial** - Proyectos de ML y AI
-- **Marketing** - Análisis de datos de marketing
-- **Automatización** - Soluciones de automatización de procesos
-- **Administración** - Proyectos de gestión y administración
+```bash
+python -m http.server 8765
+```
 
-## 🚀 Características
+## Idiomas
 
-- Diseño responsive y moderno
-- Navegación intuitiva entre proyectos
-- Portafolio organizado por categorías
-- Sección de contacto para colaboraciones
-- Optimizado para diferentes dispositivos
+Cada texto aparece dos veces, con `lang="es"` y `lang="en"`. El botón ES/EN cambia el idioma y guarda la elección en el navegador. Si no hay una elección guardada, se usa el idioma del navegador.
 
-## 💼 Sobre Mí
+## Dashboards de los proyectos
 
-Soy un profesional de análisis de datos apasionado por convertir datos en insights accionables. Este portafolio refleja mi experiencia y habilidades en diversas herramientas y técnicas de análisis.
-
-## 📧 Contacto
-
-Si estás interesado en colaborar o tienes alguna pregunta, no dudes en contactarme a través de la sección de contacto del sitio web.
-
-## 📄 Licencia
-
-Este proyecto es de código abierto y está disponible para consulta y aprendizaje.
-
----
-
-*Desarrollado con ❤️ por Isaac Martínez*
+Los dashboards en vivo se publican desde sus propios repositorios en
+[`/Pronostico-de-Demanda-y-Politica-de-Inventario/`](https://isaacmartinez.space/Pronostico-de-Demanda-y-Politica-de-Inventario/),
+[`/analisis_profeco/`](https://isaacmartinez.space/analisis_profeco/) y
+[`/ecobici/`](https://isaacmartinez.space/ecobici/).

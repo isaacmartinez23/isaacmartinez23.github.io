@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es"
+  data-title-es="Precios de la canasta QQP · Isaac Martínez Ríos"
+  data-title-en="The QQP food basket · Isaac Martínez Ríos"
+  data-desc-es="Caso de estudio: pipeline reproducible con 35.6 millones de precios de PROFECO. Elegir bien la tienda vale entre 48 y 64 pesos por canasta y semana."
+  data-desc-en="Case study: a reproducible pipeline over 35.6 million PROFECO prices. Picking the right store is worth 48 to 64 pesos per basket per week.">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Precios de la canasta QQP · Isaac Martínez Ríos</title>
+  <meta name="description" content="Caso de estudio: pipeline reproducible con 35.6 millones de precios de PROFECO. Elegir bien la tienda vale entre 48 y 64 pesos por canasta y semana.">
+  <link rel="canonical" href="https://isaacmartinez.space/proyectos/canasta-qqp/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Precios de la canasta QQP">
+  <meta property="og:description" content="Cuánto cuesta la misma canasta en cada cadena, y cuánto se ahorra al elegir bien.">
+  <meta property="og:url" content="https://isaacmartinez.space/proyectos/canasta-qqp/">
+  <meta property="og:image" content="https://isaacmartinez.space/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f4f0">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="es"&&l!=="en"){l=(navigator.language||"es").slice(0,2)==="en"?"en":"es"}document.documentElement.lang=l})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0244QQM6F0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-0244QQM6F0");</script>
+</head>
+<body>
+  <a class="skip" href="#main"><span lang="es">Ir al contenido</span><span lang="en">Skip to content</span></a>
+
+  <header class="masthead">
+    <div class="wrap">
+      <a class="masthead__name" href="/">Isaac Martínez Ríos</a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="/#casos" aria-current="page"><span lang="es">Casos</span><span lang="en">Case studies</span></a></li>
+          <li><a href="/#archivo"><span lang="es">Archivo</span><span lang="en">Archive</span></a></li>
+          <li><a href="/#sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About</span></a></li>
+          <li><a href="/#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a></li>
+        </ul>
+      </nav>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es" aria-pressed="true" title="Español">ES</button>
+        <button type="button" data-set-lang="en" aria-pressed="false" title="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="report-head">
+      <div class="wrap">
+        <p class="crumbs"><a href="/#casos"><span lang="es">← Casos de estudio</span><span lang="en">← Case studies</span></a></p>
+        <h1><span lang="es">Precios de la canasta QQP</span><span lang="en">The QQP food basket</span></h1>
+        <p class="report-head__dek" lang="es">¿Cuánto cuesta la misma canasta de 16 alimentos en distintas cadenas y municipios, y cuánto puede ahorrar una familia al elegir bien la tienda?</p>
+        <p class="report-head__dek" lang="en">How much does the same 16-item food basket cost across chains and cities, and how much can a household save by picking the right store?</p>
+      </div>
+    </header>
+
+    <div class="wrap report">
+      <aside class="report__aside">
+        <div>
+          <dl>
+            <div><dt lang="es">Fuente</dt><dt lang="en">Source</dt>
+              <dd lang="es">Quién es Quién en los Precios, PROFECO (datos abiertos)</dd>
+              <dd lang="en">PROFECO's "Quién es Quién en los Precios" (open data)</dd></div>
+            <div><dt lang="es">Periodo</dt><dt lang="en">Period</dt>
+              <dd lang="es">8 ene 2024 – 27 jul 2026, 135 semanas</dd>
+              <dd lang="en">Jan 8, 2024 – Jul 27, 2026, 135 weeks</dd></div>
+            <div><dt lang="es">Cobertura</dt><dt lang="en">Coverage</dt>
+              <dd lang="es">35.6 M de precios en 75 municipios de 30 estados</dd>
+              <dd lang="en">35.6 M prices in 75 cities across 30 states</dd></div>
+            <div><dt>Stack</dt><dd>Python 3.12 · DuckDB · dbt · PostgreSQL (Supabase) · GitHub Actions · pytest · Looker Studio</dd></div>
+          </dl>
+          <a class="btn btn--primary" href="https://isaacmartinez.space/analisis_profeco/"><span lang="es">Dashboard en vivo</span><span lang="en">Live dashboard</span></a>
+          <a class="btn" href="https://github.com/isaacmartinez23/analisis_profeco"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span></a>
+        </div>
+      </aside>
+
+      <article class="report__main">
+        <section>
+          <h2><span lang="es">Respuesta corta</span><span lang="en">Short answer</span></h2>
+          <p class="answer" lang="es">Elegir bien la tienda vale <strong>entre 48 y 64 pesos por canasta y semana</strong>, según cuántas cadenas compitan en el municipio: 6.7 % del costo con dos cadenas y 8.8 % donde están las cuatro. Cinco productos frescos explican el 73 % de esa diferencia.</p>
+          <p class="answer" lang="en">Picking the right store is worth <strong>48 to 64 pesos per basket per week</strong>, depending on how many chains compete in the city: 6.7% of the cost with two chains and 8.8% where all four are present. Five fresh items explain 73% of that gap.</p>
+
+          <figure class="fig">
+            <div class="fig__plate" data-chart="basket"
+              data-label-es="Costo mediano de la canasta por cadena: Chedraui 663.94, Bodega Aurrera 693.09, Soriana Híper 703.03, Wal-mart 713.11 pesos."
+              data-label-en="Median basket cost by chain: Chedraui 663.94, Bodega Aurrera 693.09, Soriana Híper 703.03, Wal-mart 713.11 pesos."></div>
+            <p class="fig__readout"></p>
+            <figcaption>
+              <span lang="es"><b>Figura 1.</b> Costo mediano histórico de la canasta por cadena, en pesos. La distancia entre la más barata y la más cara se mantiene estable en el tiempo: no es efecto de una promoción puntual.</span>
+              <span lang="en"><b>Figure 1.</b> Median historical basket cost by chain, in pesos. The gap between the cheapest and the most expensive chain is stable over time: it is not the effect of a one-off promotion.</span>
+              <span class="fig__source" lang="es">Fuente: PROFECO. Comparaciones pareadas: misma canasta, mismo municipio, misma semana.</span>
+              <span class="fig__source" lang="en">Source: PROFECO. Paired comparisons: same basket, same city, same week.</span>
+            </figcaption>
+          </figure>
+
+          <table class="metrics">
+            <thead><tr>
+              <th scope="col"><span lang="es">Escenario</span><span lang="en">Scenario</span></th>
+              <th scope="col" class="num"><span lang="es">Municipio-semanas</span><span lang="en">City-weeks</span></th>
+              <th scope="col" class="num"><span lang="es">Ahorro mediano</span><span lang="en">Median saving</span></th>
+              <th scope="col" class="num">p90</th>
+            </tr></thead>
+            <tbody>
+              <tr><td><span lang="es">Todas las celdas comparables</span><span lang="en">All comparable cells</span></td><td class="num">5,630</td><td class="num"><strong>$48.08</strong> (6.7 %)</td><td class="num">$92.60</td></tr>
+              <tr><td><span lang="es">Municipios con las 4 cadenas</span><span lang="en">Cities with all 4 chains</span></td><td class="num">801</td><td class="num"><strong>$64.03</strong> (8.8 %)</td><td class="num">$105.22</td></tr>
+              <tr><td><span lang="es">Solo entre grupos distintos</span><span lang="en">Only across different groups</span></td><td class="num">5,352</td><td class="num">$49.52 (6.9 %)</td><td class="num">$93.35</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2><span lang="es">Lo que encontré</span><span lang="en">What I found</span></h2>
+          <ol class="findings" lang="es">
+            <li><strong>Chedraui es la más barata en 7 de cada 10 municipio-semanas</strong> donde está presente. Wal-mart es la más cara del grupo comparado: cambiarse desde ahí equivale a unos 1,665 pesos al año.</li>
+            <li><strong>Importa más dónde se compra dentro de la ciudad que en qué ciudad.</strong> Entre municipios las diferencias son chicas: el más barato y el más caro se separan menos de 6 puntos del nivel nacional (Boca del Río 97.1, La Paz 102.7).</li>
+            <li><strong>Por peso en el bolsillo manda la carne; por diferencia relativa, los frescos.</strong> La milanesa aporta la quinta parte de la diferencia con un sobreprecio de apenas 7.5 %, porque es el artículo más caro. Limón, jitomate y cebolla llegan a costar entre 34 % y 41 % más según la tienda, en la misma ciudad y la misma semana.</li>
+            <li><strong>La canasta bajó al cierre del periodo.</strong> El índice de panel fijo se movió entre 95.6 y 104.0 durante dos años y medio. Tras el pico de abril de 2026 bajó a 96.8 en julio, alrededor de 7 % menos, en plena temporada de frescos.</li>
+            <li><strong>Un sobreprecio que no es precio.</strong> La pasta para sopa tiene el sobreprecio mediano más alto (106.5 %), pero ahí se compara marca propia contra marca comercial, así que no lo trato como diferencia de precio.</li>
+          </ol>
+          <ol class="findings" lang="en">
+            <li><strong>Chedraui is the cheapest in 7 out of 10 city-weeks</strong> where it is present. Wal-mart is the most expensive of the group: switching away from it is worth about 1,665 pesos a year.</li>
+            <li><strong>Where you shop within a city matters more than which city.</strong> Differences between cities are small: the cheapest and the most expensive sit less than 6 points from the national level (Boca del Río 97.1, La Paz 102.7).</li>
+            <li><strong>In pesos, meat dominates; in relative terms, fresh produce does.</strong> Beef cutlet makes up a fifth of the gap with a markup of only 7.5%, because it is the priciest item. Lime, tomato and onion cost 34% to 41% more depending on the store, in the same city and the same week.</li>
+            <li><strong>The basket got cheaper at the end of the period.</strong> The fixed-panel index stayed between 95.6 and 104.0 for two and a half years. After the April 2026 peak it fell to 96.8 in July, about 7% lower, in the middle of the fresh-produce season.</li>
+            <li><strong>A markup that isn't a price.</strong> Soup pasta has the highest median markup (106.5%), but it compares store brand against name brand, so I don't treat it as a price gap.</li>
+          </ol>
+
+          <figure class="fig">
+            <div class="fig__plate" data-chart="products"
+              data-label-es="Participación en la diferencia total entre cadenas: milanesa 20.6 %, limón 17.2 %, jitomate 13.1 %, cebolla 12.3 %, papa 9.9 %."
+              data-label-en="Share of the total gap between chains: beef cutlet 20.6%, lime 17.2%, tomato 13.1%, onion 12.3%, potato 9.9%."></div>
+            <figcaption>
+              <span lang="es"><b>Figura 2.</b> Los cinco productos que más explican la diferencia de costo entre cadenas. Juntos suman el 73 %.</span>
+              <span lang="en"><b>Figure 2.</b> The five items that explain most of the cost gap between chains. Together they add up to 73%.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2><span lang="es">Cómo lo construí</span><span lang="en">How I built it</span></h2>
+          <ol class="pipeline">
+            <li lang="es"><b>Ingesta</b>Archivos abiertos de PROFECO a DuckDB, con contrato de datos.</li>
+            <li lang="en"><b>Ingestion</b>PROFECO open files into DuckDB, with a data contract.</li>
+            <li lang="es"><b>Normalización</b>Productos y presentaciones comparables entre tiendas.</li>
+            <li lang="en"><b>Normalization</b>Products and package sizes made comparable across stores.</li>
+            <li lang="es"><b>Modelo</b>Esquema estrella en dbt con pruebas en cada capa.</li>
+            <li lang="en"><b>Model</b>Star schema in dbt with tests at every layer.</li>
+            <li lang="es"><b>Validación</b>Recálculo independiente desde el dato crudo: 24 de 24 coinciden.</li>
+            <li lang="en"><b>Validation</b>Independent recomputation from raw data: 24 out of 24 match.</li>
+            <li lang="es"><b>Publicación</b>Cuatro marts y un dashboard que GitHub Actions regenera en cada ejecución.</li>
+            <li lang="en"><b>Publishing</b>Four marts and a dashboard that GitHub Actions rebuilds on every run.</li>
+          </ol>
+          <p lang="es"><strong>Cuando la fuente falló, el pipeline hizo lo correcto.</strong> En octubre de 2026 PROFECO reorganizó su catálogo de datos abiertos: los enlaces anteriores devuelven 404 y los archivos de la ruta nueva llegan truncados a media lectura. El pipeline, que revisa el origen el día 1 de cada mes, se detiene en el primer paso y no publica nada a medias. Cuando el origen vuelva a publicar archivos completos, la siguiente ejecución los incorpora sola.</p>
+          <p lang="en"><strong>When the source broke, the pipeline did the right thing.</strong> In October 2026 PROFECO reorganized its open data catalog: the old links return 404 and files on the new path are truncated mid-read. The pipeline, which checks the source on the 1st of every month, stops at the first step and publishes nothing half-done. Once the source serves complete files again, the next run picks them up on its own.</p>
+
+          <figure class="fig">
+            <img class="fig__shot" src="/assets/img/canasta-dashboard.webp" width="1440" height="1640" loading="lazy"
+              alt="Página de resumen del dashboard de la canasta PROFECO con el costo por cadena y su evolución semanal">
+            <figcaption>
+              <span lang="es"><b>Figura 3.</b> Resumen del dashboard, con datos al 31 de julio de 2026. Tiene seis páginas: resumen, costo por cadena, ahorro, productos, cobertura y disponibilidad.</span>
+              <span lang="en"><b>Figure 3.</b> Dashboard summary, with data through July 31, 2026. It has six pages: summary, cost by chain, savings, products, coverage and availability.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2><span lang="es">Lo que no se puede afirmar</span><span lang="en">What this can't claim</span></h2>
+          <ul class="limits" lang="es">
+            <li>La canasta es genérica: cada artículo es la mediana de cualquier marca comparable, así que parte de la diferencia refleja la mezcla de marcas de cada cadena.</li>
+            <li>Las cantidades son la presentación más frecuente, no el consumo de un hogar. El costo es un índice comparable, no el gasto real de una familia.</li>
+            <li>En la mediana de las celdas, cada cadena está representada por una tienda y un día de levantamiento por semana.</li>
+            <li>24 de los 75 municipios nunca tienen dos cadenas completas la misma semana, así que el ahorro se estima sobre 51.</li>
+            <li>Los datos más recientes tienen 47 días de rezago respecto a la publicación de PROFECO.</li>
+          </ul>
+          <ul class="limits" lang="en">
+            <li>The basket is generic: each item is the median of any comparable brand, so part of the gap reflects each chain's brand mix.</li>
+            <li>Quantities are the most common package size, not a household's consumption. The cost is a comparable index, not what a family actually spends.</li>
+            <li>In the median cell, each chain is represented by one store and one collection day per week.</li>
+            <li>24 of the 75 cities never have two complete chains in the same week, so savings are estimated over 51.</li>
+            <li>The latest data lags PROFECO's publication by 47 days.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+
+    <nav class="wrap next" aria-label="Más casos">
+      <a href="/proyectos/demanda-inventario/"><span lang="es">Caso anterior</span><span lang="en">Previous case</span><b lang="es">Pronóstico de demanda y política de inventario</b><b lang="en">Demand forecasting and inventory policy</b></a>
+      <a href="/proyectos/ecobici/"><span lang="es">Siguiente caso</span><span lang="en">Next case</span><b lang="es">ECOBICI: dónde faltan bicicletas y a qué hora</b><b lang="en">ECOBICI: where bikes run out, and when</b></a>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Isaac Martínez Ríos · <a href="mailto:isaac.amr15@gmail.com">isaac.amr15@gmail.com</a> · <a href="https://www.linkedin.com/in/isaacmartinez23/">LinkedIn</a></span>
+      <span lang="es">Cifras tomadas del <a href="https://github.com/isaacmartinez23/analisis_profeco/blob/main/reports/memo_ejecutivo.md">memo ejecutivo</a> del repositorio.</span>
+      <span lang="en">Figures taken from the repository's <a href="https://github.com/isaacmartinez23/analisis_profeco/blob/main/reports/memo_ejecutivo.md">executive memo</a> (in Spanish).</span>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

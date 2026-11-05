@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es"
+  data-title-es="Pronóstico de demanda y política de inventario · Isaac Martínez Ríos"
+  data-title-en="Demand forecasting and inventory policy · Isaac Martínez Ríos"
+  data-desc-es="Caso de estudio: pronóstico de demanda por producto con LightGBM y su traducción a safety stock, punto de reorden y simulación. 14 % menos inventario a igual nivel de servicio."
+  data-desc-en="Case study: per-product demand forecasting with LightGBM turned into safety stock, reorder points and simulation. 14% less inventory at the same service level.">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pronóstico de demanda y política de inventario · Isaac Martínez Ríos</title>
+  <meta name="description" content="Caso de estudio: pronóstico de demanda por producto con LightGBM y su traducción a safety stock, punto de reorden y simulación. 14 % menos inventario a igual nivel de servicio.">
+  <link rel="canonical" href="https://isaacmartinez.space/proyectos/demanda-inventario/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Pronóstico de demanda y política de inventario">
+  <meta property="og:description" content="Del pronóstico a la decisión: 14 % menos inventario con el mismo nivel de servicio.">
+  <meta property="og:url" content="https://isaacmartinez.space/proyectos/demanda-inventario/">
+  <meta property="og:image" content="https://isaacmartinez.space/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f4f0">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="es"&&l!=="en"){l=(navigator.language||"es").slice(0,2)==="en"?"en":"es"}document.documentElement.lang=l})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0244QQM6F0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-0244QQM6F0");</script>
+</head>
+<body>
+  <a class="skip" href="#main"><span lang="es">Ir al contenido</span><span lang="en">Skip to content</span></a>
+
+  <header class="masthead">
+    <div class="wrap">
+      <a class="masthead__name" href="/">Isaac Martínez Ríos</a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="/#casos" aria-current="page"><span lang="es">Casos</span><span lang="en">Case studies</span></a></li>
+          <li><a href="/#archivo"><span lang="es">Archivo</span><span lang="en">Archive</span></a></li>
+          <li><a href="/#sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About</span></a></li>
+          <li><a href="/#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a></li>
+        </ul>
+      </nav>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es" aria-pressed="true" title="Español">ES</button>
+        <button type="button" data-set-lang="en" aria-pressed="false" title="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="report-head">
+      <div class="wrap">
+        <p class="crumbs"><a href="/#casos"><span lang="es">← Casos de estudio</span><span lang="en">← Case studies</span></a></p>
+        <h1><span lang="es">Pronóstico de demanda y política de inventario</span><span lang="en">Demand forecasting and inventory policy</span></h1>
+        <p class="report-head__dek" lang="es">¿Cuánto vamos a vender de cada producto en las próximas cuatro semanas, y cuánto inventario hace falta para cumplir un 95 % de nivel de servicio sin sobre-stock?</p>
+        <p class="report-head__dek" lang="en">How much of each product will we sell over the next four weeks, and how much inventory do we need to hit a 95% service level without overstocking?</p>
+      </div>
+    </header>
+
+    <div class="wrap report">
+      <aside class="report__aside">
+        <div>
+          <dl>
+            <div><dt lang="es">Datos</dt><dt lang="en">Data</dt>
+              <dd lang="es">M5 Forecasting (Walmart), categoría FOODS de la tienda CA_1: 1,429 productos, 2011–2016</dd>
+              <dd lang="en">M5 Forecasting (Walmart), FOODS category at store CA_1: 1,429 products, 2011–2016</dd></div>
+            <div><dt lang="es">Evaluación</dt><dt lang="en">Evaluation</dt>
+              <dd lang="es">3 ventanas móviles de 28 días, feb–may 2016, con reentrenamiento</dd>
+              <dd lang="en">3 rolling 28-day windows, Feb–May 2016, with retraining</dd></div>
+            <div><dt>Stack</dt><dd>Python 3.12 · LightGBM · mlforecast · statsforecast · DuckDB · GitHub Actions</dd></div>
+          </dl>
+          <a class="btn btn--primary" href="https://isaacmartinez.space/Pronostico-de-Demanda-y-Politica-de-Inventario/"><span lang="es">Dashboard en vivo</span><span lang="en">Live dashboard</span></a>
+          <a class="btn" href="https://github.com/isaacmartinez23/Pronostico-de-Demanda-y-Politica-de-Inventario"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span></a>
+        </div>
+      </aside>
+
+      <article class="report__main">
+        <section>
+          <h2><span lang="es">Respuesta corta</span><span lang="en">Short answer</span></h2>
+          <p class="answer" lang="es">Con un fill rate de 95 % y 7 días de lead time, la política basada en el modelo necesita <strong>14 % menos inventario promedio</strong> que una política clásica de media móvil: USD 63.7 mil contra 73.8 mil.</p>
+          <p class="answer" lang="en">At a 95% fill rate and a 7-day lead time, the model-based policy needs <strong>14% less average inventory</strong> than a classic moving-average policy: USD 63.7k versus 73.8k.</p>
+
+          <table class="metrics">
+            <thead><tr>
+              <th scope="col"><span lang="es">Métrica de éxito</span><span lang="en">Success metric</span></th>
+              <th scope="col" class="num"><span lang="es">Resultado</span><span lang="en">Result</span></th>
+            </tr></thead>
+            <tbody>
+              <tr><td lang="es">El modelo supera a SeasonalNaive en WRMSSE (3 ventanas)</td><td lang="en">The model beats SeasonalNaive on WRMSSE (3 windows)</td><td class="num"><strong>0.528</strong> vs 0.785 (−33 %)</td></tr>
+              <tr><td lang="es">Contra el mejor baseline, AutoETS</td><td lang="en">Against the best baseline, AutoETS</td><td class="num">0.528 vs 0.608 (−13 %)</td></tr>
+              <tr><td lang="es">Fill rate en productos clase A (meta ≥ 95 %)</td><td lang="en">Fill rate on class A products (target ≥ 95%)</td><td class="num"><strong>96.8 %</strong></td></tr>
+              <tr><td lang="es">Inventario a igual servicio frente a la política clásica</td><td lang="en">Inventory at equal service versus the classic policy</td><td class="num"><strong>−14 %</strong> · A −11 % · B −25 %</td></tr>
+              <tr><td lang="es">Reproducible con <code>make all</code></td><td lang="en">Reproducible with <code>make all</code></td><td class="num"><span lang="es">Sí, CI corre el pipeline completo</span><span lang="en">Yes, CI runs the full pipeline</span></td></tr>
+            </tbody>
+          </table>
+
+          <figure class="fig">
+            <ul class="legend"></ul>
+            <div class="fig__plate" data-chart="frontier"
+              data-label-es="Curva servicio–inventario: el modelo alcanza cada nivel de servicio con menos inventario que las políticas de referencia."
+              data-label-en="Service–inventory curve: the model reaches every service level with less inventory than the reference policies."></div>
+            <p class="fig__readout" aria-live="polite"></p>
+            <figcaption>
+              <span lang="es"><b>Figura 1.</b> Inventario promedio necesario para cada fill rate con 7 días de lead time. Como cada política termina con un nivel de servicio distinto, la comparación justa es a lo largo de la curva y no en un solo punto.</span>
+              <span lang="en"><b>Figure 1.</b> Average inventory needed for each fill rate with a 7-day lead time. Each policy ends at a different service level, so the fair comparison runs along the curve, not at a single point.</span>
+              <span class="fig__source" lang="es">Fuente: simulación diaria contra 12 semanas de demanda real fuera de muestra.</span>
+              <span class="fig__source" lang="en">Source: daily simulation against 12 weeks of real out-of-sample demand.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2><span lang="es">Lo que encontré</span><span lang="en">What I found</span></h2>
+          <ol class="findings" lang="es">
+            <li><strong>El modelo gana donde hay volumen y pierde en la cola.</strong> Mejora el WAPE en los segmentos AX y AY (74 % del ingreso) y empeora hasta 16 % en CZ, donde una media móvil funciona mejor. La recomendación no es usar ML para todo, sino segmentar.</li>
+            <li><strong>El ahorro de inventario crece con el lead time:</strong> −7 % con 3 días, −14 % con 7 y −22 % con 14. Con un fill rate de 90 % la diferencia baja a 2–4 %.</li>
+            <li><strong>El factor <code>z</code> no entrega lo que promete.</strong> Con el factor de seguridad para 95 %, el nivel de servicio de ciclo logrado fue 90 %, y 82 % con la política clásica. Fill rate y servicio de ciclo son métricas distintas y conviene reportar ambas.</li>
+            <li><strong>Sofisticar el safety stock no lo hizo más eficiente.</strong> Calcularlo con σ del error acumulado o con cuantiles empíricos mejoró la calibración, pero el inventario fue el mismo para el mismo servicio. Lo que mueve la curva es el pronóstico.</li>
+            <li><strong>Los intervalos de predicción quedan cortos:</strong> 74 % de cobertura real para el intervalo de 80 % y 89 % para el de 95 %. No cumple la meta de ±5 puntos que me fijé.</li>
+            <li><strong>Una variable "obvia" empeoraba el modelo.</strong> Usar <code>item_id</code> como categórica (1,429 niveles) subía el WRMSSE 5.6 % en las ventanas de calibración, así que quedó fuera.</li>
+          </ol>
+          <ol class="findings" lang="en">
+            <li><strong>The model wins where there is volume and loses in the tail.</strong> It improves WAPE in the AX and AY segments (74% of revenue) and gets up to 16% worse in CZ, where a moving average does better. The recommendation is not ML for everything but segmentation.</li>
+            <li><strong>Inventory savings grow with lead time:</strong> −7% at 3 days, −14% at 7 and −22% at 14. At a 90% fill rate the gap shrinks to 2–4%.</li>
+            <li><strong>The <code>z</code> factor doesn't deliver what it promises.</strong> With the safety factor for 95%, the achieved cycle service level was 90%, and 82% for the classic policy. Fill rate and cycle service are different metrics and both should be reported.</li>
+            <li><strong>A fancier safety stock was not more efficient.</strong> Using σ of the cumulative error or empirical error quantiles improved calibration, but needed the same inventory for the same service. What moves the curve is the forecast.</li>
+            <li><strong>Prediction intervals come up short:</strong> 74% real coverage for the 80% interval and 89% for the 95% one. That misses the ±5-point target I set.</li>
+            <li><strong>An "obvious" feature made the model worse.</strong> Using <code>item_id</code> as a categorical (1,429 levels) raised WRMSSE by 5.6% in the calibration windows, so it was dropped.</li>
+          </ol>
+
+          <figure class="fig">
+            <div class="fig__plate" data-chart="leadtime"
+              data-label-es="Reducción de inventario frente a la política clásica: 7 % con 3 días de lead time, 14 % con 7 y 22 % con 14."
+              data-label-en="Inventory reduction versus the classic policy: 7% at 3 days of lead time, 14% at 7 and 22% at 14."></div>
+            <figcaption>
+              <span lang="es"><b>Figura 2.</b> Reducción de inventario frente a la política clásica, con 95 % de fill rate, según el lead time.</span>
+              <span lang="en"><b>Figure 2.</b> Inventory reduction versus the classic policy, at a 95% fill rate, by lead time.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2><span lang="es">Cómo lo construí</span><span lang="en">How I built it</span></h2>
+          <ol class="pipeline">
+            <li lang="es"><b>Datos</b>Ventas, precios y calendario de M5 en formato largo, en DuckDB.</li>
+            <li lang="en"><b>Data</b>M5 sales, prices and calendar in long format, in DuckDB.</li>
+            <li lang="es"><b>Segmentación</b>Clases ABC/XYZ y patrón de demanda por producto.</li>
+            <li lang="en"><b>Segmentation</b>ABC/XYZ classes and demand pattern per product.</li>
+            <li lang="es"><b>Baselines</b>Naive, SeasonalNaive, media móvil, AutoETS y AutoARIMA.</li>
+            <li lang="en"><b>Baselines</b>Naive, SeasonalNaive, moving average, AutoETS and AutoARIMA.</li>
+            <li lang="es"><b>Modelo</b>LightGBM global con objetivo Tweedie, rezagos, medias móviles, eventos y precio relativo.</li>
+            <li lang="en"><b>Model</b>Global LightGBM with a Tweedie objective, lags, rolling means, events and relative price.</li>
+            <li lang="es"><b>Política</b>(s, S) con revisión diaria: safety stock, punto de reorden y lote EOQ.</li>
+            <li lang="en"><b>Policy</b>(s, S) with daily review: safety stock, reorder point and EOQ lot size.</li>
+            <li lang="es"><b>Simulación</b>Cada política, día a día, contra la demanda real.</li>
+            <li lang="en"><b>Simulation</b>Each policy, day by day, against real demand.</li>
+          </ol>
+          <p lang="es">De las seis ventanas de 28 días, las tres primeras sirvieron para <strong>calibrar</strong>: ahí elegí las variables y estimé la incertidumbre del pronóstico. Solo reporto las tres últimas, para no tomar ninguna decisión mirando el periodo evaluado.</p>
+          <p lang="en">Of the six 28-day windows, the first three were used for <strong>calibration</strong>: that's where I chose the features and estimated forecast uncertainty. I only report the last three, so no decision was made by looking at the evaluated period.</p>
+
+          <figure class="fig">
+            <img class="fig__shot" src="/assets/img/inventario-dashboard.webp" width="1400" height="1250" loading="lazy"
+              alt="Página de resumen del dashboard de inventario, con el inventario necesario para el 95 % de servicio y la curva servicio–inventario">
+            <figcaption>
+              <span lang="es"><b>Figura 3.</b> El dashboard tiene cinco páginas: resumen, pronóstico, inventario, producto y portafolio. Es un solo HTML sin servidor que GitHub Actions publica con cada cambio.</span>
+              <span lang="en"><b>Figure 3.</b> The dashboard has five pages: summary, forecast, inventory, product and portfolio. It is a single serverless HTML file that GitHub Actions republishes on every change.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2><span lang="es">Lo que no se puede afirmar</span><span lang="en">What this can't claim</span></h2>
+          <ul class="limits" lang="es">
+            <li>Los datos son de una tienda de Walmart en California, no de un retailer mexicano. El método se transfiere, pero las cifras no.</li>
+            <li>Los intervalos de predicción tienen menos cobertura de la nominal, así que el safety stock basado en ellos queda corto en algunos productos.</li>
+            <li>En los productos de baja rotación (CZ) el modelo es peor que una media móvil.</li>
+            <li>Las reglas de M5 no permiten redistribuir los datos: el dashboard publica solo resultados derivados, y el código falla si aparece una venta diaria o un precio.</li>
+          </ul>
+          <ul class="limits" lang="en">
+            <li>The data comes from one Walmart store in California, not a Mexican retailer. The method transfers; the numbers don't.</li>
+            <li>Prediction intervals under-cover their nominal level, so safety stock based on them falls short for some products.</li>
+            <li>For slow movers (CZ) the model is worse than a moving average.</li>
+            <li>M5 rules forbid redistributing the data: the dashboard publishes only derived results, and the code fails if a daily sale or price ever shows up.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+
+    <nav class="wrap next" aria-label="Más casos">
+      <a href="/proyectos/ecobici/"><span lang="es">Caso anterior</span><span lang="en">Previous case</span><b lang="es">ECOBICI: dónde faltan bicicletas y a qué hora</b><b lang="en">ECOBICI: where bikes run out, and when</b></a>
+      <a href="/proyectos/canasta-qqp/"><span lang="es">Siguiente caso</span><span lang="en">Next case</span><b lang="es">Precios de la canasta QQP</b><b lang="en">The QQP food basket</b></a>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Isaac Martínez Ríos · <a href="mailto:isaac.amr15@gmail.com">isaac.amr15@gmail.com</a> · <a href="https://www.linkedin.com/in/isaacmartinez23/">LinkedIn</a></span>
+      <span lang="es">Cifras tomadas del <a href="https://github.com/isaacmartinez23/Pronostico-de-Demanda-y-Politica-de-Inventario/blob/main/reports/executive_summary.md">resumen ejecutivo</a> del repositorio.</span>
+      <span lang="en">Figures taken from the repository's <a href="https://github.com/isaacmartinez23/Pronostico-de-Demanda-y-Politica-de-Inventario/blob/main/reports/executive_summary.md">executive summary</a>.</span>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>
