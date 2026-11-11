@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es"
+  data-title-es="Ventas contra meta: dónde está la brecha · Isaac Martínez Ríos"
+  data-title-en="Sales against target: where the gap is · Isaac Martínez Ríos"
+  data-desc-es="Caso de estudio: tablero de Power BI sobre PostgreSQL y Excel. La brecha contra meta está en dos grupos de producto, y las entregas tarde explican menos de 2 %."
+  data-desc-en="Case study: a Power BI dashboard over PostgreSQL and Excel. The gap against target sits in two product groups, and late deliveries explain less than 2% of it.">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ventas contra meta: dónde está la brecha · Isaac Martínez Ríos</title>
+  <meta name="description" content="Caso de estudio: tablero de Power BI sobre PostgreSQL y Excel. La brecha contra meta está en dos grupos de producto, y las entregas tarde explican menos de 2 %.">
+  <link rel="canonical" href="https://isaacmartinez.space/proyectos/ventas-vs-meta/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Ventas contra meta: dónde está la brecha">
+  <meta property="og:description" content="La brecha está en Deportes y Electrónica; las entregas tarde explican menos de 2 %.">
+  <meta property="og:url" content="https://isaacmartinez.space/proyectos/ventas-vs-meta/">
+  <meta property="og:image" content="https://isaacmartinez.space/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f4f0">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="es"&&l!=="en"){l=(navigator.language||"es").slice(0,2)==="en"?"en":"es"}document.documentElement.lang=l})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0244QQM6F0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-0244QQM6F0");</script>
+</head>
+<body>
+  <a class="skip" href="#main"><span lang="es">Ir al contenido</span><span lang="en">Skip to content</span></a>
+
+  <header class="masthead">
+    <div class="wrap">
+      <a class="masthead__name" href="/">Isaac Martínez Ríos</a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="/#casos" aria-current="page"><span lang="es">Casos</span><span lang="en">Case studies</span></a></li>
+          <li><a href="/#archivo"><span lang="es">Archivo</span><span lang="en">Archive</span></a></li>
+          <li><a href="/#sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About</span></a></li>
+          <li><a href="/#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a></li>
+        </ul>
+      </nav>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es" aria-pressed="true" title="Español">ES</button>
+        <button type="button" data-set-lang="en" aria-pressed="false" title="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+    <main id="main">
+    <header class="report-head">
+      <div class="wrap">
+        <p class="crumbs"><a href="/#casos"><span lang="es">← Casos de estudio</span><span lang="en">← Case studies</span></a></p>
+        <h1><span lang="es">Ventas contra meta: dónde está la brecha y qué no la explica</span><span lang="en">Sales against target: where the gap is, and what doesn't explain it</span></h1>
+        <p class="report-head__dek" lang="es">¿Qué categorías y regiones van por debajo de la meta en 2018, y cuánto de ese hueco se explica por entregas tardías que bajan las reseñas?</p>
+        <p class="report-head__dek" lang="en">Which categories and regions are below target in 2018, and how much of that gap is explained by late deliveries dragging reviews down?</p>
+      </div>
+    </header>
+
+    <div class="wrap report">
+      <aside class="report__aside">
+        <div>
+          <dl>
+            <div><dt lang="es">Datos</dt><dt lang="en">Data</dt>
+              <dd lang="es">Olist, e-commerce de Brasil: 98,353 pedidos de ene 2017 a ago 2018, más un Excel de metas simuladas</dd>
+              <dd lang="en">Olist, Brazilian e-commerce: 98,353 orders from Jan 2017 to Aug 2018, plus an Excel workbook of simulated targets</dd></div>
+            <div><dt lang="es">Evaluación</dt><dt lang="en">Evaluation</dt>
+              <dd lang="es">Ene–ago 2018 contra meta y contra el mismo periodo de 2017; cada medida cuadrada contra SQL</dd>
+              <dd lang="en">Jan–Aug 2018 against target and against the same period of 2017; every measure reconciled against SQL</dd></div>
+            <div><dt>Stack</dt><dd>Power BI · DAX · Power Query · PostgreSQL · Excel · Docker</dd></div>
+          </dl>
+          <a class="btn btn--primary" href="https://github.com/isaacmartinez23/ventas-vs-meta-powerbi"><span lang="es">Código y archivo de Power BI</span><span lang="en">Code and Power BI file</span></a>
+        </div>
+      </aside>
+
+      <article class="report__main">
+        <section>
+          <h2><span lang="es">Respuesta corta</span><span lang="en">Short answer</span></h2>
+          <p class="answer" lang="es">La meta total se cumple (100.1 %), pero dos grupos concentran <strong>89 % de la brecha</strong>: Deportes y Electrónica. Las entregas tarde bajan dos puntos la reseña y aun así explican <strong>menos de 2 %</strong> de ese hueco.</p>
+          <p class="answer" lang="en">The overall target is met (100.1%), but two groups hold <strong>89% of the gap</strong>: Sports and Electronics. Late deliveries cut the review score by two points and still explain <strong>less than 2%</strong> of that shortfall.</p>
+
+          <table class="metrics">
+            <thead><tr>
+              <th scope="col"><span lang="es">Métrica</span><span lang="en">Metric</span></th>
+              <th scope="col" class="num"><span lang="es">Resultado</span><span lang="en">Result</span></th>
+            </tr></thead>
+            <tbody>
+              <tr><td lang="es">Ventas ene–ago 2018 contra meta</td><td lang="en">Jan–Aug 2018 sales against target</td><td class="num"><strong>100.1 %</strong> · R$ 7.34 M vs 7.33 M</td></tr>
+              <tr><td lang="es">Brecha de los grupos debajo de meta</td><td lang="en">Gap of the groups below target</td><td class="num"><strong>R$ 567 mil</strong></td></tr>
+              <tr><td lang="es">Cumplimiento de Deportes y de Electrónica</td><td lang="en">Attainment in Sports and in Electronics</td><td class="num">81.7 % · 85.1 %</td></tr>
+              <tr><td lang="es">Reseña de pedidos tarde contra pedidos a tiempo</td><td lang="en">Review score, late orders against on-time orders</td><td class="num"><strong>−2.06</strong> <span lang="es">estrellas</span><span lang="en">stars</span></td></tr>
+              <tr><td lang="es">Ventas recuperables si ningún pedido llegara tarde</td><td lang="en">Sales recoverable if no order arrived late</td><td class="num">R$ 10.5 mil · <strong>1.9 %</strong> <span lang="es">de la brecha</span><span lang="en">of the gap</span></td></tr>
+            </tbody>
+          </table>
+
+          <figure class="fig">
+            <img class="fig__shot" src="/assets/img/ventas-resumen.webp" width="1400" height="790"
+              alt="Página de resumen del tablero: ventas acumuladas de R$ 7.34 millones, cumplimiento de 100.1 %, línea mensual de ventas contra meta y barras de brecha por grupo, con Deportes y Electrónica en rojo">
+            <figcaption>
+              <span lang="es"><b>Figura 1.</b> Página de resumen. La meta se supera de enero a mayo, salvo febrero, y se queda corta de junio a agosto. En las barras, el rojo marca solo a los grupos debajo de meta.</span>
+              <span lang="en"><b>Figure 1.</b> Summary page. The target is beaten from January to May, except February, and missed from June to August. In the bars, red marks only the groups below target. The dashboard is in Spanish.</span>
+              <span class="fig__source" lang="es">Fuente: Olist, pedidos comprados de enero a agosto de 2018. Meta simulada.</span>
+              <span class="fig__source" lang="en">Source: Olist, orders purchased January to August 2018. Simulated target.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2><span lang="es">Lo que encontré</span><span lang="en">What I found</span></h2>
+          <ol class="findings" lang="es">
+            <li><strong>La brecha tiene nombre.</strong> Deportes y ocio queda en 81.7 % y Electrónica y tecnología en 85.1 %. El mayor hueco individual es Deportes en la región Sudeste: R$ 208 mil. Electrónica queda debajo de meta en las cinco regiones.</li>
+            <li><strong>Entregar tarde hunde la reseña.</strong> 63 % de los pedidos tarde recibe 1 o 2 estrellas, contra 9 % de los que llegan a tiempo. Por estado, la relación entre porcentaje de pedidos tarde y calificación es fuerte (correlación de −0.81).</li>
+            <li><strong>Pero casi no mueve las ventas.</strong> En Olist vuelve a comprar 3.5 % de los clientes con buena reseña y 3.3 % de los que dejaron 1 o 2 estrellas. Con esa tasa, corregir todas las entregas tarde recuperaría unos R$ 10.5 mil.</li>
+            <li><strong>Ni el caso extremo cierra el hueco.</strong> Suponiendo que todos los clientes satisfechos recompran, se recuperarían R$ 300 mil: 53 % de la brecha.</li>
+            <li><strong>Por grupo, la logística no distingue a quién falla.</strong> La entrega a tiempo va de 91 % a 95 % en todos los grupos, y Belleza y salud, el de peor entrega, supera su meta en 12 %.</li>
+            <li><strong>Por región sí hay relación.</strong> El Nordeste tiene la peor entrega a tiempo (85.6 %) y el peor cumplimiento (92.0 %).</li>
+          </ol>
+          <ol class="findings" lang="en">
+            <li><strong>The gap has a name.</strong> Sports and leisure reaches 81.7% and Electronics and technology 85.1%. The largest single shortfall is Sports in the Southeast region: R$ 208k. Electronics is below target in all five regions.</li>
+            <li><strong>Late delivery sinks the review.</strong> 63% of late orders get 1 or 2 stars, against 9% of on-time orders. By state, the link between the share of late orders and the review score is strong (correlation of −0.81).</li>
+            <li><strong>But it barely moves sales.</strong> On Olist, 3.5% of customers with a good review buy again, and so do 3.3% of those who left 1 or 2 stars. At that rate, fixing every late delivery would recover about R$ 10.5k.</li>
+            <li><strong>Not even the extreme case closes the gap.</strong> Assuming every satisfied customer buys again, R$ 300k would be recovered: 53% of the gap.</li>
+            <li><strong>By group, logistics doesn't single out who misses.</strong> On-time delivery runs from 91% to 95% in every group, and Beauty and health, the worst on delivery, beats its target by 12%.</li>
+            <li><strong>By region there is a link.</strong> The Northeast has the worst on-time delivery (85.6%) and the worst attainment (92.0%).</li>
+          </ol>
+          <p lang="es">Empecé con la hipótesis de que la logística explicaba la brecha. Los datos la rechazan, y la recomendación cambia: atacar surtido y precio en Deportes y Electrónica, y tratar la logística del Nordeste como un problema de satisfacción del cliente, no de ventas.</p>
+          <p lang="en">I started from the hypothesis that logistics explained the gap. The data rejects it, and the recommendation changes: work on assortment and pricing in Sports and Electronics, and treat Northeast logistics as a customer-satisfaction problem, not a sales problem.</p>
+
+          <figure class="fig">
+            <img class="fig__shot" src="/assets/img/ventas-logistica.webp" width="1400" height="790" loading="lazy"
+              alt="Página de logística y reseñas: dispersión por estado donde más pedidos tarde coincide con peor calificación, entrega a tiempo por región, reparto de calificaciones y tabla por grupo">
+            <figcaption>
+              <span lang="es"><b>Figura 2.</b> Página de logística. Arriba, cada punto es un estado: a más pedidos tarde, peor calificación. Abajo a la derecha, la tabla que cierra el argumento: la entrega es casi igual en todos los grupos.</span>
+              <span lang="en"><b>Figure 2.</b> Logistics page. Top, each dot is a state: the more late orders, the lower the review score. Bottom right, the table that settles it: delivery is almost the same across groups.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2><span lang="es">Cómo lo construí</span><span lang="en">How I built it</span></h2>
+          <ol class="pipeline">
+            <li lang="es"><b>Carga</b>Los 9 CSV de Olist a PostgreSQL en Docker, sin transformar.</li>
+            <li lang="en"><b>Load</b>The 9 Olist CSVs into PostgreSQL on Docker, untransformed.</li>
+            <li lang="es"><b>Limpieza</b>Recorte del periodo, pedidos sin partidas y fechas de entrega nulas, con bitácora de lo que se quitó.</li>
+            <li lang="en"><b>Cleaning</b>Period cut, orders with no items and null delivery dates, with a log of what was removed.</li>
+            <li lang="es"><b>Vistas</b>Siete vistas SQL con CTE y funciones de ventana, listas para el modelo.</li>
+            <li lang="en"><b>Views</b>Seven SQL views with CTEs and window functions, ready for the model.</li>
+            <li lang="es"><b>Metas</b>Excel con supuestos en celdas con nombre, <code>AVERAGEIFS</code> y <code>XLOOKUP</code>.</li>
+            <li lang="en"><b>Targets</b>Excel with assumptions in named cells, <code>AVERAGEIFS</code> and <code>XLOOKUP</code>.</li>
+            <li lang="es"><b>Modelo</b>Estrella con tres tablas de hechos de distinta granularidad y seis dimensiones.</li>
+            <li lang="en"><b>Model</b>A star schema with three fact tables at different grains and six dimensions.</li>
+            <li lang="es"><b>Medidas</b>38 medidas DAX, cada una comprobada contra una consulta SQL.</li>
+            <li lang="en"><b>Measures</b>38 DAX measures, each checked against a SQL query.</li>
+          </ol>
+          <p lang="es">El precio vive por partida; la entrega y la reseña, por pedido. Por eso hay <strong>dos tablas de hechos de ventas</strong> que comparten dimensiones y no se relacionan entre sí. Cuando una medida de pedidos debe filtrarse por grupo de producto, lo resuelve <code>TREATAS</code> dentro de la medida y no una relación bidireccional.</p>
+          <p lang="en">Price lives at order-item level; delivery and review at order level. That is why there are <strong>two sales fact tables</strong> that share dimensions and are not related to each other. When an order-level measure has to be filtered by product group, <code>TREATAS</code> inside the measure handles it, not a bidirectional relationship.</p>
+          <p lang="es">Dos detalles cambiaron los números. Los datos terminan en agosto de 2018, así que la comparación contra el año anterior se limita a los días con ventas; sin eso, el crecimiento salía en 20 % en lugar de 142 %. Y en DAX un valor en blanco se compara como cero: un filtro de "retraso menor o igual a cero" contaba como entregados a tiempo los pedidos que nunca llegaron.</p>
+          <p lang="en">Two details changed the numbers. The data ends in August 2018, so the year-over-year comparison is limited to days that have sales; without that, growth came out at 20% instead of 142%. And in DAX a blank compares as zero: a "delay less than or equal to zero" filter counted orders that never arrived as delivered on time.</p>
+
+          <figure class="fig">
+            <img class="fig__shot" src="/assets/img/ventas-que-pasa-si.webp" width="1400" height="790" loading="lazy"
+              alt="Página qué pasa si: parámetros de mejora de entregas y de recompra, ventas recuperables de R$ 10,503, 1.9 % de la brecha y tabla de los diez vendedores con más pedidos tarde">
+            <figcaption>
+              <span lang="es"><b>Figura 3.</b> Página de análisis qué pasa si. Los dos parámetros de la izquierda cambian la estimación; el recuadro declara los supuestos en la misma página.</span>
+              <span lang="en"><b>Figure 3.</b> What-if page. The two parameters on the left change the estimate; the box states the assumptions on the same page.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2><span lang="es">Lo que no se puede afirmar</span><span lang="en">What this can't claim</span></h2>
+          <ul class="limits" lang="es">
+            <li>La meta es simulada: el promedio mensual de septiembre a diciembre de 2017 por un factor de crecimiento. Con otro factor cambian los grupos que quedan debajo.</li>
+            <li>La meta es plana de enero a agosto y no recoge estacionalidad. Usar el mismo mes de 2017 no servía: las ventas crecieron 2.4 veces y el cumplimiento habría sido de ~207 %.</li>
+            <li>Las ventas recuperables son una estimación. Suponen que un cliente con 1 o 2 estrellas no vuelve y que uno satisfecho recompra a la tasa observada.</li>
+            <li>La tasa de recompra se midió en una ventana de 20 meses. En un periodo más largo podría ser mayor.</li>
+            <li>La relación entre entregas tarde y reseñas es una asociación: en los estados con más pedidos tarde la entrega también tarda más días, y puede haber otros factores.</li>
+          </ul>
+          <ul class="limits" lang="en">
+            <li>The target is simulated: the September-to-December 2017 monthly average times a growth factor. A different factor changes which groups fall below.</li>
+            <li>The target is flat from January to August and carries no seasonality. Using the same month of 2017 did not work: sales grew 2.4 times and attainment would have been ~207%.</li>
+            <li>Recoverable sales are an estimate. They assume a customer with 1 or 2 stars does not return and a satisfied one buys again at the observed rate.</li>
+            <li>The repurchase rate was measured over a 20-month window. Over a longer period it could be higher.</li>
+            <li>The link between late deliveries and reviews is an association: in the states with more late orders delivery also takes more days, and other factors may be at play.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+
+    <nav class="wrap next" aria-label="Más casos">
+      <a href="/proyectos/ecobici/"><span lang="es">Caso anterior</span><span lang="en">Previous case</span><b lang="es">ECOBICI: dónde faltan bicicletas y a qué hora</b><b lang="en">ECOBICI: where bikes run out, and when</b></a>
+      <a href="/proyectos/demanda-inventario/"><span lang="es">Siguiente caso</span><span lang="en">Next case</span><b lang="es">Pronóstico de demanda y política de inventario</b><b lang="en">Demand forecasting and inventory policy</b></a>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Isaac Martínez Ríos · <a href="mailto:isaac.amr15@gmail.com">isaac.amr15@gmail.com</a> · <a href="https://www.linkedin.com/in/isaacmartinez23/">LinkedIn</a></span>
+      <span lang="es">Cifras tomadas del <a href="https://github.com/isaacmartinez23/ventas-vs-meta-powerbi#readme">README</a> del repositorio. Datos de Olist, CC BY-NC-SA 4.0.</span>
+      <span lang="en">Figures taken from the repository's <a href="https://github.com/isaacmartinez23/ventas-vs-meta-powerbi#readme">README</a>. Olist data, CC BY-NC-SA 4.0.</span>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

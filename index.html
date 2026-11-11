@@ -94,8 +94,8 @@
       <div class="wrap">
         <div class="section__head">
           <h2 id="casos-t"><span lang="es">Casos de estudio</span><span lang="en">Case studies</span></h2>
-          <p lang="es">Tres proyectos completos, cada uno con su pregunta, sus datos, un modelo que se compara contra una línea base y lo que el análisis no permite afirmar.</p>
-          <p lang="en">Three end-to-end projects, each with its question, its data, a model measured against a baseline, and what the analysis cannot claim.</p>
+          <p lang="es">Cuatro proyectos completos, cada uno con su pregunta, sus datos, un resultado medido contra una referencia y lo que el análisis no permite afirmar.</p>
+          <p lang="en">Four end-to-end projects, each with its question, its data, a result measured against a reference, and what the analysis cannot claim.</p>
         </div>
 
         <article class="case">
@@ -203,6 +203,39 @@
                 <span lang="en"><b>Figure 4.</b> Average trips per station for each hour of the day. Shaded bands mark the peaks at 8:00 and from 17:00 to 18:00.</span>
                 <span class="fig__source" lang="es">Fuente: datos abiertos de ECOBICI, julio a septiembre de 2026.</span>
                 <span class="fig__source" lang="en">Source: ECOBICI open data, July to September 2026.</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case__meta">
+            <dl>
+              <div><dt lang="es">Área</dt><dt lang="en">Field</dt><dd lang="es">Ventas y comercio electrónico</dd><dd lang="en">Sales and e-commerce</dd></div>
+              <div><dt lang="es">Datos</dt><dt lang="en">Data</dt><dd lang="es">Olist, 98 mil pedidos de ene 2017 a ago 2018, y un Excel de metas simuladas</dd><dd lang="en">Olist, 98k orders from Jan 2017 to Aug 2018, and an Excel workbook of simulated targets</dd></div>
+              <div><dt>Stack</dt><dd>Power BI · DAX · Power Query · PostgreSQL · Excel</dd></div>
+            </dl>
+          </div>
+          <div class="case__body">
+            <div>
+              <h3><a href="/proyectos/ventas-vs-meta/"><span lang="es">Ventas contra meta: dónde está la brecha y qué no la explica</span><span lang="en">Sales against target: where the gap is, and what doesn't explain it</span></a></h3>
+              <p class="case__q" lang="es">¿Qué categorías y regiones van por debajo de la meta en 2018, y cuánto de ese hueco se explica por entregas tardías que bajan las reseñas?</p>
+              <p class="case__q" lang="en">Which categories and regions are below target in 2018, and how much of that gap is explained by late deliveries dragging reviews down?</p>
+              <p lang="es">Un tablero de Power BI sobre un modelo estrella y 38 medidas DAX cuadradas contra SQL. Dos grupos de producto concentran 89 % de la brecha, y las entregas tarde, que bajan dos puntos la reseña, explican menos de 2 %: la hipótesis inicial no se sostuvo.</p>
+              <p lang="en">A Power BI dashboard over a star schema and 38 DAX measures reconciled against SQL. Two product groups hold 89% of the gap, and late deliveries, which cut the review score by two points, explain less than 2%: the starting hypothesis did not hold.</p>
+              <div class="case__links">
+                <a class="link-arrow" href="/proyectos/ventas-vs-meta/"><span lang="es">Leer el caso</span><span lang="en">Read the case</span></a>
+                <a href="https://github.com/isaacmartinez23/ventas-vs-meta-powerbi"><span lang="es">Código</span><span lang="en">Code</span></a>
+              </div>
+            </div>
+            <figure class="fig">
+              <img class="fig__shot" src="/assets/img/ventas-resumen.webp" width="1400" height="790" loading="lazy"
+                alt="Página de resumen del tablero de Power BI: cumplimiento de 100.1 %, ventas mensuales contra meta y brecha por grupo con Deportes y Electrónica en rojo">
+              <figcaption>
+                <span lang="es"><b>Figura 5.</b> Página de resumen del tablero. El rojo marca solo a los grupos debajo de meta.</span>
+                <span lang="en"><b>Figure 5.</b> The dashboard's summary page. Red marks only the groups below target.</span>
+                <span class="fig__source" lang="es">Fuente: Olist, pedidos de enero a agosto de 2018. Meta simulada.</span>
+                <span class="fig__source" lang="en">Source: Olist, orders from January to August 2018. Simulated target.</span>
               </figcaption>
             </figure>
           </div>
