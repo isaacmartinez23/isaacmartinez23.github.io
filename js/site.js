@@ -43,7 +43,12 @@
       lead: "Lead time", days: "días", lessInv: "menos inventario",
       share: "de la diferencia total entre cadenas",
       prod: { milanesa: "Milanesa de res", limon: "Limón sin semilla", jitomate: "Jitomate saladette", cebolla: "Cebolla blanca", papa: "Papa alfa o blanca" },
-      dow: ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"]
+      dow: ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"],
+      r7: "Retención a 7 días", r1: "Retención a 1 día", primary: "primaria", secondary: "secundaria",
+      worse40: "← peor con el nivel 40", better40: "mejor →", ppAxis: "Diferencia nivel 40 − nivel 30 (pp)",
+      ciHint: "Pasa el cursor sobre una métrica para ver sus tasas.", lvl30: "Nivel 30", lvl40: "Nivel 40", ci95: "IC 95 %",
+      daily: "Mirar cada día y detener si p < 0.05", once: "Mirar una sola vez, ese día", day: "Día del experimento",
+      peekHint: "Pasa el cursor para ver cada día.", dayN: "Día", nominal: "5 % nominal"
     },
     en: {
       stationsHint: "Hover or tap a station to see its balance.",
@@ -60,7 +65,12 @@
       lead: "Lead time", days: "days", lessInv: "less inventory",
       share: "of the total gap between chains",
       prod: { milanesa: "Beef cutlet", limon: "Seedless lime", jitomate: "Roma tomato", cebolla: "White onion", papa: "Potato" },
-      dow: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      dow: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      r7: "7-day retention", r1: "1-day retention", primary: "primary", secondary: "secondary",
+      worse40: "← worse at level 40", better40: "better →", ppAxis: "Difference, level 40 − level 30 (pp)",
+      ciHint: "Hover over a metric to see its rates.", lvl30: "Level 30", lvl40: "Level 40", ci95: "95% CI",
+      daily: "Check daily, stop at p < 0.05", once: "Check once, on that day", day: "Day of the experiment",
+      peekHint: "Hover to read each day.", dayN: "Day", nominal: "5% nominal"
     }
   };
   function t(k) { return T[currentLang()][k]; }
@@ -305,9 +315,86 @@
     drawBars(host, rows, 5.5, function (v) { return nf(v, 2); }, C.indigo);
   }
 
+  /* ---------- Figura: A/B test, diferencia con intervalo de confianza ---------- */
+
+  function sgn(v, dec) { return (v > 0 ? "+" : v < 0 ? "−" : "") + nf(Math.abs(v), dec); }
+
+  function drawIntervals(host, data) {
+    var fig = host.closest(".fig");
+    var rows = data.abtest.intervalos;
+    var W = wOf(host), rowH = 66, m = { l: 12, r: 12, t: 6, b: 48 };
+    var H = m.t + rows.length * rowH + m.b;
+    var svg = svgFor(host, W, H);
+    var x = scale(-1.6, 0.6, m.l, W - m.r), base = m.t + rows.length * rowH;
+    var ax = el("g", { class: "ax" }, svg);
+    [-1.5, -1, -0.5, 0, 0.5].forEach(function (v) {
+      el("line", { x1: x(v), x2: x(v), y1: m.t, y2: base, class: v === 0 ? "zero" : "" }, ax);
+      text(ax, x(v), base + 18, v === 0 ? "0" : sgn(v, 1), { "text-anchor": "middle" });
+    });
+    rows.forEach(function (r, i) { el("line", { x1: x(0), x2: x(0), y1: m.t + i * rowH + 28, y2: m.t + (i + 1) * rowH, stroke: C.ink, "stroke-width": 1 }, svg); });
+    text(ax, x(0) - 8, H - 8, t("worse40"), { "text-anchor": "end" });
+    if (W > 440) text(ax, x(0) + 8, H - 8, t("better40"), {});
+    var out = readout(fig);
+    rows.forEach(function (r, i) {
+      var y0 = m.t + i * rowH, cy = y0 + 44, main = i === 0, col = main ? C.indigo : C.ink3;
+      var halo = { stroke: C.paper, "stroke-width": 5, "paint-order": "stroke", "stroke-linejoin": "round" };
+      text(svg, m.l, y0 + 18, t(r[0]), Object.assign({ class: "lbl", "font-size": 13 }, halo));
+      text(svg, W - m.r, y0 + 18, sgn(r[1] * 100, 2) + " pp  [" + sgn(r[2] * 100, 2) + ", " + sgn(r[3] * 100, 2) + "]", Object.assign({ class: main ? "lbl" : "lbl lbl--muted", "font-size": 13, "text-anchor": "end" }, halo));
+      el("line", { x1: x(r[2] * 100), x2: x(r[3] * 100), y1: cy, y2: cy, stroke: col, "stroke-width": main ? 3 : 2, "stroke-linecap": "round", class: "draw", style: "--len:" + Math.ceil(x(r[3] * 100) - x(r[2] * 100) + 2) }, svg);
+      el("circle", { cx: x(r[1] * 100), cy: cy, r: main ? 7 : 6, fill: col, stroke: C.paper, "stroke-width": 2, class: "dot-in", style: "--d:" + (250 + i * 150) + "ms" }, svg);
+      var hit = el("rect", { x: 0, y: y0, width: W, height: rowH, fill: "transparent" }, svg);
+      function show() {
+        out.textContent = t(r[0]) + " (" + t(main ? "primary" : "secondary") + ") · " + t("lvl30") + " " + nf(r[4] * 100, 2) + " % · " + t("lvl40") + " " + nf(r[5] * 100, 2) + " % · " + t("ci95") + " " + sgn(r[2] * 100, 2) + (currentLang() === "en" ? " to " : " a ") + sgn(r[3] * 100, 2) + " pp · p = " + nf(r[6], r[6] < 0.01 ? 4 : 3);
+      }
+      hit.addEventListener("pointermove", show);
+      hit.addEventListener("pointerdown", show);
+      hit.addEventListener("pointerleave", function () { out.textContent = ""; });
+    });
+    setHint(fig, "ciHint");
+  }
+
+  /* ---------- Figura: falsos positivos al mirar antes de tiempo ---------- */
+
+  function drawPeeking(host, data) {
+    var fig = host.closest(".fig");
+    var pk = data.abtest.peeking, n = pk.diario.length;
+    var W = wOf(host), H = Math.max(240, Math.min(340, Math.round(W * 0.55))), m = { l: 44, r: 52, t: 14, b: 44 };
+    var svg = svgFor(host, W, H);
+    var x = scale(1, n, m.l + 6, W - m.r), y = scale(0, 0.25, H - m.b, m.t);
+    var ax = el("g", { class: "ax" }, svg);
+    [0, 0.05, 0.1, 0.15, 0.2, 0.25].forEach(function (v) {
+      el("line", { x1: m.l, x2: W - m.r + 6, y1: y(v), y2: y(v), class: v ? "" : "zero" }, ax);
+      text(ax, m.l - 8, y(v) + 4, nf(v * 100) + " %", { "text-anchor": "end" });
+    });
+    for (var d = 1; d <= n; d += (W < 480 ? 2 : 1)) text(ax, x(d), H - m.b + 18, d, { "text-anchor": "middle" });
+    text(ax, m.l, H - 6, t("day") + " →", {});
+    el("line", { x1: m.l, x2: W - m.r + 6, y1: y(0.05), y2: y(0.05), stroke: C.ink3, "stroke-dasharray": "3 4" }, svg);
+    var series = [["daily", pk.diario, C.indigo, 3], ["once", pk.una, C.ochre, 2]];
+    series.slice().reverse().forEach(function (s) {
+      var p = el("path", { d: s[1].map(function (v, i) { return (i ? "L" : "M") + x(i + 1).toFixed(1) + " " + y(v).toFixed(1); }).join(""), fill: "none", stroke: s[2], "stroke-width": s[3], "stroke-linejoin": "round", "stroke-linecap": "round", class: "draw" }, svg);
+      p.style.setProperty("--len", Math.ceil(p.getTotalLength ? p.getTotalLength() : 1200));
+      text(svg, x(n) + 8, y(s[1][n - 1]) + 4, nf(s[1][n - 1] * 100, 1) + " %", { class: "lbl", "font-size": 12 });
+    });
+    var leg = fig.querySelector(".legend");
+    if (leg) leg.innerHTML = series.map(function (s) { return '<li><i class="line" style="background:' + s[2] + '"></i>' + t(s[0]) + "</li>"; }).join("");
+    var vline = el("line", { y1: m.t, y2: H - m.b, stroke: C.ink, opacity: 0 }, svg);
+    var dots = series.map(function (s) { return el("circle", { r: 4.5, fill: s[2], opacity: 0 }, svg); });
+    var out = readout(fig);
+    svg.addEventListener("pointermove", function (evt) {
+      var r = svg.getBoundingClientRect();
+      var dd = Math.round(scale(m.l + 6, W - m.r, 1, n)((evt.clientX - r.left) / r.width * W));
+      if (dd < 1 || dd > n) return;
+      vline.setAttribute("x1", x(dd)); vline.setAttribute("x2", x(dd)); vline.setAttribute("opacity", 0.35);
+      series.forEach(function (s, i) { dots[i].setAttribute("cx", x(dd)); dots[i].setAttribute("cy", y(s[1][dd - 1])); dots[i].setAttribute("opacity", 1); });
+      out.textContent = t("dayN") + " " + dd + " · " + t("daily") + ": " + nf(pk.diario[dd - 1] * 100, 1) + " % · " + t("once") + ": " + nf(pk.una[dd - 1] * 100, 1) + " %";
+    });
+    svg.addEventListener("pointerleave", function () { vline.setAttribute("opacity", 0); dots.forEach(function (c) { c.setAttribute("opacity", 0); }); out.textContent = ""; });
+    setHint(fig, "peekHint");
+  }
+
   /* ---------- Orquestación ---------- */
 
-  var DRAW = { stations: drawStations, frontier: drawFrontier, basket: drawBasket, hourly: drawHourly, leadtime: drawLeadTime, products: drawProducts, dow: drawDow };
+  var DRAW = { stations: drawStations, frontier: drawFrontier, basket: drawBasket, hourly: drawHourly, leadtime: drawLeadTime, products: drawProducts, dow: drawDow, abci: drawIntervals, peeking: drawPeeking };
   var DATA = null;
 
   function renderAll() {

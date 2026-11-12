@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es"
+  data-title-es="A/B test de Cookie Cats: dejar la barrera en el nivel 30 · Isaac Martínez Ríos"
+  data-title-en="Cookie Cats A/B test: keep the gate at level 30 · Isaac Martínez Ríos"
+  data-desc-es="Caso de estudio: A/B test real con 90,189 jugadores, plan preregistrado, chequeo de reparto, intervalos de confianza y bootstrap. Mover la barrera al nivel 40 cuesta 820 jugadores por cada 100 mil instalaciones."
+  data-desc-en="Case study: a real A/B test with 90,189 players, a pre-registered plan, a sample ratio check, confidence intervals and bootstrap. Moving the gate to level 40 costs 820 players per 100k installs.">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A/B test de Cookie Cats: dejar la barrera en el nivel 30 · Isaac Martínez Ríos</title>
+  <meta name="description" content="Caso de estudio: A/B test real con 90,189 jugadores, plan preregistrado, chequeo de reparto, intervalos de confianza y bootstrap. Mover la barrera al nivel 40 cuesta 820 jugadores por cada 100 mil instalaciones.">
+  <link rel="canonical" href="https://isaacmartinez.space/proyectos/ab-test/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A/B test de Cookie Cats: dejar la barrera en el nivel 30">
+  <meta property="og:description" content="Mover la barrera al nivel 40 baja la retención a 7 días en 0.82 puntos: 820 jugadores menos por cada 100 mil instalaciones.">
+  <meta property="og:url" content="https://isaacmartinez.space/proyectos/ab-test/">
+  <meta property="og:image" content="https://isaacmartinez.space/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f4f0">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="es"&&l!=="en"){l=(navigator.language||"es").slice(0,2)==="en"?"en":"es"}document.documentElement.lang=l})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0244QQM6F0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-0244QQM6F0");</script>
+</head>
+<body>
+  <a class="skip" href="#main"><span lang="es">Ir al contenido</span><span lang="en">Skip to content</span></a>
+
+  <header class="masthead">
+    <div class="wrap">
+      <a class="masthead__name" href="/">Isaac Martínez Ríos</a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="/#casos" aria-current="page"><span lang="es">Casos</span><span lang="en">Case studies</span></a></li>
+          <li><a href="/#archivo"><span lang="es">Archivo</span><span lang="en">Archive</span></a></li>
+          <li><a href="/#sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About</span></a></li>
+          <li><a href="/#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a></li>
+        </ul>
+      </nav>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es" aria-pressed="true" title="Español">ES</button>
+        <button type="button" data-set-lang="en" aria-pressed="false" title="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="report-head">
+      <div class="wrap">
+        <p class="crumbs"><a href="/#casos"><span lang="es">← Casos de estudio</span><span lang="en">← Case studies</span></a></p>
+        <h1><span lang="es">A/B test de Cookie Cats: mover la barrera al nivel 40 cuesta retención</span><span lang="en">Cookie Cats A/B test: moving the gate to level 40 costs retention</span></h1>
+        <p class="report-head__dek" lang="es">Un juego móvil probó retrasar su primera barrera del nivel 30 al 40. ¿Conviene el cambio, con qué confianza y qué no permiten afirmar los datos?</p>
+        <p class="report-head__dek" lang="en">A mobile game tested moving its first gate from level 30 to level 40. Is the change worth it, how confident can we be, and what can't the data tell us?</p>
+      </div>
+    </header>
+
+    <div class="wrap report">
+      <aside class="report__aside">
+        <div>
+          <dl>
+            <div><dt lang="es">Datos</dt><dt lang="en">Data</dt>
+              <dd lang="es">Experimento Cookie Cats: 90,189 jugadores asignados al azar a la barrera en el nivel 30 o en el 40</dd>
+              <dd lang="en">Cookie Cats experiment: 90,189 players randomly assigned to the gate at level 30 or level 40</dd></div>
+            <div><dt lang="es">Evaluación</dt><dt lang="en">Evaluation</dt>
+              <dd lang="es">Plan de análisis preregistrado: una métrica primaria, α = 0.05 de dos colas y regla de decisión fijada antes de mirar</dd>
+              <dd lang="en">Pre-registered analysis plan: one primary metric, two-sided α = 0.05 and a decision rule fixed before looking</dd></div>
+            <div><dt>Stack</dt><dd>Python · SciPy · statsmodels · pandas · pytest · GitHub Actions</dd></div>
+          </dl>
+          <a class="btn btn--primary" href="https://isaacmartinez.space/ab-test-cookie-cats/"><span lang="es">Sitio del análisis</span><span lang="en">Analysis site</span></a>
+          <a class="btn" href="https://github.com/isaacmartinez23/ab-test-cookie-cats"><span lang="es">Código</span><span lang="en">Code</span></a>
+          <a class="btn" href="https://github.com/isaacmartinez23/ab-test-cookie-cats/blob/main/PLAN_DE_ANALISIS.md"><span lang="es">Plan preregistrado</span><span lang="en">Pre-registered plan</span></a>
+        </div>
+      </aside>
+
+      <article class="report__main">
+        <section>
+          <h2><span lang="es">Respuesta corta</span><span lang="en">Short answer</span></h2>
+          <p class="answer" lang="es">Conviene dejar la barrera en el nivel 30. Moverla al 40 baja la retención a 7 días en <strong>0.82 puntos porcentuales</strong>: unos <strong>820 jugadores activos menos por cada 100 mil instalaciones</strong>. La dirección es sólida; el tamaño exacto, menos, porque la asignación a grupos no fue limpia.</p>
+          <p class="answer" lang="en">Keep the gate at level 30. Moving it to 40 lowers 7-day retention by <strong>0.82 percentage points</strong>: about <strong>820 fewer active players per 100k installs</strong>. The direction is solid; the exact size less so, because the group assignment was not clean.</p>
+
+          <table class="metrics">
+            <thead><tr>
+              <th scope="col"><span lang="es">Métrica</span><span lang="en">Metric</span></th>
+              <th scope="col" class="num"><span lang="es">Resultado</span><span lang="en">Result</span></th>
+            </tr></thead>
+            <tbody>
+              <tr><td lang="es">Retención a 7 días, nivel 30 contra nivel 40</td><td lang="en">7-day retention, level 30 against level 40</td><td class="num">19.02 % → 18.20 %</td></tr>
+              <tr><td lang="es">Diferencia, con IC 95 % de −1.33 a −0.31 pp (p = 0.0016)</td><td lang="en">Difference, 95% CI −1.33 to −0.31 pp (p = 0.0016)</td><td class="num"><strong>−0.82 pp</strong></td></tr>
+              <tr><td lang="es">Jugadores activos al día 7 por cada 100 mil instalaciones (IC 95 %: −1,330 a −310)</td><td lang="en">Active players on day 7 per 100k installs (95% CI: −1,330 to −310)</td><td class="num"><strong>−820</strong></td></tr>
+              <tr><td lang="es">Chequeo de reparto (SRM): 44,700 contra 45,489 jugadores, χ² = 6.90</td><td lang="en">Sample ratio check (SRM): 44,700 against 45,489 players, χ² = 6.90</td><td class="num"><span lang="es">Alerta</span><span lang="en">Alert</span> · p = 0.0086</td></tr>
+              <tr><td lang="es">Falsos positivos al revisar cada día (simulación A/A)</td><td lang="en">False positives when checking daily (A/A simulation)</td><td class="num">5 % → <strong>22 %</strong></td></tr>
+            </tbody>
+          </table>
+
+          <figure class="fig">
+            <div class="fig__plate" data-chart="abci"
+              data-label-es="Diferencia en retención con intervalo de confianza de 95 %: a 7 días −0.82 puntos, de −1.33 a −0.31; a 1 día −0.59 puntos, de −1.24 a +0.06."
+              data-label-en="Retention difference with 95% confidence interval: 7-day −0.82 points, from −1.33 to −0.31; 1-day −0.59 points, from −1.24 to +0.06."></div>
+            <p class="fig__readout" aria-live="polite"></p>
+            <figcaption>
+              <span lang="es"><b>Figura 1.</b> Diferencia en retención, nivel 40 menos nivel 30, con intervalo de confianza de 95 %. El intervalo a 7 días queda completo debajo de cero; el de 1 día cruza el cero.</span>
+              <span lang="en"><b>Figure 1.</b> Retention difference, level 40 minus level 30, with a 95% confidence interval. The 7-day interval sits entirely below zero; the 1-day interval crosses zero.</span>
+              <span class="fig__source" lang="es">Fuente: experimento Cookie Cats, 90,189 jugadores. Prueba z de dos proporciones.</span>
+              <span class="fig__source" lang="en">Source: Cookie Cats experiment, 90,189 players. Two-proportion z-test.</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2><span lang="es">Lo que encontré</span><span lang="en">What I found</span></h2>
+          <ol class="findings" lang="es">
+            <li><strong>La retención a 7 días cae.</strong> De 19.02 % a 18.20 %, y el intervalo completo queda debajo de cero. El efecto supera lo mínimo que el experimento podía detectar con 80 % de potencia (0.73 puntos).</li>
+            <li><strong>Cuatro métodos cuentan la misma historia.</strong> Los intervalos de Wald, Newcombe, 10,000 remuestreos bootstrap y un modelo bayesiano Beta-Binomial coinciden hasta la segunda cifra decimal. La probabilidad posterior de que el nivel 40 retenga menos es 99.9 %.</li>
+            <li><strong>Las secundarias apuntan igual, sin alcanzar el umbral.</strong> La retención a 1 día baja 0.59 puntos (de −1.24 a +0.06) y las rondas jugadas, una mediana de 17 contra 16. Ajustadas por Holm, ambas quedan en p = 0.10: compatibles con un efecto pequeño y con ninguno.</li>
+            <li><strong>Un solo jugador movía la media.</strong> Uno de los 90 mil jugó 49,854 rondas. Con él, el nivel 30 parece jugar 1.16 rondas más por jugador; sin él, la diferencia es −0.04. Las pruebas basadas en rangos no cambian.</li>
+            <li><strong>El reparto no fue limpio.</strong> El nivel 40 recibió 789 jugadores más. Un sorteo 50/50 produce un desbalance así menos de 1 de cada 100 veces. Casi ningún análisis público de este dataset lo menciona.</li>
+            <li><strong>La conclusión resiste el peor caso.</strong> Si a los jugadores faltantes del nivel 30 nunca los hubiera retenido el juego, la diferencia bajaría a −0.49 puntos (de −0.99 a +0.01). La dirección se mantiene; en ningún escenario el nivel 40 sale mejor.</li>
+          </ol>
+          <ol class="findings" lang="en">
+            <li><strong>7-day retention drops.</strong> From 19.02% to 18.20%, and the whole interval sits below zero. The effect exceeds the smallest one the experiment could detect with 80% power (0.73 points).</li>
+            <li><strong>Four methods tell the same story.</strong> Wald and Newcombe intervals, 10,000 bootstrap resamples and a Beta-Binomial Bayesian model agree to the second decimal. The posterior probability that level 40 retains fewer players is 99.9%.</li>
+            <li><strong>The secondary metrics point the same way, without reaching the threshold.</strong> 1-day retention drops 0.59 points (−1.24 to +0.06) and game rounds a median of 17 against 16. Holm-adjusted, both land at p = 0.10: consistent with a small effect and with none.</li>
+            <li><strong>One player was moving the mean.</strong> One of the 90k played 49,854 rounds. With them, level 30 seems to play 1.16 more rounds per player; without them, the difference is −0.04. The rank-based tests don't change.</li>
+            <li><strong>The split was not clean.</strong> Level 40 got 789 more players. A 50/50 draw produces an imbalance like that less than 1 time in 100. Almost no public analysis of this dataset mentions it.</li>
+            <li><strong>The conclusion survives the worst case.</strong> If the players missing from level 30 would never have been retained, the difference would shrink to −0.49 points (−0.99 to +0.01). The direction holds; in no scenario does level 40 come out ahead.</li>
+          </ol>
+          <p lang="es">Mantener la barrera donde está no cuesta nada, y moverla tiene un costo probable sin ningún beneficio medido. Significancia estadística y relevancia práctica apuntan al mismo lado.</p>
+          <p lang="en">Keeping the gate where it is costs nothing, and moving it carries a likely cost with no measured benefit. Statistical significance and practical relevance point the same way.</p>
+
+          <figure class="fig">
+            <ul class="legend"></ul>
+            <div class="fig__plate" data-chart="peeking"
+              data-label-es="Falsos positivos por día en 2,000 pruebas A/A: revisando cada día suben hasta 22.2 %; mirando una sola vez se quedan en 5 %."
+              data-label-en="False positives by day across 2,000 A/A tests: checking daily they climb to 22.2%; checking once they stay at 5%."></div>
+            <p class="fig__readout" aria-live="polite"></p>
+            <figcaption>
+              <span lang="es"><b>Figura 2.</b> Pruebas A/A simuladas: dos grupos idénticos, sin efecto real, revisados cada día durante 14 días. Todo "ganador" es un falso positivo.</span>
+              <span lang="en"><b>Figure 2.</b> Simulated A/A tests: two identical groups, no real effect, checked daily for 14 days. Every "winner" is a false positive.</span>
+              <span class="fig__source" lang="es">Fuente: 2,000 simulaciones con retención de 19 % y ~45 mil jugadores por grupo.</span>
+              <span class="fig__source" lang="en">Source: 2,000 simulations at 19% retention and ~45k players per group.</span>
+            </figcaption>
+          </figure>
+          <p lang="es">El dataset no trae fechas, así que no se puede saber si alguien detuvo el experimento al ver un resultado favorable. La simulación muestra por qué importa: quien revisa cada día y se detiene al primer p &lt; 0.05 declara un ganador falso en 22 % de los casos, no en 5 %.</p>
+          <p lang="en">The dataset has no dates, so there is no way to know whether someone stopped the experiment on a favorable result. The simulation shows why it matters: checking daily and stopping at the first p &lt; 0.05 declares a false winner 22% of the time, not 5%.</p>
+        </section>
+
+        <section>
+          <h2><span lang="es">Cómo lo construí</span><span lang="en">How I built it</span></h2>
+          <ol class="pipeline">
+            <li lang="es"><b>Plan</b>Hipótesis, métrica primaria, α, efecto mínimo y regla de decisión, en el primer commit.</li>
+            <li lang="en"><b>Plan</b>Hypotheses, primary metric, α, minimum effect and decision rule, in the first commit.</li>
+            <li lang="es"><b>Potencia</b>Tamaño de muestra con la fórmula, con statsmodels y por simulación.</li>
+            <li lang="en"><b>Power</b>Sample size from the formula, from statsmodels and by simulation.</li>
+            <li lang="es"><b>Reparto</b>Chequeo de SRM antes de comparar nada, con análisis de sensibilidad.</li>
+            <li lang="en"><b>Split</b>SRM check before comparing anything, with a sensitivity analysis.</li>
+            <li lang="es"><b>Pruebas</b>Prueba z, intervalos Wald y Newcombe, Holm, Mann-Whitney y bootstrap.</li>
+            <li lang="en"><b>Tests</b>z-test, Wald and Newcombe intervals, Holm, Mann-Whitney and bootstrap.</li>
+            <li lang="es"><b>Código</b>Funciones en un paquete, 32 pruebas de pytest contra SciPy y statsmodels.</li>
+            <li lang="en"><b>Code</b>Functions in a package, 32 pytest tests against SciPy and statsmodels.</li>
+            <li lang="es"><b>Sitio</b>Un solo JSON alimenta notebooks y sitio; GitHub Actions publica en cada push.</li>
+            <li lang="en"><b>Site</b>One JSON feeds notebooks and site; GitHub Actions publishes on every push.</li>
+          </ol>
+          <p lang="es">El plan de análisis se subió a GitHub <strong>antes</strong> de calcular cualquier diferencia entre grupos, y el historial de commits lo prueba. Fija una sola métrica que decide, la retención a 7 días, para no escoger después la que saliera significativa, y prohíbe segmentar por rondas jugadas: la barrera cambia cuánto se juega, así que esos segmentos ya no serían comparables.</p>
+          <p lang="en">The analysis plan was pushed to GitHub <strong>before</strong> any difference between groups was computed, and the commit history proves it. It fixes a single deciding metric, 7-day retention, so the significant one can't be picked afterwards, and it rules out segmenting by rounds played: the gate changes how much people play, so those segments would no longer be comparable.</p>
+          <p lang="es">El sitio del análisis incluye una calculadora de tamaño de muestra para cualquier prueba de conversión o retención. Es la única parte que se calcula en el navegador; todo lo demás sale del mismo código de Python que los notebooks.</p>
+          <p lang="en">The analysis site includes a sample size calculator for any conversion or retention test. It is the only part computed in the browser; everything else comes from the same Python code as the notebooks.</p>
+        </section>
+
+        <section>
+          <h2><span lang="es">Lo que no se puede afirmar</span><span lang="en">What this can't claim</span></h2>
+          <ul class="limits" lang="es">
+            <li>El tamaño exacto del efecto. Depende de que el desbalance en la asignación no esté relacionado con la retención, y con estos datos no se puede verificar.</li>
+            <li>El impacto en ingresos. Los datos no traen compras; la retención es un indicador adelantado.</li>
+            <li>Que el experimento se haya detenido en un momento planeado. No hay fechas para revisar la regla de paro ni un posible efecto de novedad.</li>
+            <li>Que la retención a 1 día o las rondas jugadas no cambien. Sus intervalos incluyen el cero, pero también efectos de más de un punto.</li>
+            <li>Que otra posición de la barrera no sea mejor. Solo se probaron los niveles 30 y 40; el siguiente experimento sería adelantarla.</li>
+          </ul>
+          <ul class="limits" lang="en">
+            <li>The exact size of the effect. It relies on the assignment imbalance being unrelated to retention, which this data cannot verify.</li>
+            <li>The revenue impact. The data has no purchases; retention is a leading indicator.</li>
+            <li>That the experiment stopped at a planned point. There are no dates to check the stopping rule or a possible novelty effect.</li>
+            <li>That 1-day retention or rounds played don't change. Their intervals include zero, but also effects of more than a point.</li>
+            <li>That another gate position isn't better. Only levels 30 and 40 were tested; the next experiment would move it earlier.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+
+    <nav class="wrap next" aria-label="Más casos">
+      <a href="/proyectos/ventas-vs-meta/"><span lang="es">Caso anterior</span><span lang="en">Previous case</span><b lang="es">Ventas contra meta: dónde está la brecha</b><b lang="en">Sales against target: where the gap is</b></a>
+      <a href="/proyectos/demanda-inventario/"><span lang="es">Siguiente caso</span><span lang="en">Next case</span><b lang="es">Pronóstico de demanda y política de inventario</b><b lang="en">Demand forecasting and inventory policy</b></a>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Isaac Martínez Ríos · <a href="mailto:isaac.amr15@gmail.com">isaac.amr15@gmail.com</a> · <a href="https://www.linkedin.com/in/isaacmartinez23/">LinkedIn</a></span>
+      <span lang="es">Cifras tomadas del <a href="https://github.com/isaacmartinez23/ab-test-cookie-cats#readme">README</a> y de <code>resultados.json</code> del repositorio. Datos de Cookie Cats publicados por DataCamp y Kaggle.</span>
+      <span lang="en">Figures taken from the repository's <a href="https://github.com/isaacmartinez23/ab-test-cookie-cats#readme">README</a> and <code>resultados.json</code>. Cookie Cats data published by DataCamp and Kaggle.</span>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

@@ -2,13 +2,13 @@
 <html lang="es"
   data-title-es="Isaac Martínez Ríos · Análisis y ciencia de datos"
   data-title-en="Isaac Martínez Ríos · Data analysis and data science"
-  data-desc-es="Portafolio de Isaac Martínez Ríos: casos de estudio de pronóstico de demanda e inventario, precios de la canasta PROFECO y disponibilidad de ECOBICI."
-  data-desc-en="Portfolio of Isaac Martínez Ríos: case studies on demand forecasting and inventory, PROFECO food basket prices and ECOBICI bike availability.">
+  data-desc-es="Portafolio de Isaac Martínez Ríos: casos de estudio de pronóstico de demanda e inventario, precios de la canasta PROFECO, disponibilidad de ECOBICI, ventas contra meta y un A/B test."
+  data-desc-en="Portfolio of Isaac Martínez Ríos: case studies on demand forecasting and inventory, PROFECO food basket prices, ECOBICI bike availability, sales against target and an A/B test.">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Isaac Martínez Ríos · Análisis y ciencia de datos</title>
-  <meta name="description" content="Portafolio de Isaac Martínez Ríos: casos de estudio de pronóstico de demanda e inventario, precios de la canasta PROFECO y disponibilidad de ECOBICI.">
+  <meta name="description" content="Portafolio de Isaac Martínez Ríos: casos de estudio de pronóstico de demanda e inventario, precios de la canasta PROFECO, disponibilidad de ECOBICI, ventas contra meta y un A/B test.">
   <link rel="canonical" href="https://isaacmartinez.space/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Isaac Martínez Ríos · Del dato a la decisión">
@@ -94,8 +94,8 @@
       <div class="wrap">
         <div class="section__head">
           <h2 id="casos-t"><span lang="es">Casos de estudio</span><span lang="en">Case studies</span></h2>
-          <p lang="es">Cuatro proyectos completos, cada uno con su pregunta, sus datos, un resultado medido contra una referencia y lo que el análisis no permite afirmar.</p>
-          <p lang="en">Four end-to-end projects, each with its question, its data, a result measured against a reference, and what the analysis cannot claim.</p>
+          <p lang="es">Cinco proyectos completos, cada uno con su pregunta, sus datos, un resultado medido contra una referencia y lo que el análisis no permite afirmar.</p>
+          <p lang="en">Five end-to-end projects, each with its question, its data, a result measured against a reference, and what the analysis cannot claim.</p>
         </div>
 
         <article class="case">
@@ -240,6 +240,42 @@
             </figure>
           </div>
         </article>
+
+        <article class="case">
+          <div class="case__meta">
+            <dl>
+              <div><dt lang="es">Área</dt><dt lang="en">Field</dt><dd lang="es">Experimentación y producto</dd><dd lang="en">Experimentation and product</dd></div>
+              <div><dt lang="es">Datos</dt><dt lang="en">Data</dt><dd lang="es">A/B test de Cookie Cats, juego móvil, 90,189 jugadores</dd><dd lang="en">Cookie Cats A/B test, mobile game, 90,189 players</dd></div>
+              <div><dt>Stack</dt><dd>Python · SciPy · statsmodels · pytest · GitHub Actions</dd></div>
+            </dl>
+          </div>
+          <div class="case__body">
+            <div>
+              <h3><a href="/proyectos/ab-test/"><span lang="es">A/B test de Cookie Cats: mover la barrera al nivel 40 cuesta retención</span><span lang="en">Cookie Cats A/B test: moving the gate to level 40 costs retention</span></a></h3>
+              <p class="case__q" lang="es">¿Conviene retrasar la primera barrera de un juego móvil del nivel 30 al 40, con qué confianza y qué no permiten afirmar los datos?</p>
+              <p class="case__q" lang="en">Should a mobile game move its first gate from level 30 to level 40, how confident can we be, and what can't the data tell us?</p>
+              <p lang="es">Un análisis con plan preregistrado, chequeo de reparto, intervalos de confianza y bootstrap. Moverla baja la retención a 7 días en 0.82 puntos: unos 820 jugadores menos por cada 100 mil instalaciones. Además, la asignación a grupos no fue limpia, algo que casi ningún análisis público de estos datos reporta.</p>
+              <p lang="en">An analysis with a pre-registered plan, a sample ratio check, confidence intervals and bootstrap. Moving the gate lowers 7-day retention by 0.82 points: about 820 fewer players per 100k installs. The group assignment was also not clean, something almost no public analysis of this data reports.</p>
+              <div class="case__links">
+                <a class="link-arrow" href="/proyectos/ab-test/"><span lang="es">Leer el caso</span><span lang="en">Read the case</span></a>
+                <a href="https://isaacmartinez.space/ab-test-cookie-cats/"><span lang="es">Sitio del análisis</span><span lang="en">Analysis site</span></a>
+                <a href="https://github.com/isaacmartinez23/ab-test-cookie-cats"><span lang="es">Código</span><span lang="en">Code</span></a>
+              </div>
+            </div>
+            <figure class="fig">
+              <div class="fig__plate" data-chart="abci"
+                data-label-es="Diferencia en retención con intervalo de confianza de 95 %: a 7 días −0.82 puntos, de −1.33 a −0.31; a 1 día −0.59 puntos, de −1.24 a +0.06."
+                data-label-en="Retention difference with 95% confidence interval: 7-day −0.82 points, from −1.33 to −0.31; 1-day −0.59 points, from −1.24 to +0.06."></div>
+              <p class="fig__readout" aria-live="polite"></p>
+              <figcaption>
+                <span lang="es"><b>Figura 6.</b> Diferencia en retención, nivel 40 menos nivel 30, con intervalo de confianza de 95 %. A 7 días el intervalo queda completo debajo de cero.</span>
+                <span lang="en"><b>Figure 6.</b> Retention difference, level 40 minus level 30, with a 95% confidence interval. At 7 days the whole interval sits below zero.</span>
+                <span class="fig__source" lang="es">Fuente: experimento Cookie Cats, 90,189 jugadores.</span>
+                <span class="fig__source" lang="en">Source: Cookie Cats experiment, 90,189 players.</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -247,8 +283,8 @@
       <div class="wrap">
         <div class="section__head">
           <h2 id="metodo-t"><span lang="es">Cómo trabajo</span><span lang="en">How I work</span></h2>
-          <p lang="es">Los tres casos siguen el mismo método. Cualquiera puede reproducirlos con un solo comando, y cada cifra sale de un reporte que está en el repositorio.</p>
-          <p lang="en">All three cases follow the same method. Anyone can reproduce them with a single command, and every number comes from a report kept in the repository.</p>
+          <p lang="es">Todos los casos siguen el mismo método. Cualquiera puede reproducirlos con un solo comando, y cada cifra sale de un reporte que está en el repositorio.</p>
+          <p lang="en">Every case follows the same method. Anyone can reproduce them with a single command, and every number comes from a report kept in the repository.</p>
         </div>
         <div class="method">
           <div>
@@ -344,8 +380,8 @@
           <div class="about__text">
             <p lang="es">Estudié Administración de Empresas en la UNAM. De ahí viene mi manera de trabajar: un análisis está terminado cuando alguien puede tomar una decisión con él.</p>
             <p lang="en">I studied Business Administration at UNAM. That shapes how I work: an analysis is done when someone can make a decision with it.</p>
-            <p lang="es">Después me especialicé en Business Intelligence y análisis de datos, y hoy trabajo en todo el ciclo: ingesta y calidad de datos con DuckDB, dbt y PostgreSQL; modelos de pronóstico y clasificación con Python y scikit-learn; y dashboards que publico de forma automática.</p>
-            <p lang="en">I then specialized in Business Intelligence and data analysis, and today I work across the whole cycle: data ingestion and quality with DuckDB, dbt and PostgreSQL; forecasting and classification models with Python and scikit-learn; and dashboards that publish themselves.</p>
+            <p lang="es">Después me especialicé en Business Intelligence y análisis de datos, y hoy trabajo en todo el ciclo: ingesta y calidad de datos con DuckDB, dbt y PostgreSQL; modelos de pronóstico y clasificación con Python y scikit-learn; experimentos A/B con estadística inferencial; y dashboards que publico de forma automática.</p>
+            <p lang="en">I then specialized in Business Intelligence and data analysis, and today I work across the whole cycle: data ingestion and quality with DuckDB, dbt and PostgreSQL; forecasting and classification models with Python and scikit-learn; A/B experiments with inferential statistics; and dashboards that publish themselves.</p>
 
             <div class="edu">
               <div>
